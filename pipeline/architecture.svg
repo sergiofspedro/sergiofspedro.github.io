@@ -82,7 +82,7 @@
 
   <!-- title -->
   <text x="500" y="42" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">PERSONAL AI INFRASTRUCTURE</text>
-  <text x="500" y="76" text-anchor="middle" font-size="26" font-weight="600" fill="#f3f6fa">Pipeline — System Architecture</text>
+  <text x="500" y="76" text-anchor="middle" font-size="26" font-weight="600" fill="#f3f6fa">OpenClaw pipeline: System architecture</text>
 
   <!-- ══ LAYER 1 · INTERFACES ══ -->
   <text x="60" y="112" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">01 · INTERFACES</text>
@@ -102,7 +102,7 @@
   </g>
   <circle cx="549" cy="167" r="18" fill="#f0d25e" fill-opacity="0.18" stroke="#f0d25e" stroke-width="1.4"/>
   <use href="#icon-phone" x="538" y="156" width="22" height="22" color="#f0d25e"/>
-  <text x="579" y="160" font-size="15" font-weight="600" fill="#f3f6fa">Voice Calls</text>
+  <text x="579" y="160" font-size="15" font-weight="600" fill="#f3f6fa">Voice calls</text>
   <text x="579" y="180" font-size="10.8" fill="#9fb3c8">Phone-based, no app needed</text>
 
   <!-- connector 1 -> 2 (merge) -->
@@ -119,7 +119,7 @@
   </g>
   <circle cx="174" cy="313" r="18" fill="#6fd8c7" fill-opacity="0.18" stroke="#6fd8c7" stroke-width="1.4"/>
   <use href="#icon-server" x="163" y="302" width="22" height="22" color="#6fd8c7"/>
-  <text x="204" y="306" font-size="15.5" font-weight="600" fill="#f3f6fa">Self-Hosted Gateway</text>
+  <text x="204" y="306" font-size="15.5" font-weight="600" fill="#f3f6fa">Self-hosted gateway</text>
   <text x="204" y="326" font-size="11" fill="#9fb3c8">Docker · Tailscale-only network access · zero public surface</text>
 
   <!-- live ping indicator -->
@@ -193,7 +193,7 @@
     <use href="#icon-node" x="788" y="434" width="24" height="24" color="#6fa8e0"/>
   </g>
 
-  <text x="500" y="496" text-anchor="middle" font-size="12" fill="#9fb3c8">8 specialized agents, each independently orchestrated — full roster below</text>
+  <text x="500" y="496" text-anchor="middle" font-size="12" fill="#9fb3c8">8 specialized agents, each independently orchestrated (full roster below)</text>
 
   <!-- connector 3 -> 4 -->
   <line x1="500" y1="516" x2="500" y2="554" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow)"/>
@@ -207,8 +207,8 @@
   </g>
   <circle cx="184" cy="609" r="18" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.4"/>
   <use href="#icon-brain" x="173" y="598" width="22" height="22" color="#b89bf5"/>
-  <text x="214" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Persistent Memory</text>
-  <text x="214" y="620" font-size="10" fill="#9fb3c8">Cross-session recall —</text>
+  <text x="214" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Persistent memory</text>
+  <text x="214" y="620" font-size="10" fill="#9fb3c8">Cross-session recall:</text>
   <text x="214" y="633" font-size="10" fill="#9fb3c8">the fleet's second brain</text>
 
   <g filter="url(#cardShadow)">
@@ -217,7 +217,7 @@
   </g>
   <circle cx="424" cy="609" r="18" fill="#6fa8e0" fill-opacity="0.18" stroke="#6fa8e0" stroke-width="1.4"/>
   <use href="#icon-network" x="413" y="598" width="22" height="22" color="#6fa8e0"/>
-  <text x="454" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Multi-Provider Routing</text>
+  <text x="454" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Multi-provider routing</text>
   <text x="454" y="620" font-size="10" fill="#9fb3c8">Automatic fallback across</text>
   <text x="454" y="633" font-size="10" fill="#9fb3c8">independent free + paid tiers</text>
 
@@ -227,7 +227,7 @@
   </g>
   <circle cx="664" cy="609" r="18" fill="#6fd88a" fill-opacity="0.18" stroke="#6fd88a" stroke-width="1.4"/>
   <use href="#icon-lock" x="653" y="598" width="22" height="22" color="#6fd88a"/>
-  <text x="694" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Secrets Manager</text>
+  <text x="694" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Secrets manager</text>
   <text x="694" y="620" font-size="10" fill="#9fb3c8">Zero hardcoded credentials,</text>
   <text x="694" y="633" font-size="10" fill="#9fb3c8">injected at runtime</text>
 
@@ -243,7 +243,7 @@
   </g>
   <circle cx="184" cy="745" r="18" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
   <use href="#icon-clock" x="173" y="734" width="22" height="22" color="#f0a85e"/>
-  <text x="214" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Scheduled Autonomy</text>
+  <text x="214" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Scheduled autonomy</text>
   <text x="214" y="756" font-size="10" fill="#9fb3c8">Daily research &amp; reporting,</text>
   <text x="214" y="769" font-size="10" fill="#9fb3c8">no manual trigger needed</text>
 
@@ -253,7 +253,7 @@
   </g>
   <circle cx="424" cy="745" r="18" fill="#f06fa0" fill-opacity="0.18" stroke="#f06fa0" stroke-width="1.4"/>
   <use href="#icon-loop" x="413" y="734" width="22" height="22" color="#f06fa0"/>
-  <text x="454" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Workflow Automation</text>
+  <text x="454" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Workflow automation</text>
   <text x="454" y="756" font-size="10" fill="#9fb3c8">Cross-system task</text>
   <text x="454" y="769" font-size="10" fill="#9fb3c8">orchestration</text>
 

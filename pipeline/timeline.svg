@@ -34,8 +34,8 @@
   <rect width="1000" height="320" rx="22" fill="url(#dots4)"/>
 
   <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">WHILE YOU&#8217;RE NOT LOOKING</text>
-  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Pipeline — A Day in the Fleet&#8217;s Life</text>
-  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Representative schedule — agents run continuously, not just when you message them</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">OpenClaw pipeline: A day in the fleet&#8217;s life</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Representative schedule: agents run continuously, not just when you message them</text>
 
   <!-- axis -->
   <line x1="70" y1="200" x2="930" y2="200" stroke="#3a5570" stroke-width="2" stroke-linecap="round"/>
@@ -43,7 +43,7 @@
     <line x1="70" y1="196" x2="70" y2="204" stroke="#3a5570" stroke-width="2"/>
     <text x="70" y="222">Night</text>
     <line x1="242" y1="196" x2="242" y2="204" stroke="#3a5570" stroke-width="2"/>
-    <text x="242" y="222">Early Morning</text>
+    <text x="242" y="222">Early morning</text>
     <line x1="414" y1="196" x2="414" y2="204" stroke="#3a5570" stroke-width="2"/>
     <text x="414" y="222">Morning</text>
     <line x1="586" y1="196" x2="586" y2="204" stroke="#3a5570" stroke-width="2"/>

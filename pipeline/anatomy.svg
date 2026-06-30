@@ -40,7 +40,7 @@
   <rect width="1100" height="320" rx="22" fill="url(#dots3)"/>
 
   <text x="550" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">ONE REQUEST, START TO FINISH</text>
-  <text x="550" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Pipeline — Anatomy of a Request</text>
+  <text x="550" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">OpenClaw pipeline: Anatomy of a request</text>
   <text x="550" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">A single Telegram message, traced end to end</text>
 
   <!-- connecting arrows (drawn first, under cards) -->
@@ -55,7 +55,7 @@
   </g>
   <circle cx="95" cy="156" r="18" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
   <use href="#b-plane" x="84" y="145" width="22" height="22" color="#5ec8e0"/>
-  <text x="95" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Message In</text>
+  <text x="95" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Message in</text>
   <text x="95" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Telegram request</text>
   <text x="95" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">reaches the gateway</text>
 
@@ -75,7 +75,7 @@
   </g>
   <circle cx="455" cy="156" r="18" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.4"/>
   <use href="#b-brain" x="444" y="145" width="22" height="22" color="#b89bf5"/>
-  <text x="455" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Memory Recall</text>
+  <text x="455" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Memory recall</text>
   <text x="455" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Relevant past context</text>
   <text x="455" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">is pulled in</text>
 
@@ -83,25 +83,25 @@
   <g filter="url(#cardShadow3)">
     <rect x="560" y="118" width="340" height="140" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
   </g>
-  <text x="730" y="144" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Model Chain</text>
+  <text x="730" y="144" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Model chain</text>
 
   <!-- chip 1: fails -->
   <rect x="584" y="164" width="92" height="58" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#f0726f" stroke-opacity="0.35"/>
-  <text x="630" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free Model A</text>
+  <text x="630" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free model A</text>
   <use href="#b-x" x="600" y="194" width="11" height="11" color="#f0726f"/>
   <text x="638" y="203" text-anchor="middle" font-size="9" fill="#f0a8a6">rate limited</text>
   <line x1="676" y1="193" x2="682" y2="193" stroke="#5e7d96" stroke-width="1.4" marker-end="url(#arrow3sm)"/>
 
   <!-- chip 2: fails -->
   <rect x="684" y="164" width="92" height="58" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#f0726f" stroke-opacity="0.35"/>
-  <text x="730" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free Model B</text>
+  <text x="730" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free model B</text>
   <use href="#b-x" x="700" y="194" width="11" height="11" color="#f0726f"/>
   <text x="738" y="203" text-anchor="middle" font-size="9" fill="#f0a8a6">timeout</text>
   <line x1="776" y1="193" x2="782" y2="193" stroke="#5e7d96" stroke-width="1.4" marker-end="url(#arrow3sm)"/>
 
   <!-- chip 3: succeeds -->
   <rect x="784" y="164" width="92" height="58" rx="8" fill="#6fd88a" fill-opacity="0.12" stroke="#6fd88a" stroke-width="1.3"/>
-  <text x="830" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#f3f6fa">Paid Model</text>
+  <text x="830" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#f3f6fa">Paid model</text>
   <use href="#b-check" x="800" y="194" width="11" height="11" color="#6fd88a"/>
   <text x="838" y="203" text-anchor="middle" font-size="9" fill="#9fe8b0">responds</text>
 
@@ -113,10 +113,10 @@
   </g>
   <circle cx="1005" cy="156" r="18" fill="#6fd88a" fill-opacity="0.18" stroke="#6fd88a" stroke-width="1.4"/>
   <use href="#b-plane" x="994" y="145" width="22" height="22" color="#6fd88a"/>
-  <text x="1005" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Response Out</text>
+  <text x="1005" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Response out</text>
   <text x="1005" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Reply sent back</text>
   <text x="1005" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">through Telegram</text>
 
-  <text x="550" y="292" text-anchor="middle" font-size="12" fill="#9fb3c8">The paid tier is a safety net, not the common path — most requests resolve on the first free-tier attempt.</text>
+  <text x="550" y="292" text-anchor="middle" font-size="12" fill="#9fb3c8">The paid tier is a safety net, not the common path. Most requests resolve on the first free-tier attempt.</text>
 
 </svg>

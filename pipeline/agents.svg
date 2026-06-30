@@ -53,7 +53,7 @@
   <rect width="1000" height="580" rx="22" fill="url(#dots2)"/>
 
   <text x="500" y="42" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">8 SPECIALIZED AGENTS</text>
-  <text x="500" y="76" text-anchor="middle" font-size="26" font-weight="600" fill="#f3f6fa">Pipeline — Agent Roster</text>
+  <text x="500" y="76" text-anchor="middle" font-size="26" font-weight="600" fill="#f3f6fa">OpenClaw pipeline: Agent roster</text>
   <text x="500" y="98" text-anchor="middle" font-size="12" fill="#9fb3c8">Each agent runs independently, with its own multi-provider LLM fallback chain</text>
 
   <!-- Card template repeated x8 — col_x: 29,269,509,749  row_y: 126,338 -->
@@ -78,7 +78,7 @@
   <circle cx="309" cy="166" r="20" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.5"/>
   <use href="#a-chain" x="298" y="155" width="22" height="22" color="#f0a85e"/>
   <text x="341" y="162" font-size="16" font-weight="700" fill="#f3f6fa">Pipeline</text>
-  <text x="289" y="208" font-size="11.5" fill="#c3d2de">Nightly pipeline — gathers</text>
+  <text x="289" y="208" font-size="11.5" fill="#c3d2de">Nightly pipeline: gathers</text>
   <text x="289" y="224" font-size="11.5" fill="#c3d2de">saved reading, synthesizes</text>
   <text x="289" y="240" font-size="11.5" fill="#c3d2de">it, and files it away.</text>
 
@@ -102,7 +102,7 @@
   <circle cx="789" cy="166" r="20" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.5"/>
   <use href="#a-trend" x="778" y="155" width="22" height="22" color="#b89bf5"/>
   <text x="821" y="162" font-size="16" font-weight="700" fill="#f3f6fa">Invest</text>
-  <text x="769" y="208" font-size="11.5" fill="#c3d2de">Investment research —</text>
+  <text x="769" y="208" font-size="11.5" fill="#c3d2de">Investment research:</text>
   <text x="769" y="224" font-size="11.5" fill="#c3d2de">parallel signal-gathering</text>
   <text x="769" y="240" font-size="11.5" fill="#c3d2de">synthesized into a brief.</text>
 
@@ -126,7 +126,7 @@
   <circle cx="309" cy="378" r="20" fill="#f06fa0" fill-opacity="0.18" stroke="#f06fa0" stroke-width="1.5"/>
   <use href="#a-radar" x="298" y="367" width="22" height="22" color="#f06fa0"/>
   <text x="341" y="374" font-size="16" font-weight="700" fill="#f3f6fa">Intel</text>
-  <text x="289" y="420" font-size="11.5" fill="#c3d2de">Intelligence digest —</text>
+  <text x="289" y="420" font-size="11.5" fill="#c3d2de">Intelligence digest:</text>
   <text x="289" y="436" font-size="11.5" fill="#c3d2de">parallel research synthesized</text>
   <text x="289" y="452" font-size="11.5" fill="#c3d2de">into a daily brief.</text>
 
@@ -138,7 +138,7 @@
   <circle cx="549" cy="378" r="20" fill="#f0d25e" fill-opacity="0.18" stroke="#f0d25e" stroke-width="1.5"/>
   <use href="#a-phone" x="538" y="367" width="22" height="22" color="#f0d25e"/>
   <text x="581" y="374" font-size="16" font-weight="700" fill="#f3f6fa">Calls</text>
-  <text x="529" y="420" font-size="11.5" fill="#c3d2de">Voice-call interface —</text>
+  <text x="529" y="420" font-size="11.5" fill="#c3d2de">Voice-call interface:</text>
   <text x="529" y="436" font-size="11.5" fill="#c3d2de">phone-based interaction,</text>
   <text x="529" y="452" font-size="11.5" fill="#c3d2de">no app needed.</text>
 

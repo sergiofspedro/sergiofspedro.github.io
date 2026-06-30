@@ -3,7 +3,7 @@
   <rect width="900" height="700" fill="#f8f9fb" rx="12"/>
 
   <!-- Title -->
-  <text x="450" y="36" text-anchor="middle" font-size="19" font-weight="bold" fill="#1a2340">LOOP — System Architecture</text>
+  <text x="450" y="36" text-anchor="middle" font-size="19" font-weight="bold" fill="#1a2340">LOOP: System architecture</text>
   <text x="450" y="56" text-anchor="middle" font-size="12" fill="#666">EU Commission Civic Tech Hackathon · Brussels · June 2026</text>
 
   <!-- ── USERS column ── -->
@@ -47,20 +47,20 @@
 
   <rect x="420" y="100" width="166" height="105" rx="8" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
   <text x="503" y="123" text-anchor="middle" font-size="22">🤖</text>
-  <text x="503" y="146" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2340">Telegram Bot</text>
+  <text x="503" y="146" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2340">Telegram bot</text>
   <text x="503" y="163" text-anchor="middle" font-size="10.5" fill="#555">python-telegram-bot</text>
   <text x="503" y="178" text-anchor="middle" font-size="10.5" fill="#555">Inline keyboards · voting</text>
   <text x="503" y="193" text-anchor="middle" font-size="10.5" fill="#555">AI-powered free text</text>
 
   <rect x="420" y="215" width="166" height="105" rx="8" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
   <text x="503" y="238" text-anchor="middle" font-size="22">🎙️</text>
-  <text x="503" y="261" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2340">Voice Bot</text>
+  <text x="503" y="261" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2340">Voice bot</text>
   <text x="503" y="278" text-anchor="middle" font-size="10.5" fill="#555">Flask + TeXML</text>
   <text x="503" y="293" text-anchor="middle" font-size="10.5" fill="#555">DTMF menu · TTS</text>
   <text x="503" y="308" text-anchor="middle" font-size="10.5" fill="#555">speech-to-text opinions</text>
 
   <rect x="420" y="330" width="166" height="65" rx="8" fill="#e8f8f0" stroke="#27ae60" stroke-width="1.2"/>
-  <text x="503" y="350" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a2340">Shared Layer</text>
+  <text x="503" y="350" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a2340">Shared layer</text>
   <text x="503" y="367" text-anchor="middle" font-size="10.5" fill="#555">📄 Consultation data · 🗳️ SQLite votes</text>
   <text x="503" y="382" text-anchor="middle" font-size="10.5" fill="#555">(Docker volume, shared)</text>
 
@@ -86,7 +86,7 @@
 
   <!-- Hetzner VPS dashed border -->
   <rect x="395" y="55" width="420" height="370" rx="14" fill="none" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="8,4"/>
-  <text x="605" y="442" text-anchor="middle" font-size="10.5" fill="#7f8c8d">Hetzner VPS — Ubuntu 22.04 · 4 GB RAM</text>
+  <text x="605" y="442" text-anchor="middle" font-size="10.5" fill="#7f8c8d">Hetzner VPS: Ubuntu 22.04 · 4 GB RAM</text>
 
   <!-- ── HOW IT WORKS panel ── -->
   <rect x="40" y="470" width="820" height="210" rx="10" fill="#fff" stroke="#ddd" stroke-width="1"/>
@@ -103,7 +103,7 @@
 
   <circle cx="62" cy="604" r="10" fill="#4a7aec" opacity="0.2"/>
   <text x="62" y="608" text-anchor="middle" font-size="10" fill="#4a7aec" font-weight="bold">3</text>
-  <text x="82" y="598" font-size="11" fill="#333">Both bots share the same SQLite database — votes</text>
+  <text x="82" y="598" font-size="11" fill="#333">Both bots share the same SQLite database: votes</text>
   <text x="82" y="612" font-size="11" fill="#333">cast on Telegram are visible from the voice menu</text>
   <text x="82" y="626" font-size="11" fill="#333">and vice-versa</text>
 
@@ -116,7 +116,7 @@
   <circle cx="450" cy="582" r="10" fill="#4a7aec" opacity="0.2"/>
   <text x="450" y="586" text-anchor="middle" font-size="10" fill="#4a7aec" font-weight="bold">5</text>
   <text x="470" y="576" font-size="11" fill="#333">All API keys are stored in Infisical (secrets</text>
-  <text x="470" y="590" font-size="11" fill="#333">manager) — never hardcoded, injected into the</text>
+  <text x="470" y="590" font-size="11" fill="#333">manager), never hardcoded, injected into the</text>
   <text x="470" y="604" font-size="11" fill="#333">containers at startup</text>
 
   <defs>
