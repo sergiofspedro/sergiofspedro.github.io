@@ -1,0 +1,285 @@
+<svg viewBox="0 0 1000 860" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#7fa8c9"/>
+    </marker>
+
+    <!-- ── icon symbols (24x24, stroke = currentColor) ── -->
+    <symbol id="icon-plane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 3 10 14"/><path d="M21 3 14 21l-3-7-7-3 17-8z"/>
+    </g></symbol>
+
+    <symbol id="icon-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3h3l2 5-2.5 1.6a11.5 11.5 0 0 0 5.4 5.4L15.4 12.5l5 2v3a2 2 0 0 1-2 2A14.5 14.5 0 0 1 4 5a2 2 0 0 1 2-2z"/>
+    </g></symbol>
+
+    <symbol id="icon-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="6" rx="1.6"/><rect x="3" y="14" width="18" height="6" rx="1.6"/>
+      <circle cx="7" cy="7" r="0.9" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r="0.9" fill="currentColor" stroke="none"/>
+    </g></symbol>
+
+    <symbol id="icon-node" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3.2"/>
+      <circle cx="12" cy="4.5" r="1.3" fill="currentColor" stroke="none"/>
+      <circle cx="18.5" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+      <circle cx="5.5" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+      <path d="M12 8.8v2M16.4 14.8l-2.6-1.5M9.8 13.5l-2.7 1.3"/>
+    </g></symbol>
+
+    <symbol id="icon-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="9.5" r="4.2"/><circle cx="15" cy="9.5" r="4.2"/><circle cx="12" cy="15" r="4.2"/>
+    </g></symbol>
+
+    <symbol id="icon-network" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="5" r="2.3"/><circle cx="5" cy="19" r="2.3"/><circle cx="19" cy="19" r="2.3"/>
+      <path d="M12 7.3 7.2 17M12 7.3l4.8 9.7M7.5 19h9"/>
+    </g></symbol>
+
+    <symbol id="icon-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="11" width="14" height="9.5" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>
+    </g></symbol>
+
+    <symbol id="icon-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/>
+    </g></symbol>
+
+    <symbol id="icon-loop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 12a7.5 7.5 0 0 1 13-5.2"/><path d="M19.5 12a7.5 7.5 0 0 1-13 5.2"/>
+      <path d="M16.7 4.6v3.2h-3.2"/><path d="M7.3 19.4v-3.2h3.2"/>
+    </g></symbol>
+
+    <symbol id="icon-pulse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12h3.5l1.8-5 3.4 10 1.8-5H21"/>
+    </g></symbol>
+  </defs>
+
+  <!-- background -->
+  <rect width="1000" height="860" rx="22" fill="url(#bgGrad)"/>
+  <rect width="1000" height="860" rx="22" fill="url(#dots)"/>
+
+  <!-- title -->
+  <text x="500" y="42" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">PERSONAL AI INFRASTRUCTURE</text>
+  <text x="500" y="76" text-anchor="middle" font-size="26" font-weight="600" fill="#f3f6fa">Pipeline — System Architecture</text>
+
+  <!-- ══ LAYER 1 · INTERFACES ══ -->
+  <text x="60" y="112" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">01 · INTERFACES</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="185" y="124" width="300" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="185" y="124" width="4" height="86" rx="2" fill="#5ec8e0"/>
+  </g>
+  <circle cx="219" cy="167" r="18" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
+  <use href="#icon-plane" x="208" y="156" width="22" height="22" color="#5ec8e0"/>
+  <text x="249" y="160" font-size="15" font-weight="600" fill="#f3f6fa">Telegram</text>
+  <text x="249" y="180" font-size="10.8" fill="#9fb3c8">Chat interface · inline keyboards</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="515" y="124" width="300" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="515" y="124" width="4" height="86" rx="2" fill="#f0d25e"/>
+  </g>
+  <circle cx="549" cy="167" r="18" fill="#f0d25e" fill-opacity="0.18" stroke="#f0d25e" stroke-width="1.4"/>
+  <use href="#icon-phone" x="538" y="156" width="22" height="22" color="#f0d25e"/>
+  <text x="579" y="160" font-size="15" font-weight="600" fill="#f3f6fa">Voice Calls</text>
+  <text x="579" y="180" font-size="10.8" fill="#9fb3c8">Phone-based, no app needed</text>
+
+  <!-- connector 1 -> 2 (merge) -->
+  <path d="M335 210 Q335 232 500 234" fill="none" stroke="#5e7d96" stroke-width="1.6"/>
+  <path d="M665 210 Q665 232 500 234" fill="none" stroke="#5e7d96" stroke-width="1.6"/>
+  <line x1="500" y1="234" x2="500" y2="266" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- ══ LAYER 2 · GATEWAY ══ -->
+  <text x="60" y="258" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">02 · GATEWAY</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="140" y="270" width="720" height="86" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+    <rect x="140" y="270" width="4" height="86" rx="2" fill="#6fd8c7"/>
+  </g>
+  <circle cx="174" cy="313" r="18" fill="#6fd8c7" fill-opacity="0.18" stroke="#6fd8c7" stroke-width="1.4"/>
+  <use href="#icon-server" x="163" y="302" width="22" height="22" color="#6fd8c7"/>
+  <text x="204" y="306" font-size="15.5" font-weight="600" fill="#f3f6fa">Self-Hosted Gateway</text>
+  <text x="204" y="326" font-size="11" fill="#9fb3c8">Docker · Tailscale-only network access · zero public surface</text>
+
+  <!-- live ping indicator -->
+  <g filter="url(#softGlow)">
+    <circle cx="828" cy="288" r="4" fill="#6fd88a"/>
+    <circle cx="828" cy="288" r="4" fill="none" stroke="#6fd88a" stroke-width="1.4">
+      <animate attributeName="r" values="4;13;4" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <text x="838" y="292" font-size="9.5" letter-spacing="1" fill="#6fd88a">LIVE</text>
+
+  <!-- connector 2 -> 3 -->
+  <line x1="500" y1="356" x2="500" y2="394" stroke="#7fa8c9" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#arrow)">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1.1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ══ LAYER 3 · AGENT FLEET ══ -->
+  <text x="60" y="384" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">03 · AGENT FLEET</text>
+
+  <rect x="140" y="396" width="720" height="120" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#7fa8c9" stroke-opacity="0.4" stroke-dasharray="4 5"/>
+
+  <!-- 8 agent nodes -->
+  <g font-size="9" text-anchor="middle">
+    <!-- assistant -->
+    <circle cx="200" cy="446" r="22" fill="#5ec8e0" fill-opacity="0.16" stroke="#5ec8e0" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="188" y="434" width="24" height="24" color="#5ec8e0"/>
+
+    <!-- pipeline -->
+    <circle cx="285.7" cy="446" r="22" fill="#f0a85e" fill-opacity="0.16" stroke="#f0a85e" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="273.7" y="434" width="24" height="24" color="#f0a85e"/>
+
+    <!-- guardian -->
+    <circle cx="371.4" cy="446" r="22" fill="#6fd88a" fill-opacity="0.16" stroke="#6fd88a" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="359.4" y="434" width="24" height="24" color="#6fd88a"/>
+
+    <!-- invest -->
+    <circle cx="457.1" cy="446" r="22" fill="#b89bf5" fill-opacity="0.16" stroke="#b89bf5" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="445.1" y="434" width="24" height="24" color="#b89bf5"/>
+
+    <!-- coverletter -->
+    <circle cx="542.9" cy="446" r="22" fill="#f4886a" fill-opacity="0.16" stroke="#f4886a" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="530.9" y="434" width="24" height="24" color="#f4886a"/>
+
+    <!-- intel -->
+    <circle cx="628.6" cy="446" r="22" fill="#f06fa0" fill-opacity="0.16" stroke="#f06fa0" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="616.6" y="434" width="24" height="24" color="#f06fa0"/>
+
+    <!-- calls -->
+    <circle cx="714.3" cy="446" r="22" fill="#f0d25e" fill-opacity="0.16" stroke="#f0d25e" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="702.3" y="434" width="24" height="24" color="#f0d25e"/>
+
+    <!-- podcast -->
+    <circle cx="800" cy="446" r="22" fill="#6fa8e0" fill-opacity="0.16" stroke="#6fa8e0" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3.2s" begin="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <use href="#icon-node" x="788" y="434" width="24" height="24" color="#6fa8e0"/>
+  </g>
+
+  <text x="500" y="496" text-anchor="middle" font-size="12" fill="#9fb3c8">8 specialized agents, each independently orchestrated — full roster below</text>
+
+  <!-- connector 3 -> 4 -->
+  <line x1="500" y1="516" x2="500" y2="554" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- ══ LAYER 4 · SHARED INTELLIGENCE LAYER ══ -->
+  <text x="60" y="554" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">04 · SHARED INTELLIGENCE LAYER</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="150" y="566" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="150" y="566" width="4" height="86" rx="2" fill="#b89bf5"/>
+  </g>
+  <circle cx="184" cy="609" r="18" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.4"/>
+  <use href="#icon-brain" x="173" y="598" width="22" height="22" color="#b89bf5"/>
+  <text x="214" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Persistent Memory</text>
+  <text x="214" y="620" font-size="10" fill="#9fb3c8">Cross-session recall —</text>
+  <text x="214" y="633" font-size="10" fill="#9fb3c8">the fleet's second brain</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="390" y="566" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="390" y="566" width="4" height="86" rx="2" fill="#6fa8e0"/>
+  </g>
+  <circle cx="424" cy="609" r="18" fill="#6fa8e0" fill-opacity="0.18" stroke="#6fa8e0" stroke-width="1.4"/>
+  <use href="#icon-network" x="413" y="598" width="22" height="22" color="#6fa8e0"/>
+  <text x="454" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Multi-Provider Routing</text>
+  <text x="454" y="620" font-size="10" fill="#9fb3c8">Automatic fallback across</text>
+  <text x="454" y="633" font-size="10" fill="#9fb3c8">independent free + paid tiers</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="630" y="566" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="630" y="566" width="4" height="86" rx="2" fill="#6fd88a"/>
+  </g>
+  <circle cx="664" cy="609" r="18" fill="#6fd88a" fill-opacity="0.18" stroke="#6fd88a" stroke-width="1.4"/>
+  <use href="#icon-lock" x="653" y="598" width="22" height="22" color="#6fd88a"/>
+  <text x="694" y="602" font-size="13.5" font-weight="600" fill="#f3f6fa">Secrets Manager</text>
+  <text x="694" y="620" font-size="10" fill="#9fb3c8">Zero hardcoded credentials,</text>
+  <text x="694" y="633" font-size="10" fill="#9fb3c8">injected at runtime</text>
+
+  <!-- connector 4 -> 5 -->
+  <line x1="500" y1="652" x2="500" y2="690" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- ══ LAYER 5 · AUTOMATION & OPS ══ -->
+  <text x="60" y="690" font-size="11" letter-spacing="2" font-weight="700" fill="#6fd8c7">05 · AUTOMATION &amp; OPS</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="150" y="702" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="150" y="702" width="4" height="86" rx="2" fill="#f0a85e"/>
+  </g>
+  <circle cx="184" cy="745" r="18" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
+  <use href="#icon-clock" x="173" y="734" width="22" height="22" color="#f0a85e"/>
+  <text x="214" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Scheduled Autonomy</text>
+  <text x="214" y="756" font-size="10" fill="#9fb3c8">Daily research &amp; reporting,</text>
+  <text x="214" y="769" font-size="10" fill="#9fb3c8">no manual trigger needed</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="390" y="702" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="390" y="702" width="4" height="86" rx="2" fill="#f06fa0"/>
+  </g>
+  <circle cx="424" cy="745" r="18" fill="#f06fa0" fill-opacity="0.18" stroke="#f06fa0" stroke-width="1.4"/>
+  <use href="#icon-loop" x="413" y="734" width="22" height="22" color="#f06fa0"/>
+  <text x="454" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Workflow Automation</text>
+  <text x="454" y="756" font-size="10" fill="#9fb3c8">Cross-system task</text>
+  <text x="454" y="769" font-size="10" fill="#9fb3c8">orchestration</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="630" y="702" width="220" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="630" y="702" width="4" height="86" rx="2" fill="#f4886a"/>
+  </g>
+  <circle cx="664" cy="745" r="18" fill="#f4886a" fill-opacity="0.18" stroke="#f4886a" stroke-width="1.4"/>
+  <use href="#icon-pulse" x="653" y="734" width="22" height="22" color="#f4886a"/>
+  <text x="694" y="738" font-size="13.5" font-weight="600" fill="#f3f6fa">Monitoring</text>
+  <text x="694" y="756" font-size="10" fill="#9fb3c8">Live health checks &amp;</text>
+  <text x="694" y="769" font-size="10" fill="#9fb3c8">uptime dashboards</text>
+
+  <!-- stat badges -->
+  <g font-size="10.5" letter-spacing="0.5" font-weight="600" text-anchor="middle">
+    <rect x="204" y="812" width="90" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="249" y="831" fill="#dfe8f0">8 AGENTS</text>
+
+    <rect x="308" y="812" width="200" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="408" y="831" fill="#dfe8f0">ZERO HARDCODED SECRETS</text>
+
+    <rect x="522" y="812" width="150" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="597" y="831" fill="#dfe8f0">24/7 AUTONOMOUS</text>
+
+    <rect x="686" y="812" width="120" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="746" y="831" fill="#dfe8f0">SELF-HOSTED</text>
+  </g>
+
+</svg>

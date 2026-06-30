@@ -29,6 +29,9 @@
     <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">
       LOOP – Civic Participation Gateway
     </button>
+    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">
+      Pipeline – Multi-Agent Infrastructure
+    </button>
   </div>
 
   <div class="sidebar-contact">
@@ -292,6 +295,104 @@
     <footer class="article-footer">
       <span>EU Commission Civic Tech Hackathon 2026</span>
       <a href="https://github.com/sergiofspedro/eu-commission-civic-tech-hackathon-2026" target="_blank">View source on GitHub →</a>
+    </footer>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       PROJECT 4 – PIPELINE
+  ════════════════════════════════════════════════════ -->
+  <section id="project-pipeline" style="display:none">
+
+    <div class="hero-banner hero-banner--pipeline">
+      <div class="hero-text">
+        <h1>Pipeline</h1>
+        <div class="hero-sub-banner">Autonomous Multi-Agent Infrastructure · Self-Hosted AI Operations</div>
+      </div>
+    </div>
+
+    <div class="article">
+
+      <h1 class="article-title">OpenClaw personal Pipeline – A fleet of autonomous agents running my daily operations</h1>
+      <div class="article-date">2026 · Personal Infrastructure · Self-Hosted</div>
+
+      <p>
+        <strong>Pipeline</strong> is the self-hosted AI infrastructure that runs my daily operations —
+        not a single assistant, but a fleet of <strong>eight specialized agents</strong>, each with its
+        own role, memory, and model routing, running continuously on a personal server. One drafts cover
+        letters. One tracks markets. One screens its own teammates for health and policy compliance.
+        Where most personal-AI setups are a single chatbot, this is closer to a small, always-on team.
+      </p>
+      <p>
+        Requests arrive through whichever channel fits — a <strong>Telegram</strong> message or a
+        <strong>voice call</strong> — and are routed through a self-hosted gateway running in Docker,
+        reachable only over a zero-trust private network. From there, each request lands with the right
+        specialist agent, which draws on a shared, persistent memory layer and a secrets manager that
+        injects credentials at runtime — nothing is ever hardcoded.
+      </p>
+      <p>
+        The engineering choices are deliberate. Every agent has an <strong>independent, multi-provider
+        language-model fallback chain</strong> — open-weight models doing the bulk of the work, with a
+        paid tier as a last resort — so a single provider outage or rate limit never takes the system
+        down. A scheduler drives a meaningful share of the work without any manual trigger: daily
+        research briefs, health checks, and digests run on their own, with monitoring watching the
+        fleet's uptime in the background.
+      </p>
+      <p>
+        Pipeline started as a way to offload repetitive personal admin; it has become a working testbed
+        for the architecture patterns — fallback design, secrets handling, autonomous scheduling — that
+        scale into production multi-agent systems.
+      </p>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System Architecture</h2>
+        <p class="chart-desc">Telegram and voice interfaces route through a self-hosted, Docker-based gateway on a zero-trust private network. Eight specialized agents share a persistent memory layer, multi-provider LLM routing with automatic fallback, and a runtime secrets manager — with scheduling and monitoring running the fleet autonomously.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/architecture.svg" alt="Pipeline System Architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Agent Roster</h2>
+        <p class="chart-desc">Each of the eight agents runs independently, with its own role, memory, and model fallback chain — from daily investment research to cover-letter drafting to fleet-wide health checks.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/agents.svg" alt="Pipeline Agent Roster" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Anatomy of a Request</h2>
+        <p class="chart-desc">A single Telegram message traced end to end — routed to the right agent, grounded in memory, then resolved through that agent's model chain. The paid tier only gets involved when every free-tier option ahead of it has already failed.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/anatomy.svg" alt="Pipeline Anatomy of a Request" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>A Day in the Fleet's Life</h2>
+        <p class="chart-desc">Representative schedule, not a literal one — several agents run autonomously across the day without any message from me, while others (Assistant, Calls, Coverletter) respond on demand.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/timeline.svg" alt="Pipeline 24-Hour Autonomy Timeline" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Independent Fallback Chains</h2>
+        <p class="chart-desc">Each agent's model chain is ordered differently on purpose — no two share the same first two providers, so one provider's rate limit can't cascade into a fleet-wide outage.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/resilience.svg" alt="Pipeline Independent Fallback Chains" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="article-footer">
+      <span>Personal Infrastructure · Self-Hosted AI Operations</span>
+      <a href="https://github.com/openclaw/openclaw" target="_blank">Built on OpenClaw (open-source) →</a>
     </footer>
   </section>
 

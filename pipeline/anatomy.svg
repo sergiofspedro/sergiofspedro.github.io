@@ -1,0 +1,122 @@
+<svg viewBox="0 0 1100 320" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="dots3" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="cardShadow3" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#7fa8c9"/>
+    </marker>
+    <marker id="arrow3sm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#5e7d96"/>
+    </marker>
+
+    <symbol id="b-plane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 3 10 14"/><path d="M21 3 14 21l-3-7-7-3 17-8z"/>
+    </g></symbol>
+    <symbol id="b-node" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3.2"/>
+      <circle cx="12" cy="4.5" r="1.3" fill="currentColor" stroke="none"/>
+      <circle cx="18.5" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+      <circle cx="5.5" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+      <path d="M12 8.8v2M16.4 14.8l-2.6-1.5M9.8 13.5l-2.7 1.3"/>
+    </g></symbol>
+    <symbol id="b-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="9.5" r="4.2"/><circle cx="15" cy="9.5" r="4.2"/><circle cx="12" cy="15" r="4.2"/>
+    </g></symbol>
+    <symbol id="b-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="b-check" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+
+  <rect width="1100" height="320" rx="22" fill="url(#bgGrad3)"/>
+  <rect width="1100" height="320" rx="22" fill="url(#dots3)"/>
+
+  <text x="550" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">ONE REQUEST, START TO FINISH</text>
+  <text x="550" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Pipeline — Anatomy of a Request</text>
+  <text x="550" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">A single Telegram message, traced end to end</text>
+
+  <!-- connecting arrows (drawn first, under cards) -->
+  <line x1="170" y1="188" x2="198" y2="188" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow3)"/>
+  <line x1="350" y1="188" x2="378" y2="188" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow3)"/>
+  <line x1="530" y1="188" x2="558" y2="188" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow3)"/>
+  <line x1="900" y1="188" x2="928" y2="188" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#arrow3)"/>
+
+  <!-- Card 1 — Message In -->
+  <g filter="url(#cardShadow3)">
+    <rect x="20" y="118" width="150" height="140" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+  </g>
+  <circle cx="95" cy="156" r="18" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
+  <use href="#b-plane" x="84" y="145" width="22" height="22" color="#5ec8e0"/>
+  <text x="95" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Message In</text>
+  <text x="95" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Telegram request</text>
+  <text x="95" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">reaches the gateway</text>
+
+  <!-- Card 2 — Routed -->
+  <g filter="url(#cardShadow3)">
+    <rect x="200" y="118" width="150" height="140" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+  </g>
+  <circle cx="275" cy="156" r="18" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
+  <use href="#b-node" x="264" y="145" width="22" height="22" color="#f0a85e"/>
+  <text x="275" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Routed</text>
+  <text x="275" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Gateway assigns it to</text>
+  <text x="275" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">a specialist agent</text>
+
+  <!-- Card 3 — Memory Recall -->
+  <g filter="url(#cardShadow3)">
+    <rect x="380" y="118" width="150" height="140" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+  </g>
+  <circle cx="455" cy="156" r="18" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.4"/>
+  <use href="#b-brain" x="444" y="145" width="22" height="22" color="#b89bf5"/>
+  <text x="455" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Memory Recall</text>
+  <text x="455" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Relevant past context</text>
+  <text x="455" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">is pulled in</text>
+
+  <!-- Card 4 — Model Chain (wide, with mini cascade) -->
+  <g filter="url(#cardShadow3)">
+    <rect x="560" y="118" width="340" height="140" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <text x="730" y="144" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Model Chain</text>
+
+  <!-- chip 1: fails -->
+  <rect x="584" y="164" width="92" height="58" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#f0726f" stroke-opacity="0.35"/>
+  <text x="630" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free Model A</text>
+  <use href="#b-x" x="600" y="194" width="11" height="11" color="#f0726f"/>
+  <text x="638" y="203" text-anchor="middle" font-size="9" fill="#f0a8a6">rate limited</text>
+  <line x1="676" y1="193" x2="682" y2="193" stroke="#5e7d96" stroke-width="1.4" marker-end="url(#arrow3sm)"/>
+
+  <!-- chip 2: fails -->
+  <rect x="684" y="164" width="92" height="58" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#f0726f" stroke-opacity="0.35"/>
+  <text x="730" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#c3d2de">Free Model B</text>
+  <use href="#b-x" x="700" y="194" width="11" height="11" color="#f0726f"/>
+  <text x="738" y="203" text-anchor="middle" font-size="9" fill="#f0a8a6">timeout</text>
+  <line x1="776" y1="193" x2="782" y2="193" stroke="#5e7d96" stroke-width="1.4" marker-end="url(#arrow3sm)"/>
+
+  <!-- chip 3: succeeds -->
+  <rect x="784" y="164" width="92" height="58" rx="8" fill="#6fd88a" fill-opacity="0.12" stroke="#6fd88a" stroke-width="1.3"/>
+  <text x="830" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#f3f6fa">Paid Model</text>
+  <use href="#b-check" x="800" y="194" width="11" height="11" color="#6fd88a"/>
+  <text x="838" y="203" text-anchor="middle" font-size="9" fill="#9fe8b0">responds</text>
+
+  <text x="730" y="238" text-anchor="middle" font-size="8.7" fill="#7f93a6">2 of this agent&#8217;s fallback tiers shown</text>
+
+  <!-- Card 5 — Response Out -->
+  <g filter="url(#cardShadow3)">
+    <rect x="930" y="118" width="150" height="140" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+  </g>
+  <circle cx="1005" cy="156" r="18" fill="#6fd88a" fill-opacity="0.18" stroke="#6fd88a" stroke-width="1.4"/>
+  <use href="#b-plane" x="994" y="145" width="22" height="22" color="#6fd88a"/>
+  <text x="1005" y="192" text-anchor="middle" font-size="13.5" font-weight="600" fill="#f3f6fa">Response Out</text>
+  <text x="1005" y="214" text-anchor="middle" font-size="10.3" fill="#9fb3c8">Reply sent back</text>
+  <text x="1005" y="228" text-anchor="middle" font-size="10.3" fill="#9fb3c8">through Telegram</text>
+
+  <text x="550" y="292" text-anchor="middle" font-size="12" fill="#9fb3c8">The paid tier is a safety net, not the common path — most requests resolve on the first free-tier attempt.</text>
+
+</svg>
