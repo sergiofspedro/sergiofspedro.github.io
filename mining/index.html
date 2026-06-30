@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal Mining Conflicts — Visualisations</title>
+<!-- Open Graph tags for Facebook sharing -->
+<meta property="og:title" content="Portugal Mining Conflicts — Interactive Visualisations">
+<meta property="og:description" content="Interactive visualisations documenting water contamination and depletion conflicts at 14 mine sites in Portugal (2015–2026). Report by Sérgio Pedro for Friends of the Earth Europe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sergiofspedro.github.io/Miningeurope/index.html">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #1F4E79;
+    color: white;
+    padding: 32px 40px 28px;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  header .subtitle {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 4px;
+  }
+  header .meta {
+    font-size: 12px;
+    opacity: 0.65;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 24px;
+  }
+
+  .section-intro {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    background: white;
+    border-left: 4px solid #1F4E79;
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 620px) {
+    .grid { grid-template-columns: 1fr; }
+    header { padding: 24px 20px; }
+    main { padding: 0 16px; margin: 24px auto; }
+  }
+
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+  }
+
+  .card-num {
+    background: #1F4E79;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .card-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1F4E79;
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.55;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  .card-link {
+    display: inline-block;
+    background: #1F4E79;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.15s;
+  }
+  .card-link:hover { background: #16385a; }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Portugal Mining Environmental Conflicts</h1>
+  <div class="subtitle">Water contamination and depletion — Interactive Visualisations (2015–2026)</div>
+  <div class="meta">Report by Sérgio Pedro &nbsp;|&nbsp; Friends of the Earth Europe (FoEE) &nbsp;|&nbsp; April 2026</div>
+</header>
+
+<main>
+  <div class="section-intro">
+    This page provides access to eight interactive visualisations accompanying the report
+    <em>Mining Case Studies: Water contamination and depletion in Portugal (2015–2026)</em>.
+    Each visualisation can be opened in your browser and explored interactively.
+    Click any card below to open that visualisation.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-num">VISUALISATION 01</div>
+      <div class="card-body">
+        <div class="card-title">Interactive Map</div>
+        <div class="card-desc">Mine locations across Portugal with filters, search, and detailed info panel for each mine.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/01DF_interactive_map.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 02</div>
+      <div class="card-body">
+        <div class="card-title">Heatmap Timeline</div>
+        <div class="card-desc">Articles monitored per mine per year (2015–2026), showing which mines attracted most attention and when.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/02_heatmap_timeline.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 03</div>
+      <div class="card-body">
+        <div class="card-title">Conflict Types by Mine</div>
+        <div class="card-desc">Stacked bar chart showing water contamination, water depletion, court-related and NGO/civic articles per mine.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/03_conflict_by_mine.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 04</div>
+      <div class="card-body">
+        <div class="card-title">Water Flags</div>
+        <div class="card-desc">Water contamination vs water depletion articles per mine, with toggle between absolute counts and percentage.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/04_water_flags.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 05</div>
+      <div class="card-body">
+        <div class="card-title">Articles by Year</div>
+        <div class="card-desc">Total monitored articles per year (2015–2026), stacked by mine status, with reference lines at key dates.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/05_yearly_total.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 06</div>
+      <div class="card-body">
+        <div class="card-title">Mine Summary Grid</div>
+        <div class="card-desc">Colour-coded grid comparing all 14 mines across five environmental indicators.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/06_mine_summary_grid.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 07</div>
+      <div class="card-body">
+        <div class="card-title">Events Timeline</div>
+        <div class="card-desc">All documented environmental events plotted by mine and year — water, legal and civic events.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/07_events_timeline.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-num">VISUALISATION 08</div>
+      <div class="card-body">
+        <div class="card-title">Gantt Timeline</div>
+        <div class="card-desc">Monitoring coverage periods per mine with water contamination and court incident markers overlaid.</div>
+        <a class="card-link" href="https://sergiofspedro.github.io/Miningeurope/08_gantt_timeline.html" target="_blank">Open visualisation &#8594;</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Mining Case Studies: Water contamination and depletion in Portugal (2015–2026)
+  &nbsp;&middot;&nbsp; Sérgio Pedro for Friends of the Earth Europe
+  &nbsp;&middot;&nbsp; Data: automated monitoring pipeline + manual research
+</footer>
+
+</body>
+</html>

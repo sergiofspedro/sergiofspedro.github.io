@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal Mining Environmental Conflicts — Interactive Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f0f2f5; color: #222;
+         height: 100vh; display: flex; flex-direction: column; }
+  #topbar {
+    background: #1F4E79; color: white; padding: 10px 16px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.3); z-index: 1000;
+  }
+  #topbar h1 { font-size: 15px; font-weight: bold; white-space: nowrap; margin-right: 8px; }
+  .filter-group { display: flex; align-items: center; gap: 6px; }
+  .filter-group label { font-size: 12px; opacity: 0.85; white-space: nowrap; }
+  #topbar input, #topbar select {
+    font-size: 13px; padding: 5px 8px; border: none; border-radius: 4px;
+    background: rgba(255,255,255,0.15); color: white; cursor: pointer; outline: none;
+  }
+  #topbar input { background: rgba(255,255,255,0.2); width: 180px; }
+  #topbar input::placeholder { color: rgba(255,255,255,0.6); }
+  #topbar select option { color: #222; background: white; }
+  #clear-btn {
+    margin-left: auto; background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4); color: white;
+    padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; white-space: nowrap;
+  }
+  #clear-btn:hover { background: rgba(255,255,255,0.35); }
+  #match-count { font-size: 12px; opacity: 0.75; white-space: nowrap; }
+  #main { display: flex; flex: 1; overflow: hidden; }
+  #map  { flex: 1; z-index: 1; }
+  #sidebar {
+    width: 360px; min-width: 360px; background: white;
+    overflow-y: auto; box-shadow: -3px 0 12px rgba(0,0,0,0.12);
+    display: flex; flex-direction: column; z-index: 2;
+  }
+  #sidebar-header {
+    background: #1F4E79; color: white; padding: 14px 16px 12px;
+    position: sticky; top: 0; z-index: 10;
+  }
+  #sidebar-header h2 { font-size: 16px; margin-bottom: 2px; }
+  #sidebar-header .sub { font-size: 12px; opacity: 0.8; }
+  #sidebar-close {
+    position: absolute; top: 10px; right: 12px;
+    background: rgba(255,255,255,0.2); border: none; color: white;
+    width: 26px; height: 26px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; line-height: 26px; text-align: center;
+  }
+  #sidebar-close:hover { background: rgba(255,255,255,0.4); }
+  #sidebar-body { padding: 0; flex: 1; }
+  .status-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: bold; color: white; margin-bottom: 10px;
+  }
+  .status-active    { background: #1A7F44; }
+  .status-planned   { background: #C96A00; }
+  .status-abandoned { background: #c0392b; }
+  .info-grid { display: grid; grid-template-columns: 110px 1fr; gap: 0; border-top: 1px solid #eee; }
+  .info-grid dt { background: #F2F2F2; font-size: 12px; font-weight: bold; color: #444;
+                  padding: 7px 10px; border-bottom: 1px solid #e0e0e0; }
+  .info-grid dd { font-size: 12px; color: #222; padding: 7px 10px; border-bottom: 1px solid #e0e0e0; }
+  .stats-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+               border-top: 2px solid #1F4E79; border-bottom: 1px solid #ddd; background: #f8fafc; }
+  .stat-cell { text-align: center; padding: 10px 4px; border-right: 1px solid #ddd; }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num { font-size: 22px; font-weight: bold; color: #1F4E79; display: block; }
+  .stat-lbl { font-size: 10px; color: #666; line-height: 1.2; margin-top: 2px; }
+  .section-title { font-size: 12px; font-weight: bold; color: #1F4E79; padding: 10px 14px 4px;
+                   text-transform: uppercase; letter-spacing: 0.5px; border-top: 1px solid #eee; }
+  .narrative-text { font-size: 13px; line-height: 1.6; color: #333; padding: 4px 14px 10px; }
+  .narrative-text p { margin-bottom: 8px; }
+  .narrative-text p:last-child { margin-bottom: 0; }
+  #narrative-short { display: block; }
+  #narrative-full  { display: none; }
+  #read-more-btn {
+    display: inline-block; margin: 0 14px 10px; font-size: 12px; color: #2E75B6;
+    cursor: pointer; text-decoration: underline; background: none; border: none; padding: 0;
+  }
+  .sources-list { padding: 4px 14px 14px; }
+  .sources-list a { display: block; font-size: 12px; color: #2E75B6; text-decoration: none;
+                    padding: 3px 0; border-bottom: 1px solid #f0f0f0; word-break: break-all; }
+  .sources-list a:hover { text-decoration: underline; }
+  .source-date { color: #888; font-size: 11px; }
+  #sidebar-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center;
+                         justify-content: center; padding: 32px 20px; text-align: center; color: #aaa; }
+  #sidebar-placeholder svg { margin-bottom: 16px; opacity: 0.3; }
+  #sidebar-placeholder p { font-size: 13px; line-height: 1.6; }
+  #legend { position: absolute; bottom: 30px; left: 16px; z-index: 500;
+            background: white; padding: 10px 14px; border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18); font-size: 12px; }
+  #legend b { display: block; margin-bottom: 6px; color: #1F4E79; }
+  .leg-row { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+  .leg-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0;
+             border: 2px solid rgba(0,0,0,0.15); }
+  #no-results { display: none; position: absolute; top: 50%; left: 50%;
+                transform: translate(-50%,-50%); background: white; padding: 16px 24px;
+                border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                font-size: 14px; color: #666; z-index: 400; text-align: center; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <h1>&#128506; Portugal Mining Environmental Conflicts</h1>
+  <div class="filter-group"><label>Search</label>
+    <input type="text" id="search-input" placeholder="Mine name&#8230;"></div>
+  <div class="filter-group"><label>CRM / mineral</label>
+    <select id="filter-crm"><option value="">All materials</option>
+      <option value="Copper">Copper</option>
+      <option value="Zinc">Zinc</option>
+      <option value="Lithium">Lithium</option>
+      <option value="Tungsten">Tungsten</option>
+      <option value="Uranium">Uranium</option>
+      <option value="Other">Other</option>
+    </select></div>
+  <div class="filter-group"><label>Status</label>
+    <select id="filter-status">
+      <option value="">All statuses</option>
+      <option value="active">Active</option>
+      <option value="planned">Planned</option>
+      <option value="abandoned">Abandoned</option>
+    </select></div>
+  <span id="match-count"></span>
+  <button id="clear-btn" onclick="clearAll()">&#10005; Clear filters</button>
+</div>
+<div id="main">
+  <div id="map"></div>
+  <div id="sidebar">
+    <div id="sidebar-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+      </svg>
+      <p>Click a pin on the map<br>to view mine details.</p>
+    </div>
+    <div id="sidebar-content" style="display:none; flex-direction:column; flex:1;">
+      <div id="sidebar-header" style="position:relative;">
+        <h2 id="s-name"></h2>
+        <div class="sub" id="s-location"></div>
+        <button id="sidebar-close" onclick="closeSidebar()" title="Close">&#10005;</button>
+      </div>
+      <div id="sidebar-body">
+        <div style="padding:12px 14px 8px;"><span id="s-badge" class="status-badge"></span></div>
+        <dl class="info-grid" id="s-info-grid"></dl>
+        <div class="stats-row" id="s-stats"></div>
+        <div class="section-title">Background and documented incidents</div>
+        <div class="narrative-text">
+          <div id="narrative-short"></div>
+          <div id="narrative-full"></div>
+          <button id="read-more-btn" onclick="toggleNarrative()">Read more &#9660;</button>
+        </div>
+        <div class="section-title">Sources</div>
+        <div class="sources-list" id="s-sources"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="legend"><b>Mine status</b>
+  <div class="leg-row"><div class="leg-dot" style="background:#1A7F44;"></div> Active</div>
+  <div class="leg-row"><div class="leg-dot" style="background:#C96A00;"></div> Planned</div>
+  <div class="leg-row"><div class="leg-dot" style="background:#c0392b;"></div> Abandoned</div>
+</div>
+<div id="no-results">No mines match the current filters.</div>
+<script>
+var MINES         = [{"name": "Neves-Corvo", "operator": "Somincor / Boliden Group", "city": "Castro Verde", "district": "Beja", "lat": 37.6447, "lon": -8.1256, "minerals": "Copper, Zinc, Lead, Silver, Tin", "crm": "Copper", "crm_list": ["Copper"], "status": "active", "total": 72, "wc": 0, "wd": 0, "court": 8, "ngo": 10, "narrative": "Neves-Corvo is one of the most important copper and zinc mines in Europe, operated by Somincor (a subsidiary of the Boliden Group) near Castro Verde in the Alentejo region. It has been in continuous operation since 1988 and was classified as a strategic project under the EU Critical Raw Materials Act in 2025. Environmental concerns include the management of the tailings dam at Cerro do Lobo, acid drainage into local watercourses, and the risk of contamination to the Mira river basin.|||In 2025-2026, a legal action brought by the public prosecutor led to the suspension of construction of a 49 MW solar plant adjacent to the mine, promoted by Somincor in partnership with EDP and Greenvolt. The prosecutor argued the project did not comply with the Municipal Master Plan (PDM) of Castro Verde. A subcontractor also filed a claim of 5.6 million euros against Somincor for alleged breach of contract.|||The mine's EIA processes (including the fourth raising of the tailings dam at Cerro do Lobo) have been subject to review by the APA, with conditions imposed regarding surface and groundwater quality monitoring.", "sources": [{"title": "In overalls and painted nails, digging the earth", "url": "https://www.publico.pt/2018/07/22/economia/noticia/sou-mulher-e-sou-mineira-tra-lai-rai-1838593", "date": "2018"}, {"title": "Lithium projects in Portugal receive classification ...", "url": "https://www.dn.pt/economia/bruxelas-d%C3%A1-for%C3%A7a-m%C3%A1xima-e-classifica-como-estrat%C3%A9gicos-os-tr%C3%AAs-projetos-de-l%C3%ADtio-portugueses", "date": "2025"}, {"title": "ZERO – Sustainable Terrestrial System Association", "url": "https://sapo.pt/artigo/zero-associacao-sistema-terrestre-sustentavel-6967ec67dc26768e3e3e0f8e", "date": "2026"}, {"title": "Castro Verde: Subcontractor demands 5.6 million more from Somincor ...", "url": "https://lidadornoticias.pt/castro-verde-subempreiteira-exige-a-somincor-mais-56-milhoes-de-euros-por-rescisao-de-contrato/", "date": "2026"}, {"title": "Contested solar plant exempted from environmental assessment", "url": "https://observador.pt/2026/03/27/central-solar-das-minas-de-neves-corvo-impugnada-pelo-ministerio-publico-foi-dispensada-de-avaliacao-de-impacte-ambiental/", "date": "2026"}, {"title": "Neves-Corvo invests in expansion and longevity of ...", "url": "https://sapo.pt/artigo/neves-corvo-investe-na-expansao-e-longevidade-da-extracao-em-castro-verde-69a566f70b36bc0128fc293b", "date": "2026"}, {"title": "The concessionaire company of the Neves-Corvo mine, ...", "url": "https://sapo.pt/artigo/concessionaria-reforca-investimento-na-exploracao-na-mina-de-neves-corvo-em-2026-69aaeb9902574ac8d65c5971", "date": "2026"}, {"title": "Company demands 5.6 million euros from the owner of the mines of ...", "url": "https://www.jn.pt/pais/artigo/empresa-exige-56-milhoes-de-euros-a-dona-das-minas-de-neves-corvo/18039158", "date": "2026"}]}, {"name": "Aljustrel", "operator": "Almina – Minas do Alentejo, S.A.", "city": "Aljustrel", "district": "Beja", "lat": 37.8826, "lon": -8.1611, "minerals": "Copper, Zinc, Lead, Silver", "crm": "Copper", "crm_list": ["Copper", "Zinc"], "status": "active", "total": 48, "wc": 0, "wd": 1, "court": 5, "ngo": 4, "narrative": "Aljustrel, operated by Almina - Minas do Alentejo, S.A., is one of the oldest continuously mined sites in the world, located on the Iberian Pyrite Belt in Beja district. The mine extracts copper, zinc, lead and silver concentrates, situated approximately 20 km north of Neves-Corvo in the same hydrographic basin.|||Acid mine drainage (AMD) from the sulphide mineralogy generates acidic leachate carrying heavy metals (copper, zinc, lead, arsenic) into the local drainage network, with potential long-term impacts on the Sado river basin.|||In 2022, a fatal accident killed one worker. Subsequent investigations by the Authority for Work Conditions (ACT) identified non-compliance with occupational safety obligations. In 2024, approximately 40 workers were temporarily trapped underground, though all were evacuated safely.", "sources": [{"title": "The sad deaths at the Aljustrel mines", "url": "https://visao.pt/atualidade/sociedade/2019-08-10-as-tristes-mortes-das-minas-de-aljustrel/", "date": "2019"}, {"title": "Environmental monitoring commission - Aljustrel - Almina", "url": "https://www.almina.pt/pt/sustentabilidade/ambiente-e-natureza", "date": "2022"}, {"title": "Download of mineral resources information", "url": "https://geoportal.lneg.pt/pt/dados_abertos/info_recursosminerais/", "date": "2022"}, {"title": "Minas de Aljustrel – Wikipédia, a enciclopédia livre", "url": "https://pt.wikipedia.org/wiki/Minas_de_Aljustrel", "date": "2022"}, {"title": "Panorama of mineral resources in Portugal", "url": "https://rce.casadasciencias.org/rceapp/art/2025/004/", "date": "2025"}, {"title": "ALMINA- Minas do Alentejo SA", "url": "https://www.ordemdosengenheiros.pt/fotos/editor2/apresentacao_almina.pdf", "date": "2015"}, {"title": "Aljustrel - Desenvolvimento Mineiro", "url": "https://www.epos.pt/portfolio/aljustrel-desenvolvimento-mineiro/", "date": "2015"}, {"title": "A economia das pirites alentejanas", "url": "https://books.openedition.org/cidehus/130", "date": "2017"}]}, {"name": "Panasqueira", "operator": "Beralt Tin & Wolfram (Portugal) S.A. / Almonty Industries Inc.", "city": "Covilhã / Fundão", "district": "Castelo Branco", "lat": 40.0333, "lon": -7.75, "minerals": "Tungsten (Wolframite), Tin, Copper", "crm": "Tungsten", "crm_list": ["Tungsten"], "status": "active", "total": 12, "wc": 4, "wd": 0, "court": 2, "ngo": 3, "narrative": "The Panasqueira mine, operated by Beralt Tin and Wolfram (Portugal) S.A. (majority-owned by Almonty Industries Inc.), is one of Europe's most important tungsten producers and has been active since 1896. Located in Castelo Branco district, it extracts tungsten (wolframite), tin and copper.|||In January 2026, heavy rains caused the partial collapse of an inactive tailings dam, sweeping toxic waste including lead and arsenic into the Cebola stream, a tributary of the Zezere river. The Quercus and MiningWatch Portugal organisations issued formal alerts. Water abstraction for local supply was temporarily suspended. The company acknowledged in 2025 that it was discharging untreated effluent into a Zezere tributary.|||Scientific studies since 2015 have repeatedly documented elevated arsenic levels in the Zezere river near the mine. The river feeds the Castelo do Bode reservoir, which supplies Lisbon and dozens of municipalities.", "sources": [{"title": "Panasqueira mines are a public health threat - SafeMed", "url": "https://blog.safemed.pt/minas-da-panasqueira-sao-ameaca-a-saude-publica/", "date": "2016"}, {"title": "Panasqueira mines: Quercus denounces risk of ...", "url": "https://www.publico.pt/2026/03/24/azul/noticia/minas-panasqueira-quercus-denuncia-risco-contaminacao-toxica-rio-zezere-2163617", "date": "2026"}, {"title": "Collapse of tailings dumps at Panasqueira mines ...", "url": "https://sapo.pt/artigo/desabamento-de-escombreiras-nas-minas-da-panasqueira-gera-alerta-ambiental-697d52554db45ec3bccbace1", "date": "2026"}, {"title": "Researchers recover metals from the waste of ...", "url": "https://noticiasdacovilha.pt/investigadores-recuperam-metais-nos-residuos-da-panasqueira/", "date": "2025"}, {"title": "Pedreiras", "url": "https://www.asae.gov.pt/newsletter2/asaenews-n-98-junho-2016/pedreiras.aspx", "date": "2016"}, {"title": "Panasqueira mine: with over a century of history ...", "url": "https://www.ambientemagazine.com/minas-da-panasqueira-com-mais-de-um-seculo-de-historia-e-uma-forc%CC%A7a-resistente-num-setor-incerto/?print=print", "date": "2022"}, {"title": "Minas da Panasqueira, Covilhã, Portugal", "url": "https://minob.org/portugues/mina-da-panasqueira.html", "date": "2023"}, {"title": "ESTUDO DE IMPACTE AMBIENTAL (EIA) VOL. I", "url": "https://siaia.apambiente.pt/AIADOC/AIA3778/volumei_t2020-746-00-eia_rnt_01202531395336.pdf", "date": "2023"}]}, {"name": "Barroso", "operator": "Savannah Resources plc", "city": "Boticas", "district": "Vila Real", "lat": 41.6731, "lon": -7.6681, "minerals": "Lithium (Spodumene)", "crm": "Lithium", "crm_list": ["Lithium"], "status": "planned", "total": 150, "wc": 10, "wd": 4, "court": 55, "ngo": 54, "narrative": "The Barroso Lithium Project, promoted by Savannah Resources plc near Boticas in Vila Real district, is the most contested mining project in Portugal during the monitoring period. It sits above Europe's largest known spodumene (lithium) deposit and was classified as a strategic EU project under the CRMA in 2025.|||The project received a conditional EIA from APA in May 2023. The Ministerio Publico requested its annulment in early 2024, citing incompatibility with the UN-FAO Globally Important Agricultural Heritage System (SIPAM) status of the region. Three parallel legal proceedings are ongoing. Local communities physically blocked machine access from November 2023 to June 2024.|||In February 2026, UDCB and ClientEarth lodged a challenge at the EU Court of Justice (TJUE). Five mining concession contracts were signed in late 2024, expanding the concession area by 1,139 hectares. Key water concerns include impacts on the Tamega and Cavado river basins and management of approximately 16 million tonnes of tailings.", "sources": [{"title": "Covas do Barroso: lithium mine or Agricultural Heritage ...", "url": "https://www.esquerda.net/artigo/covas-do-barroso-mina-de-litio-ou-patrimonio-agricola-mundial/58307", "date": "2018"}, {"title": "GEOTA rejects Barroso mine expansion project ...", "url": "https://www.geota.pt/blogs/geota-chumba-projeto-de-ampliacao-da-mina-do-barroso-e-deixa-5-alertas", "date": "2021"}, {"title": "MP defende anulação da DIA da Mina do Barroso por vício de violação da lei — 2024", "url": "https://rr.pt/noticia/pais/2024/02/09/minas-de-litio-boticas-aplaude-anulacao-de-declaracao-de-impacte-ambiental/366092/", "date": "2024"}, {"title": "Borralha mine to have underground exploitation in former ...", "url": "https://www.rtp.pt/noticias/economia/mina-da-borralha-tera-exploracao-subterranea-em-antiga-area-mineira-de-montalegre_n1689009", "date": "2025"}, {"title": "Borralha mine to have underground exploitation in the former ...", "url": "https://www.publico.pt/2025/10/07/azul/noticia/mina-borralha-tera-exploracao-subterranea-antiga-area-mineira-montalegre-2149886", "date": "2025"}, {"title": "Borralha mine to have underground exploitation in former ...", "url": "https://www.cmjornal.pt/sociedade/detalhe/mina-da-borralha-tera-exploracao-subterranea-em-antiga-area-mineira-de-montalegre", "date": "2025"}, {"title": "Borralha to have underground exploitation in former mining area", "url": "https://observador.pt/2025/10/07/mina-da-borralha-tera-exploracao-subterranea-em-antiga-area-mineira-de-montalegre/", "date": "2025"}, {"title": "Association warns of risks of mining exploitation in ...", "url": "https://www.cmjornal.pt/sociedade/detalhe/associacao-alerta-para-riscos-da-exploracao-mineira-na-borralha-em-montalegre", "date": "2025"}]}, {"name": "Romano de Tresminas", "operator": "Lusorecursos Portugal Lithium, Lda.", "city": "Montalegre / Vila Pouca de Aguiar", "district": "Vila Real", "lat": 41.75, "lon": -7.7167, "minerals": "Lithium (Lepidolite, Spodumene)", "crm": "Lithium", "crm_list": ["Lithium"], "status": "planned", "total": 78, "wc": 0, "wd": 2, "court": 18, "ngo": 14, "narrative": "The Romano de Tresminas Lithium Project, promoted by Lusorecursos Portugal Lithium, Lda., is located near Montalegre and Vila Pouca de Aguiar in Vila Real district, targeting lithium from lepidolite and spodumene. It was classified as an EU strategic project in 2025.|||The project received a conditional EIA in 2023 and five mining concession contracts were signed in late 2024. The EIA public consultation received over 1,000 public submissions. The Camara de Montalegre filed legal proceedings to halt the project. An oversight commission required by EIA conditions had not been constituted by mid-2025.|||Key water concerns include impacts on mountain streams in Tras-os-Montes that feed the Cavado and Tamega basins, and the generation of large volumes of toxic tailings from lepidolite processing.", "sources": [{"title": "Lusorecursos confident of 'go-ahead' for mine in Montalegre ...", "url": "https://eco.sapo.pt/especiais/lusorecursos-confiante-no-ok-para-a-mina-em-montalegre-conheca-o-projeto-os-pros-e-os-contras/", "date": "2023"}, {"title": "Lusorecursos confident of 'go-ahead' for mine in Montalegre ...", "url": "https://cnnportugal.iol.pt/lusorecursos/montalegre/lusorecursos-confiante-no-ok-para-a-mina-em-montalegre-conheca-o-projeto-os-pros-e-os-contras/20230826/64e72f45d34e371fc0b6f19f", "date": "2023"}, {"title": "O que está em causa na mina de lítio de Montalegre?", "url": "https://www.dn.pt/o-que-esta-em-causa-na-mina-de-litio-de-montalegre-12685521.html", "date": "2019"}, {"title": "Lithium. Company admits \"minimal\" negative impacts", "url": "https://observador.pt/2020/01/25/empresa-com-a-concessao-admite-impactos-negativos-mas-minimizaveis-devido-a-mina-de-litio-em-montalegre/", "date": "2020"}, {"title": "Sao Sebastiao da Pedreira parish", "url": "https://www.patriarcado-lisboa.pt/site/index.php?tem=65&value=open:1698", "date": "2020"}, {"title": "Lusorecursos entregou EIA para mina de lítio em Montalegre", "url": "https://www.ambientemagazine.com/lusorecursos-entregou-eia-para-mina-de-litio-em-montalegre/", "date": "2020"}, {"title": "Mina de lítio de Montalegre possui \"impactes negativos\" ...", "url": "https://sicnoticias.pt/pais/2020-01-25-Mina-de-litio-de-Montalegre-possui-impactes-negativos-mas-que-sao-minimizaveis", "date": "2020"}, {"title": "Lusorecursos disse que entregou hoje EIA da mina de lítio ...", "url": "https://www.jornaldenegocios.pt/empresas/detalhe/lusorecursos-disse-que-entregou-hoje-eia-da-mina-de-litio-de-montalegre", "date": "2021"}]}, {"name": "Lagoa Salgada", "operator": "Redcorp – Empreendimentos Mineiros, Lda. / Ascendant Resources", "city": "Grândola / Alcácer do Sal", "district": "Setúbal / Beja", "lat": 38.2167, "lon": -8.5667, "minerals": "Copper, Lead, Zinc, Gold, Silver", "crm": "Copper", "crm_list": ["Copper", "Zinc"], "status": "planned", "total": 18, "wc": 14, "wd": 7, "court": 6, "ngo": 10, "narrative": "The Lagoa Salgada project, promoted by Redcorp (a subsidiary of Ascendant Resources, Toronto), was a proposed underground polymetallic mine in Grandola and Alcacer do Sal targeting copper, lead, zinc, gold and silver. It was classified as a Project of National Interest (PIN) in 2022.|||In January 2026, the APA issued a negative EIA decision, rejecting the project specifically on grounds of risks to water resources — the first major Portuguese mining project rejected on explicit water grounds. The project would have used sodium cyanide in processing and required 864 m³/day of groundwater in one of Portugal's driest regions. The sole water abstraction point for local villages was within the proposed mining area.|||Environmental groups (ZERO, Quercus, Proteger Grandola), farmers and local authorities filed extensive objections. The Lagoa Salgada case is considered a landmark decision in Portuguese environmental law regarding mining and water resources.", "sources": [{"title": "Estudo de Impacte Ambiental (EIA) da Mina da Lagoa ...", "url": "https://zero.ong/noticias/estudo-de-impacte-ambiental-eia-da-mina-da-lagoa-salgada/", "date": "2022"}, {"title": "Lagoa Salgada mine project is a danger to resources ...", "url": "https://zero.ong/noticias/projeto-da-mina-da-lagoa-salgada-e-um-perigo-para-os-recursos-hidricos-da-regiao/", "date": "2025"}, {"title": "Lagoa Salgada mine exploitation will use ...", "url": "https://www.publico.pt/2025/05/23/azul/noticia/mina-lagoa-salgada-processamento-minerio-ouro-recorre-substancia-altamente-toxica-2133937", "date": "2025"}, {"title": "Lagoa Salgada copper mine drops substance ...", "url": "https://observador.pt/2025/11/14/promotor-da-mina-de-cobre-da-lagoa-salgada-deixa-cair-substancia-toxica-e-volta-a-tentar-aprovacao-ambiental/", "date": "2025"}, {"title": "Zero: Lagoa Salgada mine project is a danger to ...", "url": "https://smart-cities.pt/smn/projeto-da-mina-da-lagoa-salgada-e-um-perigo-para-os-recursos-hidricos-da-regiao-alertam-ambientalistas-27-05/", "date": "2025"}, {"title": "APA rejects Lagoa Salgada mine project, but ...", "url": "https://www.publico.pt/2025/07/10/azul/noticia/apa-chumba-projecto-mina-lagoa-salgada-empresa-tera-seis-meses-responder-2139798", "date": "2025"}, {"title": "Lagoa Salgada copper mine faces environmental setback", "url": "https://observador.pt/2025/07/09/apa-chumba-mina-de-cobre-para-a-lagoa-salgada-promotor-tem-seis-meses-para-rever-projeto-em-grandola-e-alcacer/", "date": "2025"}, {"title": "Alcácer and Grândola municipalities against copper mine", "url": "https://observador.pt/2025/05/22/autarquias-de-alcacer-e-grandola-contra-mina-de-cobre-da-lagoa-salgada-receiam-impacto-nos-recursos-hidricos/", "date": "2025"}]}, {"name": "Argemela", "operator": "Neomina (Almina group)", "city": "Fundão", "district": "Castelo Branco", "lat": 40.1167, "lon": -7.5833, "minerals": "Lithium, Tin, Tungsten", "crm": "Lithium", "crm_list": ["Lithium", "Tungsten"], "status": "planned", "total": 2, "wc": 1, "wd": 1, "court": 0, "ngo": 0, "narrative": "The Argemela project, promoted by Neomina (a subsidiary of Almina, also operator of Aljustrel), is a proposed open-pit lithium, tin and tungsten mine in the Serra da Argemela, Fundao municipality. Local opposition has been led by GPSA since 2017.|||Key environmental concerns include impacts on the local hydrology whose streams feed the Zezere river system, risks to water abstractions for local communities, and proximity to Castelo do Bode reservoir, which supplies Lisbon. The project was under EIA review during the monitoring period.", "sources": [{"title": "Mina da Argemela — APA — Avaliação de Impacte Ambiental", "url": "https://siaia.apambiente.pt/AIADOC/DA201/pda201_parecer_ca_2021.pdf", "date": "2021"}, {"title": "Avelino quarry natural monument", "url": "https://natural.pt/protected-areas/monumento-natural-pedreira-avelino", "date": "2019"}]}, {"name": "Lousal", "operator": "EDM (remediation) / Museu do Lousal", "city": "Grândola", "district": "Setúbal", "lat": 38.1, "lon": -8.4333, "minerals": "Pyrite, Zinc, Lead, Copper (closed 1988)", "crm": "Zinc", "crm_list": ["Zinc", "Copper"], "status": "abandoned", "total": 10, "wc": 0, "wd": 1, "court": 0, "ngo": 1, "narrative": "The Lousal mine (closed 1988) in Grandola, Setubal, exploited pyrite, zinc, lead and copper on the Iberian Pyrite Belt, leaving a legacy of acid mine drainage affecting local streams within the Sado basin. EDM has undertaken remediation and the site now hosts the Lousal Mining Museum.|||The proximity of Lousal and the nearby Caveira mine to the proposed Lagoa Salgada project site shaped debates about cumulative hydrological impacts in the Sado/Mira watershed.", "sources": [{"title": "Mina da Lagoa Salgada: o “veneno” da mineração volta a ...", "url": "https://www.publico.pt/2025/05/07/azul/noticia/mina-lagoa-salgada-veneno-mineracao-volta-ameacar-grandola-2131998", "date": "2025"}, {"title": "Groups - Lousal Living Science Centre", "url": "https://lousal.cienciaviva.pt/grupos/", "date": "2017"}, {"title": "Environmental remediation of the Lousal mining area - EDM", "url": "https://edm.pt/projetos/recuperacao-ambiental-da-antiga-area-mineira-do-lousal/", "date": "2017"}, {"title": "Lousal Living Science Centre - Ciência Viva", "url": "https://lousal.cienciaviva.pt/centro-ciencia-viva-do-lousal/", "date": "2020"}, {"title": "Waldemar Mining Gallery - Lousal Living Science Centre", "url": "https://lousal.cienciaviva.pt/galeria-mineira-waldemar/", "date": "2020"}, {"title": "Visita ao Lousal e Alqueva", "url": "https://storymaps.arcgis.com/stories/754680027aaa462e8d4fc75689087165", "date": "2023"}, {"title": "Vinho da Mina do Lousal - Herdade Canal Caveira", "url": "https://www.herdadecanalcaveira.com/vinhominalousal", "date": "2024"}, {"title": "Compressor station nucleus, Aljustrel", "url": "https://roteirodasminas.dgeg.gov.pt/pt/lista-de-pontos/nucleo-da-central-de-compressores-pt-1/", "date": "2024"}]}, {"name": "Caveira", "operator": "EDM (remediation)", "city": "Grândola", "district": "Setúbal", "lat": 38.1333, "lon": -8.45, "minerals": "Pyrite, Copper, Zinc (closed 1986)", "crm": "Copper", "crm_list": ["Copper", "Zinc"], "status": "abandoned", "total": 4, "wc": 0, "wd": 0, "court": 0, "ngo": 0, "narrative": "The Caveira mine (closed 1986) in Grandola, Setubal, exploited pyrite, copper and zinc on the Iberian Pyrite Belt and left extensive tailings generating ongoing acid mine drainage. EDM is responsible for environmental monitoring and remediation.|||The site was cited in debates about the cumulative environmental impact of the proposed Lagoa Salgada project on the same watershed. Legacy contamination contributes to elevated metal concentrations in streams feeding the Sado basin.", "sources": [{"title": "Bloco de Esquerda requests clarifications from Government ...", "url": "https://www.ambienteonline.pt/destaques/bloco-de-esquerda-pede-esclarecimentos-ao-governo-sobre-contaminacao-em-mina-de-grandola", "date": "2024"}, {"title": "“É irreal o que se passa na mina da Caveira”: níveis ...", "url": "https://www.publico.pt/2024/05/19/azul/noticia/irreal-passa-mina-caveira-niveis-elevados-contaminacao-grandola-2090262", "date": "2024"}, {"title": "“'É irreal o que se passa na mina da Caveira': há ...", "url": "https://www.publico.pt/2024/06/07/azul/direito-de-resposta/irreal-passa-mina-caveira-ha-contaminacao-grandola-publicado-19-maio-2024-2093127", "date": "2024"}, {"title": "Caveira mine", "url": "https://www.xn--museu-coleo-martins-da-pedra-lmc3j.pt/mina-da-caveira/", "date": "2025"}]}, {"name": "Urgeiriça", "operator": "EDM (rehabilitation) / former ENU", "city": "Nelas (Canas de Senhorim)", "district": "Viseu", "lat": 40.5333, "lon": -7.85, "minerals": "Uranium (Radium) – abandoned", "crm": "Other", "crm_list": ["Other"], "status": "abandoned", "total": 1, "wc": 0, "wd": 0, "court": 0, "ngo": 1, "narrative": "The Urgeirica mine in Nelas (Canas de Senhorim), Viseu district, was one of the most important uranium mines in Europe, producing radium (from 1913) and later uranium oxide (U3O8) until closure. The legacy includes elevated uranium and radium concentrations in the Pantanha stream and surrounding groundwater.|||EDM has carried out extensive remediation since 2005, including a passive mine water treatment system for Shaft 4 (2012), sealing of the tailings dam, and chemical decontamination of the processing plant (from 2016). Former workers and residents campaigned for recognition as contaminated persons.", "sources": [{"title": "\"We are like lizards\": community, struggle and mining ...", "url": "https://www.jornalmapa.pt/2021/03/04/somos-como-os-lagartos-comunidade-luta-e-mineracao-do-uranio-na-urgeirica/", "date": "2021"}]}, {"name": "Borralha", "operator": "No active operator (inactive since 1986)", "city": "Montalegre", "district": "Vila Real", "lat": 41.7833, "lon": -7.95, "minerals": "Tungsten (Wolframite), Tin", "crm": "Tungsten", "crm_list": ["Tungsten"], "status": "abandoned", "total": 7, "wc": 0, "wd": 0, "court": 1, "ngo": 0, "narrative": "The Borralha mine in Montalegre, Vila Real district, exploited tungsten (wolframite) and tin until closure in 1986. It is an inactive site with a legacy of tailings presenting contamination risks to watercourses feeding the Cavado river basin.|||A public consultation on plans for new exploration was published in 2025, and an RTP report (October 2025) indicated that underground exploitation was being considered. Local associations raised concerns about risks to water quality and biodiversity.", "sources": [{"title": "Study confirms severe heavy metal contamination ...", "url": "https://sapo.pt/artigo/estudo-confirma-contaminacao-grave-por-metais-pesados-na-antiga-mina-da-borralha-68ef65f1460998151c8a5140", "date": "2025"}, {"title": "The case study of the Borralha mine, Portugal", "url": "https://www.lneg.pt/wp-content/uploads/2020/03/9-Avila-et-al_Metais-pesados-solos-Borralha_v2_rede_SM.pdf", "date": "2015"}, {"title": "Borralha mines", "url": "https://minob.org/assets/pdf/recursos/MINOB-CaseStudy-MinasDaBorralha-PT.pdf", "date": "2024"}, {"title": "Borralha mines - Montalegre", "url": "https://minob.org/portugues/minas-da-borralha.html", "date": "2024"}, {"title": "Impact of deep-sea mining is being assessed", "url": "https://www.sulinformacao.pt/2024/02/impacto-da-mineracao-do-mar-profundo-esta-a-ser-avaliado/", "date": "2024"}, {"title": "APA issues conditional favourable opinion for the ... mine", "url": "https://www.jn.pt/pais/artigo/apa-da-parecer-favoravel-condicionado-a-mina-da-borralha-em-montalegre/18039895", "date": "2026"}, {"title": "APA approves Borralha mine project with conditions ...", "url": "https://www.ambienteonline.pt/destaques/apa-aprova-projeto-da-mina-da-borralha-com-condicoes-ambientais", "date": "2026"}]}, {"name": "Montemor", "operator": "Unknown", "city": "Montemor-o-Novo", "district": "Évora", "lat": 38.65, "lon": -8.2167, "minerals": "Copper", "crm": "Copper", "crm_list": ["Copper"], "status": "abandoned", "total": 6, "wc": 0, "wd": 1, "court": 1, "ngo": 3, "narrative": "Limited documented information was available for Montemor-o-Novo, Evora. Monitoring identified articles referencing copper extraction activities and associated environmental concerns. At least one court-related article was identified, and NGO or civic involvement was noted. Further manual investigation is recommended to verify specific incidents.", "sources": [{"title": "Requests", "url": "https://www.dgeg.gov.pt/pt/areas-setoriais/geologia/depositos-minerais-minas/publicitacao/pedidos/", "date": "2025"}, {"title": "Mining exploitation does not spare protected areas ...", "url": "https://www.jn.pt/nacional/artigo/exploracao-mineira-nao-poupa-zonas-de-protecao-da-natureza/17759484", "date": "2025"}, {"title": "Contracts in force", "url": "https://www.dgeg.gov.pt/pt/areas-setoriais/geologia/depositos-minerais-minas/publicitacao/contratos-em-vigor/", "date": "2023"}, {"title": "Mining's assault on areas with protected status ...", "url": "https://zero.ong/noticias/o-assalto-da-mineracao-as-areas-com-estatuto-de-protecao-ja-comecou/", "date": "2024"}, {"title": "Bloco questioned government on gold prospecting in ...", "url": "https://www.esquerda.net/artigo/bloco-questionou-governo-sobre-prospecao-de-ouro-em-montemor-o-novo/94218", "date": "2025"}, {"title": "Mining", "url": "https://zero.ong/blog/mineracao/", "date": "2025"}]}, {"name": "Terramonte", "operator": "MITEL – Minas de Terramonte Lda. (1966–1972); EDM (remediation)", "city": "Raiva, Castelo de Paiva", "district": "Aveiro", "lat": 41.0167, "lon": -8.25, "minerals": "Lead, Zinc, Silver (Ag-Pb-Zn quartz vein)", "crm": "Other", "crm_list": ["Other"], "status": "abandoned", "total": 1, "wc": 1, "wd": 0, "court": 0, "ngo": 0, "narrative": "The Terramonte mine is located in the parish of Raiva, Castelo de Paiva, Aveiro district. The site exploited a quartz vein with silver, lead and zinc mineralisation (Ag-Pb-Zn). The mine was significantly developed in the 1960s by MITEL – Minas de Terramonte Lda.|||Between 1966 and 1972, Terramonte was one of the most important silver mines in Europe, producing up to 10.3 tonnes of silver in 1967. Underground extraction ceased in 1972 and the site was abandoned. The primary documented environmental impact is the leaching of metals and metalloids from tailings into the Ribeira de Terramonte, the Ribeira de Castanheira, and ultimately the Douro river.|||EDM undertook remediation works co-financed by FEDER (approximately 1.2 million euros), including drainage ditches, waterproofing of tailings, topsoil treatment and a continuous effluent monitoring system, reducing contamination levels in the Douro basin.", "sources": [{"title": "Environmental remediation of the Terramonte mining area - EDM", "url": "https://edm.pt/projetos/recuperacao-ambiental-da-area-mineira-de-terramonte/", "date": "2017"}]}, {"name": "Azeméis", "operator": "The Anglo-Peninsular Mining & Chemical Co. Ltd (1875–1958); EDM (remediation)", "city": "Oliveira de Azeméis (Nogueira do Cravo e Pindelo)", "district": "Aveiro", "lat": 40.85, "lon": -8.4667, "minerals": "Arsenic (primary), Tungsten, Tin, Lead, Silver, Gold, Copper", "crm": "Other", "crm_list": ["Other"], "status": "abandoned", "total": 1, "wc": 0, "wd": 0, "court": 0, "ngo": 0, "narrative": "The Azeméis mine (officially the Minas do Pintor) is located in the parish of Nogueira do Cravo e Pindelo, Oliveira de Azeméis, Aveiro district. The mine was operated by The Anglo-Peninsular Mining & Chemical Co. Ltd from 1875 to 1958, making it the only mine in Portugal to have commercially extracted arsenic.|||Extraction was halted in 1958 due to environmental damage and the site was definitively abandoned in 1995 without any remediation. The abandoned galleries contain stored tonnes of arsenic. The principal documented impact is acid mine drainage from flooded galleries carrying heavy metals into the Ribeira do Pintor and subsequently the Antua river.|||EDM launched a public tender in October 2025 for environmental remediation worth 4.6 million euros (Norte 2030 / FEDER), covering tailings stabilisation, soil decontamination and ecological recovery. The municipality of Oliveira de Azeméis has separately commissioned the design of a Minas do Pintor Interpretative Centre.", "sources": [{"title": "Oliveira de Azeméis: Study analyses soils and materials ...", "url": "https://www.noticiasdeaveiro.pt/estudo-analisa-solos-e-materiais-contaminados-das-antigas-minas-do-pintor/", "date": "2023"}]}];
+var STATUS_COLOUR = {"active": "#1A7F44", "planned": "#C96A00", "abandoned": "#c0392b"};
+var STATUS_LABEL  = { active:'Active', planned:'Planned', abandoned:'Abandoned' };
+var STATUS_CLASS  = { active:'status-active', planned:'status-planned', abandoned:'status-abandoned' };
+
+// FIX 1: center:[lat,lon] only — zoom is a separate option key
+var map = L.map('map', { center:[39.5, -8.0], zoom:6 });
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
+}).addTo(map);
+
+var selectedMarker = null;
+var markerMap = {};
+
+function makeIcon(colour, selected) {
+  var size = selected ? 20 : 14;
+  var sw   = selected ? 2.5 : 1.5;
+  var svg  = '<svg xmlns="http://www.w3.org/2000/svg"'
+           + ' width="' + (size*2) + '" height="' + (size*2.4) + '" viewBox="0 0 20 24">'
+           + '<path d="M10 0C5.8 0 2 3.8 2 8c0 6 8 16 8 16s8-10 8-16c0-4.2-3.8-8-8-8z"'
+           + ' fill="' + colour + '" stroke="white" stroke-width="' + sw + '"/>'
+           + '<circle cx="10" cy="8" r="3.5" fill="white" opacity="0.85"/></svg>';
+  return L.divIcon({ html:svg, iconSize:[size*2,size*2.4],
+                     iconAnchor:[size,size*2.4], popupAnchor:[0,-(size*2)], className:'' });
+}
+
+MINES.forEach(function(mine) {
+  var colour = STATUS_COLOUR[mine.status] || '#888';
+  var marker = L.marker([mine.lat, mine.lon], { icon: makeIcon(colour, false) })
+    .addTo(map)
+    .bindTooltip(mine.name, { permanent:false, direction:'top' })
+    .on('click', function() { openSidebar(mine, marker); });
+  markerMap[mine.name] = { marker:marker, mine:mine, visible:true };
+});
+
+var narrativeExpanded = false;
+
+function findByMarker(m) {
+  var found = null;
+  Object.keys(markerMap).forEach(function(k) {
+    if (markerMap[k].marker === m) found = markerMap[k];
+  });
+  return found;
+}
+
+function openSidebar(mine, marker) {
+  if (selectedMarker && selectedMarker !== marker) {
+    var prev = findByMarker(selectedMarker);
+    if (prev) selectedMarker.setIcon(makeIcon(STATUS_COLOUR[prev.mine.status] || '#888', false));
+  }
+  selectedMarker = marker;
+  marker.setIcon(makeIcon(STATUS_COLOUR[mine.status] || '#888', true));
+
+  document.getElementById('sidebar-placeholder').style.display = 'none';
+  document.getElementById('sidebar-content').style.display = 'flex';
+  document.getElementById('s-name').textContent = mine.name;
+  document.getElementById('s-location').textContent =
+    mine.city + (mine.district ? ', ' + mine.district : '');
+
+  var badge = document.getElementById('s-badge');
+  badge.textContent = STATUS_LABEL[mine.status] || mine.status;
+  badge.className   = 'status-badge ' + (STATUS_CLASS[mine.status] || '');
+
+  var rows = [
+    ['Operator',      mine.operator],
+    ['Location',      mine.city + (mine.district ? ', ' + mine.district : '')],
+    ['Latitude',      mine.lat + '° N'],
+    ['Longitude',     Math.abs(mine.lon).toFixed(4) + '° W'],
+    ['CRM / mineral', mine.minerals],
+    ['Articles',      mine.total + ' (2015–2026)']
+  ];
+  var g = '';
+  rows.forEach(function(r) { g += '<dt>' + r[0] + '</dt><dd>' + (r[1] || '—') + '</dd>'; });
+  document.getElementById('s-info-grid').innerHTML = g;
+
+  document.getElementById('s-stats').innerHTML =
+    '<div class="stat-cell"><span class="stat-num">' + mine.wc    + '</span><span class="stat-lbl">Water contamination</span></div>' +
+    '<div class="stat-cell"><span class="stat-num">' + mine.wd    + '</span><span class="stat-lbl">Water depletion</span></div>'    +
+    '<div class="stat-cell"><span class="stat-num">' + mine.court + '</span><span class="stat-lbl">Court-related</span></div>'      +
+    '<div class="stat-cell"><span class="stat-num">' + mine.ngo   + '</span><span class="stat-lbl">NGO / civic</span></div>';
+
+  // FIX 2: split on safe '|||' separator — no regex literal, no escape issues
+  var paras   = mine.narrative.split('|||').filter(function(p) { return p.trim(); });
+  var shortPs = paras.slice(0, 2);
+  var fullPs  = paras.slice(2);
+
+  document.getElementById('narrative-short').innerHTML =
+    shortPs.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+
+  narrativeExpanded = false;
+  var fullDiv = document.getElementById('narrative-full');
+  var btn     = document.getElementById('read-more-btn');
+  if (fullPs.length > 0) {
+    fullDiv.innerHTML    = fullPs.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+    fullDiv.style.display = 'none';
+    btn.textContent      = 'Read more ▼';
+    btn.style.display    = 'inline-block';
+  } else {
+    fullDiv.innerHTML = ''; fullDiv.style.display = 'none'; btn.style.display = 'none';
+  }
+
+  var srcDiv = document.getElementById('s-sources');
+  if (mine.sources && mine.sources.length > 0) {
+    var h = '';
+    mine.sources.forEach(function(s) {
+      var d = s.date ? ' <span class="source-date">(' + s.date + ')</span>' : '';
+      var l = s.title || s.url.substring(0, 60) + '…';
+      h += '<a href="' + s.url + '" target="_blank" rel="noopener">' + l + d + '</a>';
+    });
+    srcDiv.innerHTML = h;
+  } else {
+    srcDiv.innerHTML = '<span style="font-size:12px;color:#aaa;">No sources available.</span>';
+  }
+  document.getElementById('sidebar-body').scrollTop = 0;
+  map.panTo([mine.lat, mine.lon], { animate:true });
+}
+
+function closeSidebar() {
+  if (selectedMarker) {
+    var prev = findByMarker(selectedMarker);
+    if (prev) selectedMarker.setIcon(makeIcon(STATUS_COLOUR[prev.mine.status] || '#888', false));
+    selectedMarker = null;
+  }
+  document.getElementById('sidebar-content').style.display = 'none';
+  document.getElementById('sidebar-placeholder').style.display = 'flex';
+}
+
+function toggleNarrative() {
+  narrativeExpanded = !narrativeExpanded;
+  document.getElementById('narrative-full').style.display = narrativeExpanded ? 'block' : 'none';
+  document.getElementById('read-more-btn').textContent =
+    narrativeExpanded ? 'Read less ▲' : 'Read more ▼';
+}
+
+function applyFilters() {
+  var search = document.getElementById('search-input').value.trim().toLowerCase();
+  var crm    = document.getElementById('filter-crm').value.trim().toLowerCase();
+  var status = document.getElementById('filter-status').value.trim();
+  var visible = 0;
+  Object.keys(markerMap).forEach(function(name) {
+    var item = markerMap[name];
+    var mine = item.mine;
+    var ok = (!search || mine.name.toLowerCase().indexOf(search) >= 0) &&
+             (!crm    || mine.crm.toLowerCase() === crm ||
+              mine.crm_list.some(function(c) { return c.toLowerCase() === crm; })) &&
+             (!status || mine.status === status);
+    if (ok) { if (!map.hasLayer(item.marker)) item.marker.addTo(map); visible++; }
+    else    { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
+    item.visible = ok;
+  });
+  document.getElementById('match-count').textContent = visible + ' of ' + MINES.length + ' mines shown';
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  if (selectedMarker) { var s = findByMarker(selectedMarker); if (s && !s.visible) closeSidebar(); }
+}
+
+document.getElementById('search-input').addEventListener('input',  applyFilters);
+document.getElementById('filter-crm').addEventListener('change',   applyFilters);
+document.getElementById('filter-status').addEventListener('change', applyFilters);
+
+function clearAll() {
+  document.getElementById('search-input').value  = '';
+  document.getElementById('filter-crm').value    = '';
+  document.getElementById('filter-status').value = '';
+  applyFilters();
+}
+applyFilters();
+</script>
+</body>
+</html>
