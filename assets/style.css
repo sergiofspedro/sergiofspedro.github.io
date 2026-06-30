@@ -167,8 +167,8 @@ body {
   background: linear-gradient(135deg, #0e1a2a 0%, #1f3d6e 40%, #0a1a3a 100%);
 }
 
-.hero-banner--pipeline {
-  background: linear-gradient(135deg, #0a0f18 0%, #102c46 48%, #0a2a28 100%);
+.hero-banner--porto {
+  background: linear-gradient(135deg, #1a0e0e 0%, #6e2d2d 40%, #3a0a0a 100%);
 }
 
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
@@ -256,12 +256,6 @@ body {
   border-radius: 4px;
   background: #f8f9fb;
   padding: 24px;
-}
-
-.svg-frame--dark {
-  background: #0a0f18;
-  border-color: #1a2e3c;
-  padding: 16px;
 }
 
 .chart-divider {
