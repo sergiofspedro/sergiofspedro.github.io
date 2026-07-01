@@ -1,0 +1,144 @@
+<svg viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="nbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="ndots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="nshadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="narrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#7fa8c9"/>
+    </marker>
+
+    <symbol id="n-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.3 2"/>
+    </g></symbol>
+    <symbol id="n-loop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7.5" width="11" height="6.5" rx="3.25"/><rect x="10" y="11" width="11" height="6.5" rx="3.25"/>
+    </g></symbol>
+    <symbol id="n-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3 19 6v5.5c0 5-3.2 7.7-7 9-3.8-1.3-7-4-7-9V6z"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/>
+    </g></symbol>
+    <symbol id="n-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M8 12h8M8 16h8M8 8h4"/>
+    </g></symbol>
+    <symbol id="n-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 9.5h17M3.5 15.5h17M9.5 3.5v17M15.5 3.5v17"/>
+    </g></symbol>
+    <symbol id="n-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.4 4.4 5.6 4.4 9s-1.6 6.6-4.4 9c-2.8-2.4-4.4-5.6-4.4-9s1.6-6.6 4.4-9z"/>
+    </g></symbol>
+    <symbol id="n-plug" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 3v6M15 3v6M6 9h12v3a6 6 0 0 1-12 0V9z"/><path d="M12 18v3"/>
+    </g></symbol>
+    <symbol id="n-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="9.5" r="4.2"/><circle cx="15" cy="9.5" r="4.2"/><circle cx="12" cy="15" r="4.2"/>
+    </g></symbol>
+    <symbol id="n-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 15l6-6"/><path d="M11 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M13 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/>
+    </g></symbol>
+  </defs>
+
+  <rect width="1000" height="640" rx="22" fill="url(#nbg)"/>
+  <rect width="1000" height="640" rx="22" fill="url(#ndots)"/>
+
+  <text x="500" y="38" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">WORKFLOW AUTOMATION</text>
+  <text x="500" y="70" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">n8n pipeline: System architecture</text>
+  <text x="500" y="92" text-anchor="middle" font-size="12" fill="#9fb3c8">Three scheduled workflows, one shared integration layer</text>
+
+  <!-- ROW A — Job discovery -->
+  <g filter="url(#nshadow)">
+    <rect x="60" y="130" width="140" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="60" y="130" width="4" height="86" rx="2" fill="#5ec8e0"/>
+  </g>
+  <circle cx="94" cy="163" r="16" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
+  <use href="#n-clock" x="84" y="153" width="20" height="20" color="#5ec8e0"/>
+  <text x="130" y="163" font-size="12.5" font-weight="600" fill="#f3f6fa">Daily</text>
+  <text x="130" y="180" font-size="9.5" fill="#9fb3c8">scheduled trigger</text>
+  <line x1="200" y1="173" x2="218" y2="173" stroke="#7fa8c9" stroke-width="1.6" marker-end="url(#narrow)"/>
+
+  <g filter="url(#nshadow)">
+    <rect x="220" y="130" width="280" height="86" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+    <rect x="220" y="130" width="4" height="86" rx="2" fill="#5ec8e0"/>
+  </g>
+  <circle cx="254" cy="163" r="16" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
+  <use href="#n-loop" x="244" y="153" width="20" height="20" color="#5ec8e0"/>
+  <text x="284" y="160" font-size="13.5" font-weight="600" fill="#f3f6fa">Job discovery</text>
+  <text x="284" y="178" font-size="10" fill="#9fb3c8">Finds new opportunities,</text>
+  <text x="284" y="191" font-size="10" fill="#9fb3c8">dedupes, syncs to Notion</text>
+  <line x1="500" y1="173" x2="518" y2="173" stroke="#7fa8c9" stroke-width="1.6" marker-end="url(#narrow)"/>
+
+  <use href="#n-doc" x="530" y="150" width="22" height="22" color="#f0d25e"/>
+  <text x="541" y="188" text-anchor="middle" font-size="9" fill="#c3d2de">Notion</text>
+  <use href="#n-globe" x="620" y="150" width="22" height="22" color="#6fa8e0"/>
+  <text x="631" y="188" text-anchor="middle" font-size="9" fill="#c3d2de">Firecrawl</text>
+  <use href="#n-plug" x="720" y="150" width="22" height="22" color="#b89bf5"/>
+  <text x="731" y="188" text-anchor="middle" font-size="9" fill="#c3d2de">RapidAPI</text>
+
+  <!-- ROW B — Cover letter generator -->
+  <g filter="url(#nshadow)">
+    <rect x="60" y="250" width="140" height="86" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="60" y="250" width="4" height="86" rx="2" fill="#f0a85e"/>
+  </g>
+  <circle cx="94" cy="283" r="16" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
+  <use href="#n-clock" x="84" y="273" width="20" height="20" color="#f0a85e"/>
+  <text x="130" y="283" font-size="12.5" font-weight="600" fill="#f3f6fa">Hourly</text>
+  <text x="130" y="300" font-size="9.5" fill="#9fb3c8">scheduled trigger</text>
+  <line x1="200" y1="293" x2="218" y2="293" stroke="#7fa8c9" stroke-width="1.6" marker-end="url(#narrow)"/>
+
+  <g filter="url(#nshadow)">
+    <rect x="220" y="250" width="280" height="86" rx="14" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+    <rect x="220" y="250" width="4" height="86" rx="2" fill="#f0a85e"/>
+  </g>
+  <circle cx="254" cy="283" r="16" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
+  <use href="#n-loop" x="244" y="273" width="20" height="20" color="#f0a85e"/>
+  <text x="284" y="280" font-size="13.5" font-weight="600" fill="#f3f6fa">Cover letter generator</text>
+  <text x="284" y="298" font-size="10" fill="#9fb3c8">Drafts tailored letters,</text>
+  <text x="284" y="311" font-size="10" fill="#9fb3c8">syncs to Notion</text>
+  <line x1="500" y1="293" x2="518" y2="293" stroke="#7fa8c9" stroke-width="1.6" marker-end="url(#narrow)"/>
+
+  <use href="#n-doc" x="530" y="270" width="22" height="22" color="#f0d25e"/>
+  <text x="541" y="308" text-anchor="middle" font-size="9" fill="#c3d2de">Notion</text>
+  <use href="#n-brain" x="620" y="270" width="22" height="22" color="#6fd88a"/>
+  <text x="631" y="308" text-anchor="middle" font-size="9" fill="#c3d2de">LLM API</text>
+  <use href="#n-grid" x="720" y="270" width="22" height="22" color="#f06fa0"/>
+  <text x="731" y="308" text-anchor="middle" font-size="9" fill="#c3d2de">Sheets</text>
+
+  <!-- Error handler, catching both -->
+  <path d="M200 216 Q275 350 400 388" fill="none" stroke="#5e7d96" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <path d="M200 336 Q275 360 400 388" fill="none" stroke="#5e7d96" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+  <g filter="url(#nshadow)">
+    <rect x="350" y="390" width="300" height="72" rx="14" fill="#f4886a" fill-opacity="0.1" stroke="#f4886a" stroke-width="1.3"/>
+  </g>
+  <circle cx="384" cy="426" r="16" fill="#f4886a" fill-opacity="0.18" stroke="#f4886a" stroke-width="1.4"/>
+  <use href="#n-shield" x="374" y="416" width="20" height="20" color="#f4886a"/>
+  <text x="414" y="422" font-size="12.5" font-weight="600" fill="#f3f6fa">Error handler</text>
+  <text x="414" y="438" font-size="9.5" fill="#9fb3c8">Catches failures from either workflow</text>
+
+  <!-- monitored-by note -->
+  <line x1="500" y1="462" x2="500" y2="490" stroke="#5e7d96" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <rect x="330" y="492" width="340" height="42" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#7fa8c9" stroke-opacity="0.3" stroke-dasharray="3 4"/>
+  <use href="#n-link" x="345" y="503" width="18" height="18" color="#7fa8c9"/>
+  <text x="500" y="512" text-anchor="middle" font-size="10.5" font-weight="600" fill="#c3d2de">Independently monitored</text>
+  <text x="500" y="526" text-anchor="middle" font-size="9" fill="#9fb3c8">OpenClaw's guardian agent checks n8n health on its own schedule</text>
+
+  <!-- stat badges -->
+  <g font-size="10.5" letter-spacing="0.5" font-weight="600" text-anchor="middle">
+    <rect x="298" y="566" width="130" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="363" y="585" fill="#dfe8f0">3 WORKFLOWS</text>
+
+    <rect x="438" y="566" width="150" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="513" y="585" fill="#dfe8f0">SQLITE-BACKED</text>
+
+    <rect x="598" y="566" width="120" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="658" y="585" fill="#dfe8f0">N8N 2.21.7</text>
+  </g>
+
+</svg>

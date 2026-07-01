@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="sbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="sdots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="sshadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <symbol id="s-loop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7.5" width="11" height="6.5" rx="3.25"/><rect x="10" y="11" width="11" height="6.5" rx="3.25"/>
+    </g></symbol>
+    <symbol id="s-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3 19 6v5.5c0 5-3.2 7.7-7 9-3.8-1.3-7-4-7-9V6z"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/>
+    </g></symbol>
+  </defs>
+
+  <rect width="1000" height="320" rx="22" fill="url(#sbg)"/>
+  <rect width="1000" height="320" rx="22" fill="url(#sdots)"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">ALWAYS RUNNING</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">n8n pipeline: A day of scheduled runs</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">One daily run, twenty-four hourly runs, and a watchdog that never sleeps</text>
+
+  <!-- axis -->
+  <line x1="70" y1="200" x2="930" y2="200" stroke="#3a5570" stroke-width="2" stroke-linecap="round"/>
+  <g font-size="10" fill="#7f93a6" text-anchor="middle">
+    <line x1="70" y1="196" x2="70" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="70" y="222">Midnight</text>
+    <line x1="242" y1="196" x2="242" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="242" y="222">Morning</text>
+    <line x1="414" y1="196" x2="414" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="414" y="222">Midday</text>
+    <line x1="586" y1="196" x2="586" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="586" y="222">Afternoon</text>
+    <line x1="758" y1="196" x2="758" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="758" y="222">Evening</text>
+    <line x1="930" y1="196" x2="930" y2="204" stroke="#3a5570" stroke-width="2"/>
+    <text x="930" y="222">Midnight</text>
+  </g>
+
+  <!-- Job discovery: single daily pin -->
+  <line x1="120" y1="200" x2="120" y2="158" stroke="#5ec8e0" stroke-width="1.4" stroke-opacity="0.6"/>
+  <circle cx="120" cy="200" r="5.5" fill="#5ec8e0"/>
+  <g filter="url(#sshadow)">
+    <rect x="52" y="118" width="136" height="40" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#5ec8e0" stroke-opacity="0.4"/>
+  </g>
+  <use href="#s-loop" x="62" y="129" width="18" height="18" color="#5ec8e0"/>
+  <text x="86" y="135" font-size="10.5" font-weight="600" fill="#f3f6fa">Job discovery</text>
+  <text x="86" y="148" font-size="9" fill="#9fb3c8">once daily</text>
+
+  <!-- Cover letter: many hourly pins (small ticks across the whole axis) -->
+  <g stroke="#f0a85e" stroke-width="1.3" stroke-opacity="0.55">
+    <line x1="180" y1="200" x2="180" y2="182"/>
+    <line x1="260" y1="200" x2="260" y2="182"/>
+    <line x1="340" y1="200" x2="340" y2="182"/>
+    <line x1="420" y1="200" x2="420" y2="182"/>
+    <line x1="500" y1="200" x2="500" y2="182"/>
+    <line x1="580" y1="200" x2="580" y2="182"/>
+    <line x1="660" y1="200" x2="660" y2="182"/>
+    <line x1="740" y1="200" x2="740" y2="182"/>
+    <line x1="820" y1="200" x2="820" y2="182"/>
+    <line x1="900" y1="200" x2="900" y2="182"/>
+  </g>
+  <g filter="url(#sshadow)">
+    <rect x="352" y="238" width="180" height="40" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#f0a85e" stroke-opacity="0.4"/>
+  </g>
+  <use href="#s-loop" x="362" y="249" width="18" height="18" color="#f0a85e"/>
+  <text x="386" y="255" font-size="10.5" font-weight="600" fill="#f3f6fa">Cover letter generator</text>
+  <text x="386" y="268" font-size="9" fill="#9fb3c8">every hour, all day</text>
+  <line x1="500" y1="200" x2="480" y2="234" stroke="#f0a85e" stroke-width="1.2" stroke-opacity="0.5"/>
+
+  <!-- Error handler: watchdog spanning the whole day -->
+  <rect x="70" y="192" width="860" height="16" rx="8" fill="#f4886a" fill-opacity="0.1" stroke="#f4886a" stroke-opacity="0.35"/>
+  <use href="#s-shield" x="906" y="184" width="16" height="16" color="#f4886a"/>
+  <text x="500" y="203" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="#f5b8a8">ERROR HANDLER WATCHES BOTH, ALL DAY</text>
+
+  <!-- live pulse on "now" -->
+  <circle cx="500" cy="200" r="5" fill="none" stroke="#6fd8c7" stroke-width="1.3">
+    <animate attributeName="r" values="5;12;5" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="500" y="300" text-anchor="middle" font-size="11.5" fill="#9fb3c8">25 runs a day between the two workflows — none of them need a message from me to start.</text>
+
+</svg>

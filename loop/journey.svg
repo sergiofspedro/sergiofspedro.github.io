@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1100 460" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="jbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="jdots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="jshadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="jarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#7fa8c9"/>
+    </marker>
+
+    <symbol id="j-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-4.2 3.1-6.5 7-6.5s7 2.3 7 6.5"/>
+    </g></symbol>
+    <symbol id="j-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 17h12M8 17v-5a4 4 0 0 1 8 0v5"/><path d="M10.2 20a2 2 0 0 0 3.6 0"/>
+    </g></symbol>
+    <symbol id="j-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M8 12h8M8 16h8M8 8h4"/>
+    </g></symbol>
+    <symbol id="j-vote" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="9" width="16" height="12" rx="1.5"/><path d="M4 9l8-6 8 6"/><path d="M9.3 14.7l1.8 1.8 3.6-3.6"/>
+    </g></symbol>
+    <symbol id="j-share" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 12.5l3 3L17 8.5"/><path d="M4 4.5l2.5 2.5M20 4.5l-2.5 2.5M4 19.5l2.5-2.5M20 19.5l-2.5-2.5"/>
+    </g></symbol>
+    <symbol id="j-track" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <circle cx="6" cy="12" r="1.7" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/>
+      <circle cx="18" cy="12" r="1.7" fill="currentColor" stroke="none"/>
+    </g></symbol>
+  </defs>
+
+  <rect width="1100" height="460" rx="22" fill="url(#jbg)"/>
+  <rect width="1100" height="460" rx="22" fill="url(#jdots)"/>
+
+  <text x="550" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">THE CITIZEN JOURNEY</text>
+  <text x="550" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">LOOP: One citizen, start to finish</text>
+  <text x="550" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">From registration to knowing what happened next</text>
+
+  <!-- row 1 arrows -->
+  <line x1="360" y1="195" x2="388" y2="195" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#jarrow)"/>
+  <line x1="710" y1="195" x2="738" y2="195" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#jarrow)"/>
+  <!-- wrap arrow row1 -> row2 -->
+  <path d="M900 260 C 1000 275, 1000 285, 900 300" fill="none" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#jarrow)"/>
+  <!-- row 2 arrows -->
+  <line x1="360" y1="355" x2="388" y2="355" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#jarrow)"/>
+  <line x1="710" y1="355" x2="738" y2="355" stroke="#7fa8c9" stroke-width="1.8" marker-end="url(#jarrow)"/>
+
+  <!-- Card 1: Register -->
+  <g filter="url(#jshadow)">
+    <rect x="40" y="130" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="40" y="130" width="4" height="130" rx="2" fill="#5ec8e0"/>
+  </g>
+  <circle cx="76" cy="168" r="17" fill="#5ec8e0" fill-opacity="0.18" stroke="#5ec8e0" stroke-width="1.4"/>
+  <use href="#j-person" x="65" y="157" width="22" height="22" color="#5ec8e0"/>
+  <text x="106" y="163" font-size="14" font-weight="600" fill="#f3f6fa">Register</text>
+  <text x="60" y="200" font-size="10.3" fill="#9fb3c8">Once, linking phone to a</text>
+  <text x="60" y="215" font-size="10.3" fill="#9fb3c8">location and topics (mock demo,</text>
+  <text x="60" y="230" font-size="10.3" fill="#9fb3c8">EU Digital Identity Wallet target)</text>
+
+  <!-- Card 2: Notified -->
+  <g filter="url(#jshadow)">
+    <rect x="390" y="130" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="390" y="130" width="4" height="130" rx="2" fill="#f0a85e"/>
+  </g>
+  <circle cx="426" cy="168" r="17" fill="#f0a85e" fill-opacity="0.18" stroke="#f0a85e" stroke-width="1.4"/>
+  <use href="#j-bell" x="415" y="157" width="22" height="22" color="#f0a85e"/>
+  <text x="456" y="163" font-size="14" font-weight="600" fill="#f3f6fa">Notified</text>
+  <text x="410" y="200" font-size="10.3" fill="#9fb3c8">Proactive alert when a relevant</text>
+  <text x="410" y="215" font-size="10.3" fill="#9fb3c8">consultation opens in their own</text>
+  <text x="410" y="230" font-size="10.3" fill="#9fb3c8">municipality, country, or EU level</text>
+
+  <!-- Card 3: Consultation card -->
+  <g filter="url(#jshadow)">
+    <rect x="740" y="130" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="740" y="130" width="4" height="130" rx="2" fill="#f0d25e"/>
+  </g>
+  <circle cx="776" cy="168" r="17" fill="#f0d25e" fill-opacity="0.18" stroke="#f0d25e" stroke-width="1.4"/>
+  <use href="#j-doc" x="765" y="157" width="22" height="22" color="#f0d25e"/>
+  <text x="806" y="163" font-size="14" font-weight="600" fill="#f3f6fa">Four-field card</text>
+  <text x="760" y="200" font-size="10.3" fill="#9fb3c8">Title, theme, deadline, and a</text>
+  <text x="760" y="215" font-size="10.3" fill="#9fb3c8">plain-language summary replacing</text>
+  <text x="760" y="230" font-size="10.3" fill="#9fb3c8">the full legal text</text>
+
+  <!-- Card 4: Responds -->
+  <g filter="url(#jshadow)">
+    <rect x="40" y="290" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="40" y="290" width="4" height="130" rx="2" fill="#6fd88a"/>
+  </g>
+  <circle cx="76" cy="328" r="17" fill="#6fd88a" fill-opacity="0.18" stroke="#6fd88a" stroke-width="1.4"/>
+  <use href="#j-vote" x="65" y="317" width="22" height="22" color="#6fd88a"/>
+  <text x="106" y="323" font-size="14" font-weight="600" fill="#f3f6fa">Responds</text>
+  <text x="60" y="360" font-size="10.3" fill="#9fb3c8">Four options only: know more,</text>
+  <text x="60" y="375" font-size="10.3" fill="#9fb3c8">express my opinion, vote yes,</text>
+  <text x="60" y="390" font-size="10.3" fill="#9fb3c8">or vote no</text>
+
+  <!-- Card 5: Confirmed -->
+  <g filter="url(#jshadow)">
+    <rect x="390" y="290" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="390" y="290" width="4" height="130" rx="2" fill="#f06fa0"/>
+  </g>
+  <circle cx="426" cy="328" r="17" fill="#f06fa0" fill-opacity="0.18" stroke="#f06fa0" stroke-width="1.4"/>
+  <use href="#j-share" x="415" y="317" width="22" height="22" color="#f06fa0"/>
+  <text x="456" y="323" font-size="14" font-weight="600" fill="#f3f6fa">Confirmed</text>
+  <text x="410" y="360" font-size="10.3" fill="#9fb3c8">A warm confirmation naming the</text>
+  <text x="410" y="375" font-size="10.3" fill="#9fb3c8">consultation, plus a one-tap</text>
+  <text x="410" y="390" font-size="10.3" fill="#9fb3c8">invite to bring someone else in</text>
+
+  <!-- Card 6: Tracked -->
+  <g filter="url(#jshadow)">
+    <rect x="740" y="290" width="320" height="130" rx="14" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="740" y="290" width="4" height="130" rx="2" fill="#b89bf5"/>
+  </g>
+  <circle cx="776" cy="328" r="17" fill="#b89bf5" fill-opacity="0.18" stroke="#b89bf5" stroke-width="1.4"/>
+  <use href="#j-track" x="765" y="317" width="22" height="22" color="#b89bf5"/>
+  <text x="806" y="323" font-size="14" font-weight="600" fill="#f3f6fa">Tracked</text>
+  <text x="760" y="360" font-size="10.3" fill="#9fb3c8">Official platform plus an</text>
+  <text x="760" y="375" font-size="10.3" fill="#9fb3c8">anonymised dashboard: open,</text>
+  <text x="760" y="390" font-size="10.3" fill="#9fb3c8">under review, decided, implemented</text>
+
+  <text x="550" y="446" text-anchor="middle" font-size="11.5" fill="#9fb3c8">Every step answers the same question: did my participation make a difference?</text>
+
+</svg>

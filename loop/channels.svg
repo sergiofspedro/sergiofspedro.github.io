@@ -1,0 +1,89 @@
+<svg viewBox="0 0 1000 580" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="cbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="cdots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="cshadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <radialGradient id="hubgrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f3d6e"/>
+      <stop offset="100%" stop-color="#0e1a2a"/>
+    </radialGradient>
+
+    <symbol id="ch-plane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 3 10 14"/><path d="M21 3 14 21l-3-7-7-3 17-8z"/>
+    </g></symbol>
+    <symbol id="ch-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3h3l2 5-2.5 1.6a11.5 11.5 0 0 0 5.4 5.4L15.4 12.5l5 2v3a2 2 0 0 1-2 2A14.5 14.5 0 0 1 4 5a2 2 0 0 1 2-2z"/>
+    </g></symbol>
+    <symbol id="ch-rcs" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="12" rx="3"/><path d="M8 21l3-4h2l3 4"/><path d="M7 10h10M7 13h6"/>
+    </g></symbol>
+    <symbol id="ch-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5h16a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9.5L6 19.5V16H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
+      <circle cx="8.5" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.5" cy="10.5" r="0.9" fill="currentColor" stroke="none"/>
+    </g></symbol>
+    <symbol id="ch-browser" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><circle cx="6" cy="6.2" r="0.6" fill="currentColor" stroke="none"/>
+    </g></symbol>
+  </defs>
+
+  <rect width="1000" height="580" rx="22" fill="url(#cbg)"/>
+  <rect width="1000" height="580" rx="22" fill="url(#cdots)"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">FIVE CHANNELS, ONE GATEWAY</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">LOOP: How wide the door opens</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Two channels working today; three more the team designed LOOP to support</text>
+
+  <!-- connecting lines, drawn first, under the nodes -->
+  <line x1="500" y1="300" x2="230" y2="175" stroke="#5ec8e0" stroke-width="2"/>
+  <line x1="500" y1="300" x2="770" y2="175" stroke="#f0d25e" stroke-width="2"/>
+  <line x1="500" y1="300" x2="165" y2="430" stroke="#7fa8c9" stroke-width="1.6" stroke-dasharray="5 5"/>
+  <line x1="500" y1="300" x2="500" y2="470" stroke="#7fa8c9" stroke-width="1.6" stroke-dasharray="5 5"/>
+  <line x1="500" y1="300" x2="835" y2="430" stroke="#7fa8c9" stroke-width="1.6" stroke-dasharray="5 5"/>
+
+  <!-- hub -->
+  <circle cx="500" cy="300" r="58" fill="url(#hubgrad)" stroke="#7fa8c9" stroke-width="1.6" filter="url(#cshadow)"/>
+  <text x="500" y="296" text-anchor="middle" font-size="17" font-weight="700" fill="#f3f6fa">LOOP</text>
+  <text x="500" y="313" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#9fb3c8">GATEWAY</text>
+
+  <!-- built: Telegram -->
+  <circle cx="230" cy="175" r="46" fill="#5ec8e0" fill-opacity="0.16" stroke="#5ec8e0" stroke-width="1.8" filter="url(#cshadow)"/>
+  <use href="#ch-plane" x="212" y="152" width="26" height="26" color="#5ec8e0"/>
+  <text x="230" y="203" text-anchor="middle" font-size="12.5" font-weight="600" fill="#f3f6fa">Telegram</text>
+  <text x="230" y="235" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#6fd88a">● BUILT</text>
+
+  <!-- built: Voice -->
+  <circle cx="770" cy="175" r="46" fill="#f0d25e" fill-opacity="0.16" stroke="#f0d25e" stroke-width="1.8" filter="url(#cshadow)"/>
+  <use href="#ch-phone" x="752" y="152" width="26" height="26" color="#f0d25e"/>
+  <text x="770" y="203" text-anchor="middle" font-size="12.5" font-weight="600" fill="#f3f6fa">Voice call</text>
+  <text x="770" y="235" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#6fd88a">● BUILT</text>
+
+  <!-- envisioned: RCS -->
+  <circle cx="165" cy="430" r="42" fill="#ffffff" fill-opacity="0.04" stroke="#7fa8c9" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <use href="#ch-rcs" x="149" y="409" width="24" height="24" color="#9fb3c8"/>
+  <text x="165" y="456" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c3d2de">RCS</text>
+  <text x="165" y="486" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="#7f93a6">○ VISION</text>
+
+  <!-- envisioned: Chat bot -->
+  <circle cx="500" cy="470" r="42" fill="#ffffff" fill-opacity="0.04" stroke="#7fa8c9" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <use href="#ch-chat" x="484" y="449" width="24" height="24" color="#9fb3c8"/>
+  <text x="500" y="496" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c3d2de">WhatsApp / Signal</text>
+  <text x="500" y="526" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="#7f93a6">○ VISION</text>
+
+  <!-- envisioned: Website -->
+  <circle cx="835" cy="430" r="42" fill="#ffffff" fill-opacity="0.04" stroke="#7fa8c9" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <use href="#ch-browser" x="819" y="409" width="24" height="24" color="#9fb3c8"/>
+  <text x="835" y="456" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c3d2de">Website</text>
+  <text x="835" y="486" text-anchor="middle" font-size="8.5" letter-spacing="0.5" fill="#7f93a6">○ VISION</text>
+
+  <text x="500" y="556" text-anchor="middle" font-size="11" fill="#9fb3c8">Same backend either way: legitimacy stays with the official platform, LOOP just widens the door.</text>
+
+</svg>

@@ -21,19 +21,22 @@
   <div class="sidebar-projects">
     <div class="sidebar-projects-title">Projects</div>
     <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">
-      Regenerative Potential Index
+      Regenerative Potential Index: Evaluation tool
     </button>
     <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">
-      MiningEurope
+      Mining Europe: Environmental info real-time monitoring tool
     </button>
     <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">
-      LOOP – Civic Participation Gateway
+      LOOP – Civic participation gateway (EU Commission project)
     </button>
     <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">
       Urban livability analysis
     </button>
     <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">
       OpenClaw pipeline – Multi-agent infrastructure
+    </button>
+    <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">
+      n8n pipeline – Workflow automation
     </button>
   </div>
 
@@ -257,39 +260,94 @@
 
       <p>
         <strong>LOOP</strong> is an open-source civic participation gateway built for the
-        <strong>EU Commission Civic Tech Hackathon 2026</strong>. It does not replace existing official
-        consultation platforms, it makes them <strong>discoverable, understandable, and actionable</strong>
-        for every EU citizen, including the approximately <strong>40–45 million people without a smartphone</strong>
-        who are unreachable by any existing civic tech platform.
+        <strong>EU Commission Civic Tech Hackathon 2026</strong>, one of only three projects highlighted at
+        the event. It responds to three compounding failures named in the hackathon's own background note:
+        consultations are fragmented across EU, national, and municipal platforms with no single point of
+        discovery, the language they're written in is complex enough to keep participation theoretical
+        rather than practical, and roughly <strong>40–45 million EU citizens, one in ten</strong>, have no
+        smartphone and are unreachable by any existing civic tech platform. LOOP does not replace official
+        platforms like Decidim or Have Your Say. It makes them <strong>discoverable, understandable, and
+        actionable</strong> through channels citizens already use.
+      </p>
+      <p>
+        Citizens register once, linking a phone number to a location and topic preferences, currently a
+        lightweight mock flow standing in for a future EU Digital Identity Wallet integration, so the same
+        architecture works for a single municipality or a nationwide rollout without changing the model.
+        From there, LOOP proactively notifies citizens when a relevant consultation opens in their own
+        municipality, country, or at EU level, rather than waiting for them to go looking for it.
       </p>
       <p>
         Citizens interact through the channel that works for them: a <strong>voice call</strong>
         (DTMF keypad voting, no smartphone needed), or a <strong>Telegram bot</strong> with inline keyboards
         and AI-powered free-text opinion submission. Both channels share the same backend, a single
         SQLite vote database, so votes cast by phone are immediately visible in the Telegram interface
-        and vice-versa.
+        and vice versa. Each consultation is presented as a four-field card: title, theme, deadline, and
+        an AI-generated plain-language summary, with four possible responses: know more, express my
+        opinion, vote yes, or vote no.
       </p>
       <p>
-        Each consultation is presented as a four-field card: title, theme, deadline, and an AI-generated
-        plain-language summary. Citizens choose from four responses: know more, express my opinion,
-        vote yes, or vote no. The Telegram bot sends free-text opinions to <strong>DeepSeek V4 Flash</strong>
-        via OpenRouter for empathetic acknowledgement. All API keys are managed through
-        <strong>Infisical</strong> (open-source secrets manager), never hardcoded, injected at container
-        startup. The full stack (Caddy, Docker, Flask, Telnyx, GitHub Actions) is open-source.
+        Every contribution triggers two things at once: an immediate, warmly worded confirmation naming
+        the consultation and how many others have already taken part, and a one-tap shareable invitation
+        the citizen can forward to bring someone else in. The Telegram bot sends free-text opinions to
+        <strong>DeepSeek V4 Flash</strong> via OpenRouter for empathetic acknowledgement, and all API keys
+        are managed through <strong>Infisical</strong> (open-source secrets manager), never hardcoded,
+        injected at container startup. The full stack (Caddy, Docker, Flask, Telnyx, GitHub Actions) is
+        open-source.
       </p>
       <p>
         LOOP directly addresses the feedback loop absence identified as the primary driver of
-        <strong>EU electoral abstention (49.3%)</strong>: every contribution triggers an immediate
-        confirmation and a live tracking page showing each consultation's status from
-        open → under review → decision published → implementation.
+        <strong>EU electoral abstention (49.3%)</strong>: every vote and opinion routes to the official
+        platform that launched the consultation, while an anonymised copy feeds a live tracking dashboard
+        showing each consultation's status from open, to under review, to decision published, to
+        implementation, answering the question citizens actually ask: did my participation make a
+        difference?
+      </p>
+      <p>
+        The team's full vision reaches further than the two channels built for the 48-hour demo: a native
+        RCS experience and an embedded chat bot inside WhatsApp and Signal alongside the Telegram and voice
+        channels already working, and a website for citizens who prefer to browse. Interoperability is
+        designed in from the start through an API and MCP layer, so any civic platform, Decidim, CONSUL,
+        Adhocracy+, Have Your Say, can exchange participation data with any other instead of every platform
+        building the same integration separately. Data sovereignty is a first-class design principle
+        throughout, with the goal of citizen participation data that never leaves the jurisdiction where
+        the participation happened. Positioned this way, LOOP is shared civic infrastructure a single
+        municipality can deploy today, with a natural path toward adoption as a reference implementation
+        for the future European Civic Tech Hub.
       </p>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>System architecture</h2>
         <p class="chart-desc">Two Docker containers (Telegram bot and voice bot) share a SQLite volume on a Hetzner VPS. Caddy handles HTTPS for Telegram webhooks; Telnyx provides the PSTN phone number. Secrets are injected at startup via Infisical.</p>
-        <div class="svg-frame">
+        <div class="svg-frame svg-frame--dark">
           <img src="loop/architecture.svg" alt="LOOP system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The citizen journey</h2>
+        <p class="chart-desc">From a one-time registration to knowing what happened to a vote: proactive notification, a four-field consultation card, four response options, a two-message confirmation, and a dual-routed result that answers "did my participation make a difference?"</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/journey.svg" alt="LOOP citizen journey from registration to tracked outcome" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>How wide the door opens</h2>
+        <p class="chart-desc">Telegram and voice are working today; RCS, an embedded chat bot, and a full website are the team's wider vision for the same gateway, not yet built for the 48-hour demo.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/channels.svg" alt="LOOP built channels versus envisioned channels" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>A gateway, not a new platform</h2>
+        <p class="chart-desc">LOOP connects citizens to Decidim, Have Your Say, CONSUL, Adhocracy+, and national or municipal portals through one shared API and MCP layer, so each platform integrates once instead of every civic app rebuilding the same connection.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/interoperability.svg" alt="LOOP interoperability across official civic platforms" style="width:100%;height:auto;display:block;" />
         </div>
       </div>
 
@@ -467,6 +525,83 @@
     <footer class="article-footer">
       <span>Personal infrastructure · Self-hosted AI operations</span>
       <a href="https://github.com/openclaw/openclaw" target="_blank">Built on OpenClaw (open-source) →</a>
+    </footer>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       PROJECT 6 – N8N PIPELINE
+  ════════════════════════════════════════════════════ -->
+  <section id="project-n8n" style="display:none">
+
+    <div class="hero-banner hero-banner--n8n">
+      <div class="hero-text">
+        <h1>n8n pipeline</h1>
+        <div class="hero-sub-banner">Workflow automation · Job search on autopilot</div>
+      </div>
+    </div>
+
+    <div class="article">
+
+      <h1 class="article-title">n8n pipeline, three workflows that run without me</h1>
+      <div class="article-date">2026 · Personal automation · Self-hosted</div>
+
+      <p>
+        <strong>n8n pipeline</strong> is a small workflow-automation instance running three scheduled jobs
+        on the same personal server as the rest of my infrastructure. It started as a way to take a specific
+        repetitive process, job hunting, off my plate entirely: one workflow finds new opportunities, another
+        drafts the first pass at a cover letter, and a third watches both for failures.
+      </p>
+      <p>
+        A daily job discovery workflow scans for new listings, filters out duplicates and anything already
+        reviewed, and writes fresh entries into a Notion database. An hourly cover letter workflow then picks
+        up queued entries and drafts a first pass using an LLM, saving the result back to Notion for review.
+        Twenty-five runs a day between the two, and neither needs me to trigger it.
+      </p>
+      <p>
+        The instance is SQLite-backed and integrates with Notion, Google Sheets, an LLM API, Firecrawl for
+        web content, and RapidAPI for supporting data lookups. It runs on the same Hetzner VPS as my OpenClaw
+        agent pipeline, on a shared Docker network, but the two systems are otherwise independent. One nice
+        side effect: OpenClaw's <strong>guardian</strong> agent has its own skill that checks n8n's health,
+        so the automation pipeline gets watched by a different system entirely, not just by itself.
+      </p>
+      <p>
+        It is a small project next to the agent fleet, but it uses the same underlying patterns, scheduled
+        triggers, deduplication, integration orchestration, and a dedicated error handler, that scale to
+        much larger automation work.
+      </p>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System architecture</h2>
+        <p class="chart-desc">Two scheduled triggers feed two workflows, each with its own integrations; a third workflow catches failures from either one. Monitored independently by OpenClaw's guardian agent as a second set of eyes.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/architecture.svg" alt="n8n pipeline system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>A day of scheduled runs</h2>
+        <p class="chart-desc">One daily run for job discovery, twenty-four hourly runs for the cover letter generator, and an error handler watching both around the clock.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/schedule.svg" alt="n8n pipeline schedule of daily and hourly runs" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>One posting, traced end to end</h2>
+        <p class="chart-desc">From a fresh listing showing up in a scan to a drafted cover letter ready for review, with no manual step in between.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/dataflow.svg" alt="n8n pipeline one job posting traced end to end" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="article-footer">
+      <span>Personal automation · Self-hosted</span>
+      <a href="https://github.com/n8n-io/n8n" target="_blank">Built on n8n (open-source) →</a>
     </footer>
   </section>
 

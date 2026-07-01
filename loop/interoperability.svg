@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="ibg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/>
+      <stop offset="48%" stop-color="#102c46"/>
+      <stop offset="100%" stop-color="#0a2a28"/>
+    </linearGradient>
+    <pattern id="idots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="ishadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <radialGradient id="ihub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f3d6e"/>
+      <stop offset="100%" stop-color="#0e1a2a"/>
+    </radialGradient>
+
+    <symbol id="i-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-4.2 3.1-6.5 7-6.5s7 2.3 7 6.5"/>
+    </g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 21V9l8-5 8 5v12"/><path d="M4 21h16"/><path d="M10 21v-6h4v6"/>
+    </g></symbol>
+  </defs>
+
+  <rect width="1000" height="480" rx="22" fill="url(#ibg)"/>
+  <rect width="1000" height="480" rx="22" fill="url(#idots)"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">NOT A NEW PLATFORM</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">LOOP: One gateway, every official platform</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Legitimacy stays with the official systems; LOOP just makes them reachable</text>
+
+  <!-- connecting lines first -->
+  <line x1="140" y1="250" x2="365" y2="250" stroke="#7fa8c9" stroke-width="2"/>
+  <line x1="475" y1="230" x2="680" y2="67" stroke="#5e7d96" stroke-width="1.4"/>
+  <line x1="475" y1="245" x2="680" y2="151" stroke="#5e7d96" stroke-width="1.4"/>
+  <line x1="475" y1="250" x2="680" y2="235" stroke="#5e7d96" stroke-width="1.4"/>
+  <line x1="475" y1="255" x2="680" y2="319" stroke="#5e7d96" stroke-width="1.4"/>
+  <line x1="475" y1="270" x2="680" y2="403" stroke="#5e7d96" stroke-width="1.4"/>
+
+  <!-- citizens -->
+  <circle cx="90" cy="250" r="50" fill="#5ec8e0" fill-opacity="0.14" stroke="#5ec8e0" stroke-width="1.8" filter="url(#ishadow)"/>
+  <use href="#i-person" x="72" y="228" width="26" height="26" color="#5ec8e0"/>
+  <text x="90" y="290" text-anchor="middle" font-size="12.5" font-weight="600" fill="#f3f6fa">Citizens</text>
+
+  <!-- hub -->
+  <circle cx="420" cy="250" r="55" fill="url(#ihub)" stroke="#7fa8c9" stroke-width="1.6" filter="url(#ishadow)"/>
+  <text x="420" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#f3f6fa">LOOP</text>
+  <text x="420" y="262" text-anchor="middle" font-size="8" letter-spacing="1" fill="#6fd8c7">API / MCP LAYER</text>
+
+  <!-- platform cards -->
+  <g filter="url(#ishadow)">
+    <rect x="680" y="40" width="280" height="54" rx="12" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <use href="#i-building" x="696" y="53" width="24" height="24" color="#f0a85e"/>
+  <text x="732" y="72" font-size="13" font-weight="600" fill="#f3f6fa">Decidim</text>
+
+  <g filter="url(#ishadow)">
+    <rect x="680" y="124" width="280" height="54" rx="12" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <use href="#i-building" x="696" y="137" width="24" height="24" color="#6fd88a"/>
+  <text x="732" y="156" font-size="13" font-weight="600" fill="#f3f6fa">Have Your Say</text>
+
+  <g filter="url(#ishadow)">
+    <rect x="680" y="208" width="280" height="54" rx="12" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <use href="#i-building" x="696" y="221" width="24" height="24" color="#f0d25e"/>
+  <text x="732" y="240" font-size="13" font-weight="600" fill="#f3f6fa">CONSUL</text>
+
+  <g filter="url(#ishadow)">
+    <rect x="680" y="292" width="280" height="54" rx="12" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <use href="#i-building" x="696" y="305" width="24" height="24" color="#b89bf5"/>
+  <text x="732" y="324" font-size="13" font-weight="600" fill="#f3f6fa">Adhocracy+</text>
+
+  <g filter="url(#ishadow)">
+    <rect x="680" y="376" width="280" height="54" rx="12" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <use href="#i-building" x="696" y="389" width="24" height="24" color="#f06fa0"/>
+  <text x="732" y="404" font-size="12" font-weight="600" fill="#f3f6fa">National &amp; municipal portals</text>
+
+  <text x="500" y="452" text-anchor="middle" font-size="11" fill="#9fb3c8">Each platform connects once through the same interface, instead of every civic app rebuilding it separately.</text>
+
+</svg>

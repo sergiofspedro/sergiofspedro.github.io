@@ -175,6 +175,10 @@ body {
   background: linear-gradient(135deg, #0a0f18 0%, #102c46 48%, #0a2a28 100%);
 }
 
+.hero-banner--n8n {
+  background: linear-gradient(135deg, #0a1410 0%, #123d2e 48%, #0a2a1c 100%);
+}
+
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
 
 .hero-text h1 {
