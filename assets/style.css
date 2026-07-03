@@ -201,6 +201,13 @@ body {
 /* ─── ARTICLE ──────────────────────────────────────── */
 .article { padding: 44px 60px 80px; }
 
+.project-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
 .article-title {
   font-size: 1.9rem;
   font-weight: 400;
