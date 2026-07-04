@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <marker id="motifArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#ffffff" fill-opacity="0.14"/>
+    </marker>
+  </defs>
+
+  <g stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.6" fill="none" marker-end="url(#motifArrow)">
+    <path d="M140,110 L230,110"/>
+    <path d="M310,110 L310,180 L230,180"/>
+    <path d="M390,180 L470,180"/>
+    <path d="M550,180 L550,110 L630,110"/>
+    <path d="M710,110 L790,110"/>
+    <path d="M710,110 L710,240 L790,240"/>
+    <path d="M870,240 L950,240"/>
+    <path d="M870,110 L950,110"/>
+    <path d="M1030,110 L1030,175 L1110,175"/>
+    <path d="M1030,240 L1030,175"/>
+    <path d="M1190,175 L1270,175"/>
+  </g>
+
+  <g fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.4">
+    <rect x="60" y="90" width="80" height="40" rx="8"/>
+    <rect x="230" y="90" width="80" height="40" rx="8"/>
+    <rect x="230" y="160" width="80" height="40" rx="8"/>
+    <rect x="470" y="160" width="80" height="40" rx="8"/>
+    <rect x="630" y="90" width="80" height="40" rx="8"/>
+    <rect x="790" y="90" width="80" height="40" rx="8"/>
+    <rect x="790" y="220" width="80" height="40" rx="8"/>
+    <rect x="950" y="90" width="80" height="40" rx="8"/>
+    <rect x="950" y="220" width="80" height="40" rx="8"/>
+    <rect x="1110" y="155" width="80" height="40" rx="8"/>
+    <rect x="1270" y="155" width="80" height="40" rx="8"/>
+  </g>
+</svg>

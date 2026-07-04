@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <!-- large sweeping loop arcs, echoing the LOOP logo -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="3" stroke-linecap="round">
+    <circle cx="180" cy="420" r="220"/>
+    <circle cx="1230" cy="-60" r="240"/>
+    <circle cx="700" cy="170" r="330"/>
+  </g>
+
+  <!-- citizen dot constellation -->
+  <g fill="#ffffff" fill-opacity="0.12">
+    <circle cx="120" cy="90" r="3.4"/>
+    <circle cx="260" cy="150" r="3"/>
+    <circle cx="340" cy="70" r="2.6"/>
+    <circle cx="480" cy="230" r="3.2"/>
+    <circle cx="610" cy="110" r="2.8"/>
+    <circle cx="760" cy="260" r="3.4"/>
+    <circle cx="880" cy="150" r="2.6"/>
+    <circle cx="1000" cy="90" r="3"/>
+    <circle cx="1120" cy="240" r="3.2"/>
+    <circle cx="1250" cy="140" r="2.8"/>
+    <circle cx="1340" cy="260" r="3"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1.4">
+    <line x1="120" y1="90" x2="260" y2="150"/>
+    <line x1="260" y1="150" x2="340" y2="70"/>
+    <line x1="480" y1="230" x2="610" y2="110"/>
+    <line x1="610" y1="110" x2="760" y2="260"/>
+    <line x1="880" y1="150" x2="1000" y2="90"/>
+    <line x1="1000" y1="90" x2="1120" y2="240"/>
+    <line x1="1120" y1="240" x2="1250" y2="140"/>
+    <line x1="1250" y1="140" x2="1340" y2="260"/>
+  </g>
+</svg>

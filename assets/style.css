@@ -144,6 +144,10 @@ body {
   max-width: 980px;
 }
 
+.main > section {
+  transition: opacity 0.2s ease;
+}
+
 /* ─── HERO ─────────────────────────────────────────── */
 .hero-banner {
   width: 100%;
@@ -156,27 +160,45 @@ body {
 .hero-banner::before {
   content: '';
   position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("motifs/rpi-skyline.svg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
 }
 
 .hero-banner--mining {
   background: linear-gradient(135deg, #2a1a0e 0%, #6e3d1f 40%, #3a2a0a 100%);
 }
+.hero-banner--mining::before {
+  background-image: url("motifs/mining-peaks.svg");
+}
 
 .hero-banner--loop {
   background: linear-gradient(135deg, #0e1a2a 0%, #1f3d6e 40%, #0a1a3a 100%);
+}
+.hero-banner--loop::before {
+  background-image: url("motifs/loop-arcs.svg");
 }
 
 .hero-banner--porto {
   background: linear-gradient(135deg, #1a0e0e 0%, #6e2d2d 40%, #3a0a0a 100%);
 }
+.hero-banner--porto::before {
+  background-image: url("motifs/porto-bridge.svg");
+}
 
 .hero-banner--pipeline {
   background: linear-gradient(135deg, #0a0f18 0%, #102c46 48%, #0a2a28 100%);
 }
+.hero-banner--pipeline::before {
+  background-image: url("motifs/pipeline-network.svg");
+}
 
 .hero-banner--n8n {
   background: linear-gradient(135deg, #0a1410 0%, #123d2e 48%, #0a2a1c 100%);
+}
+.hero-banner--n8n::before {
+  background-image: url("motifs/n8n-flowchart.svg");
 }
 
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }

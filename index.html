@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sérgio Pedro – Portfolio</title>
+  <meta name="description" content="Portfolio of Sérgio Pedro: regenerative innovation, environmental policy, applied AI, and civic tech projects." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sérgio Pedro – Portfolio" />
+  <meta property="og:description" content="Regenerative innovation, environmental policy, applied AI, and civic tech projects." />
+  <meta property="og:image" content="https://sergiofspedro.github.io/assets/favicon.png" />
+  <meta property="og:url" content="https://sergiofspedro.github.io/" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -15,7 +25,7 @@
   <div class="sidebar-name">Sérgio Pedro</div>
   <div class="sidebar-dot"></div>
   <p class="sidebar-bio">
-    REGENERATIVE INNOVATION &amp; CLIMATE POLICY | DATA ANALYST &amp; APPLIED AI BUILDER | EU CLIMATE PACT AMBASSADOR
+    INNOVATION &amp; ENVIRONMENTAL POLICY | DATA ANALYST &amp; APPLIED AI BUILDER | EU CLIMATE PACT AMBASSADOR
   </p>
 
   <div class="sidebar-projects">
@@ -618,12 +628,23 @@
 
 <script>
   function showProject(id, btn) {
-    document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+    const target = document.getElementById('project-' + id);
+    if (!target) return;
+
     document.querySelectorAll('.sidebar-project-link').forEach(b => b.classList.remove('active'));
-    const s = document.getElementById('project-' + id);
-    if (s) s.style.display = 'block';
     if (btn) btn.classList.add('active');
     history.pushState(null, '', '#' + id);
+
+    const sections = document.querySelectorAll('main > section');
+    sections.forEach(s => { s.style.opacity = '0'; });
+
+    setTimeout(() => {
+      sections.forEach(s => { s.style.display = 'none'; });
+      target.style.display = 'block';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { target.style.opacity = '1'; });
+      });
+    }, 180);
   }
 
   window.addEventListener('DOMContentLoaded', () => {
