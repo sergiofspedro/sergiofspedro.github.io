@@ -247,6 +247,37 @@ body {
   margin-bottom: 30px;
 }
 
+.project-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 28px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.84rem;
+}
+
+.project-info-table tr { border-bottom: 1px solid var(--border); }
+.project-info-table tr:last-child { border-bottom: none; }
+
+.project-info-table th {
+  text-align: left;
+  vertical-align: top;
+  width: 160px;
+  padding: 10px 16px 10px 0;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+.project-info-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 0;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
 .article p {
   font-size: 1rem;
   line-height: 1.8;
