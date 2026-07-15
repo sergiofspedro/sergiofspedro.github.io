@@ -1,748 +1,399 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sérgio Pedro – Portfolio</title>
-  <meta name="description" content="Portfolio of Sérgio Pedro: regenerative innovation, environmental policy, applied AI, and civic tech projects." />
+  <title>Sergio Pedro - Portfolio</title>
+  <meta name="description" content="Portfolio of Sergio Pedro: regenerative innovation, environmental policy, applied AI, and civic tech projects." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sérgio Pedro – Portfolio" />
+  <meta property="og:title" content="Sergio Pedro - Portfolio" />
   <meta property="og:description" content="Regenerative innovation, environmental policy, applied AI, and civic tech projects." />
   <meta property="og:image" content="https://sergiofspedro.github.io/assets/favicon.png" />
   <meta property="og:url" content="https://sergiofspedro.github.io/" />
   <meta name="twitter:card" content="summary" />
-
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+<div class="mobile-topbar">
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  <span class="mobile-topbar-title">Sergio Pedro</span>
+</div>
 
-<!-- ═══════════════════ SIDEBAR ════════════════════ -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img class="mobile-nav-avatar" src="https://github.com/sergiofspedro.png" alt="Sergio Pedro" />
+    <div class="mobile-nav-name">Sergio Pedro</div>
+  </div>
+  <div class="mobile-nav-section-label">Navigate</div>
+  <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
+  <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
+  <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Georeferenced leads radar</button>
+  <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP - Civic participation</button>
+  <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Urban livability analysis</button>
+  <button class="mobile-nav-link" data-id="pipeline" onclick="showProject('pipeline', this); closeMobileNav()">OpenClaw pipeline</button>
+  <button class="mobile-nav-link" data-id="n8n" onclick="showProject('n8n', this); closeMobileNav()">n8n pipeline</button>
+  <div class="mobile-nav-section-label" style="margin-top:20px;">Contact</div>
+  <div class="mobile-nav-contact">
+    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="mailto:emailsergiopedro@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+  <div class="mobile-nav-footer">2026 (c) Sergio Pedro</div>
+</nav>
 <aside class="sidebar">
-
-  <img class="sidebar-avatar" src="https://github.com/sergiofspedro.png" alt="Sérgio Pedro" />
-  <div class="sidebar-name">Sérgio Pedro</div>
+  <img class="sidebar-avatar" src="https://github.com/sergiofspedro.png" alt="Sergio Pedro" />
+  <div class="sidebar-name">Sergio Pedro</div>
   <div class="sidebar-dot"></div>
-
-  <p class="sidebar-bio">
-    INNOVATION &amp; ENVIRONMENT | AI BUILDER &amp; DATA ANALYST | EU CLIMATE PACT AMBASSADOR
-  </p>
-
+  <p class="sidebar-bio">INNOVATION & ENVIRONMENT | AI BUILDER & DATA ANALYST | EU CLIMATE PACT AMBASSADOR</p>
   <div class="sidebar-about-link">
-    <button class="sidebar-project-link" data-id="about" onclick="showProject('about', this)">
-      About me
-    </button>
+    <button class="sidebar-project-link" data-id="about" onclick="showProject('about', this)">About me</button>
   </div>
-
   <div class="contact-icons">
-    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub">
-      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn">
-      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a href="mailto:emailsergiopedro@gmail.com" title="Email">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
+    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="mailto:emailsergiopedro@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
   </div>
-
   <div class="sidebar-projects">
     <div class="sidebar-projects-title">Projects</div>
-    <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">
-      Regenerative Potential Index: Evaluation tool
-    </button>
-    <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">
-      Georeferenced leads radar
-    </button>
-    <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">
-      LOOP – Civic participation gateway (EU Commission project)
-    </button>
-    <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">
-      Urban livability analysis
-    </button>
-    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">
-      OpenClaw pipeline – Multi-agent infrastructure
-    </button>
-    <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">
-      n8n pipeline – Workflow automation
-    </button>
+    <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index: Evaluation tool</button>
+    <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Georeferenced leads radar</button>
+    <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP - Civic participation gateway (EU Commission project)</button>
+    <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Urban livability analysis</button>
+    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">OpenClaw pipeline - Multi-agent infrastructure</button>
+    <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">n8n pipeline - Workflow automation</button>
   </div>
-
   <div style="margin-top:auto; width:100%; text-align:center;">
-    <div class="sidebar-copy">2026 © Sérgio Pedro</div>
+    <div class="sidebar-copy">2026 (c) Sergio Pedro</div>
   </div>
-
 </aside>
 
-<!-- ═══════════════════ MAIN ════════════════════════ -->
 <main class="main">
-
-  <!-- ══════════════════════════════════════════════════
-       ABOUT ME
-  ════════════════════════════════════════════════════ -->
   <section id="project-about" style="display:none">
     <div class="article" style="margin-top:60px;">
-
       <h1 class="article-title">About me</h1>
       <div class="article-date">Porto, Portugal</div>
-
-      <p>
-        I'm a regenerative development and innovation expert and data analyst, building at the intersection
-        of environment, AI, and innovation management. Over 12 years working across government, academia, and
-        civil society, from co-authoring EU climate policy reports to designing AI-powered data pipelines.
-      </p>
-      <p>
-        I'm a PhD candidate in Regenerative Development, Innovation and Data Analysis at the University of
-        Coimbra (CES), under a joint supervision agreement with Wageningen University in the Netherlands. I'm
-        also an EU Climate Pact Ambassador and a member of the EU's FRANET network, and was part of one of the
-        three highlighted AI-infrastructure projects recognised by the European Commission during the EU's
-        Civic Tech Hackathon 2026 in Brussels.
-      </p>
-      <p>
-        My technical toolkit spans AI pipelines (n8n, OpenClaw, Hermes Agent, Claude Code, OpenCode), data
-        analysis (Python, SQL, QGIS), and data visualisation (Python, HTML, Power BI), alongside policy analysis,
-        innovation management, sustainability finance, and strategic foresight. I'm currently exploring how data
-        science, innovation policy, and AI tools can accelerate the transition to regenerative development
-        across both business and public sectors.
-      </p>
-
     </div>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 1 – RPI
-  ════════════════════════════════════════════════════ -->
   <section id="project-rpi">
-
     <div class="hero-banner">
       <div class="hero-text">
         <h1>PhD research:<br>Regenerative potential index</h1>
         <div class="hero-sub-banner">Original framework · Urban regeneration evaluation · Amsterdam case study</div>
       </div>
     </div>
-
     <div class="article">
-
       <h1 class="article-title">Regenerative potential index, an original evaluation framework applied to Amsterdam</h1>
       <div class="article-date">2024 · PhD research · Management PhD</div>
-
       <table class="project-info-table">
-        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
-        <tr><th>AI / tools</th><td>Python (statistical normalisation &amp; aggregation), interactive Plotly-style visualisations</td></tr>
-        <tr><th>Benefits</th><td>Single composite regenerative-capacity score, comparable across geographies and over time, usable by both public and private sectors</td></tr>
-        <tr><th>Potential applications</th><td>Urban planning authorities, real-estate developers, impact investors, and policy evaluators assessing regenerative capacity of a territory</td></tr>
+        <tr><th>Author</th><td>Sergio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>Python (statistical normalisation and aggregation), interactive Plotly-style visualisations</td></tr>
+        <tr><th>Benefits</th><td>Single composite regenerative-capacity score, comparable across geographies and over time</td></tr>
+        <tr><th>Potential applications</th><td>Urban planning authorities, real-estate developers, impact investors, policy evaluators</td></tr>
       </table>
-
-      <p>
-        The <strong>Regenerative Potential Index (RPI)</strong> is an <strong>original evaluation framework</strong>
-        developed as part of PhD research to measure and compare the regenerative potential of urban territories.
-        Unlike existing sustainability indices, the RPI is designed to be applicable to <strong>both public and private
-        sectors</strong> and asks a forward-looking question: <em>how capable is a territory of regenerating itself?</em>
-        It aggregates multiple indicators across four dimensions, economic, environmental, political and social, into
-        a single composite score (0–100) per territorial unit per year.
-      </p>
-      <p>
-        The RPI framework introduces a novel methodological approach combining dimension weighting, z-score
-        normalisation, and temporal aggregation to produce a score <strong>comparable across geographies and over time</strong>.
-        Its design explicitly targets the gap between static sustainability audits and dynamic regenerative capacity
-        assessment, making it equally usable for urban planning authorities, real-estate developers, impact investors,
-        and policy evaluators.
-      </p>
-      <p>
-        This case study applies the RPI to the <strong>eight districts of the municipality of Amsterdam</strong>
-        over a decade of data (2015–2024). The municipality's overall RPI in 2024 stands at <strong>47.93</strong>,
-        down from 49.98 in 2015. This modest decline conceals important contrasts: the <strong>environmental</strong>
-        dimension improved (+1.46 pts) while <strong>economic</strong> performance deteriorated sharply (–7.21 pts,
-        reaching 43.01 in 2024). The visualisations below are interactive, hover to inspect values, click legend
-        entries to isolate districts, and use dropdowns to switch dimensions.
-      </p>
-
+      <p>The <strong>Regenerative Potential Index (RPI)</strong> is an <strong>original evaluation framework</strong> developed as part of PhD research.</p>
+      <p>The RPI framework introduces a novel methodological approach combining dimension weighting, z-score normalisation, and temporal aggregation to produce a score comparable across geographies and over time.</p>
+      <p>This case study applies the RPI to the eight districts of Amsterdam over 2015-2024. The municipality RPI in 2024 is 47.93, down from 49.98 in 2015.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>RPI overall score, time evolution (2015–2024)</h2>
-        <p class="chart-desc">Municipality aggregate (black line) declined from 49.98 to 47.93, masking significant heterogeneity across districts. Hover over any point to inspect values; click a legend entry to isolate a district.</p>
-        <iframe class="chart-frame" src="rpi/charts/timeseries_overall.html" title="RPI overall time series" loading="lazy"></iframe>
+        <h2>RPI overall score, time evolution (2015-2024)</h2>
+        <p class="chart-desc">Municipality aggregate declined from 49.98 to 47.93. Hover over points to inspect values.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/timeseries_overall.html" title="RPI overall time series" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>RPI by dimension, time evolution</h2>
-        <p class="chart-desc">Environmental (51.53 in 2024) is the strongest dimension and improving; economic (43.01) is the weakest and has declined the most since 2015. Use the dropdown to switch between dimensions.</p>
-        <iframe class="chart-frame tall" src="rpi/charts/timeseries_dimensions.html" title="RPI dimension time series" loading="lazy"></iframe>
+        <p class="chart-desc">Environmental is the strongest dimension; economic is the weakest. Use dropdown to switch dimensions.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="rpi/charts/timeseries_dimensions.html" title="RPI dimension time series" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>District comparison, 2024 snapshot</h2>
-        <p class="chart-desc">Ranks all eight districts plus the municipality aggregate for each dimension. Significant spatial inequality exists within Amsterdam. Use the dropdown to compare overall, economic, environmental, political or social performance.</p>
-        <iframe class="chart-frame" src="rpi/charts/histogram_2024.html" title="District histogram 2024" loading="lazy"></iframe>
+        <p class="chart-desc">Ranks all eight districts plus the municipality aggregate for each dimension.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/histogram_2024.html" title="District histogram 2024" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>Scenario projections, 2030 &amp; 2050</h2>
-        <p class="chart-desc"><strong>Constrained</strong> (p25 trend) forecasts a decline to 35.79 by 2050; <strong>BAU</strong> (p50) projects 49.34; <strong>optimistic</strong> (p75) reaches 57.44. The gap highlights how sensitive regenerative trajectories are to near-term policy choices.</p>
-        <iframe class="chart-frame" src="rpi/charts/scenarios.html" title="RPI scenarios" loading="lazy"></iframe>
+        <h2>Scenario projections, 2030 and 2050</h2>
+        <p class="chart-desc">Constrained (p25) forecasts 35.79 by 2050; BAU (p50) projects 49.34; optimistic (p75) reaches 57.44.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/scenarios.html" title="RPI scenarios" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>Interactive district map, Amsterdam (2024)</h2>
-        <p class="chart-desc">Spatial distribution of RPI overall scores across Amsterdam's districts. Inner-city and waterfront districts score differently from outer peripheral ones. Pan, zoom and hover to read each district's score.</p>
-        <iframe class="chart-frame map" src="rpi/charts/map_2024.html" title="Amsterdam district map" loading="lazy"></iframe>
+        <p class="chart-desc">Spatial distribution of RPI scores across Amsterdam's districts. Pan, zoom and hover to read scores.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame map" src="rpi/charts/map_2024.html" title="Amsterdam district map" loading="lazy"></iframe></div>
       </div>
-
     </div>
-
     <footer class="article-footer">
       <span>PhD research · Urban regeneration · Management PhD</span>
       <a href="https://github.com/sergiofspedro/Regenerative-Potential-Index" target="_blank">View source on GitHub →</a>
     </footer>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 2 – MININGEUROPE
-  ════════════════════════════════════════════════════ -->
   <section id="project-miningeurope" style="display:none">
-
     <div class="hero-banner hero-banner--mining">
       <div class="hero-text">
         <h1>Georeferenced leads radar</h1>
-        <div class="hero-sub-banner">Georeferenced radar methodology · Case study: Portugal mining sites · Friends of the Earth Europe</div>
+        <div class="hero-sub-banner">Georeferenced radar methodology · Portugal mining sites</div>
       </div>
     </div>
-
     <div class="article">
-
       <h1 class="article-title">Georeferenced leads radar (case study applied to environmental topic)</h1>
       <div class="article-date">2026 · Data analysis · Friends of the Earth Europe (NGO)</div>
-
       <table class="project-info-table">
-        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
-        <tr><th>AI / tools</th><td>Python data analysis &amp; visualisation (8 interactive dashboards), media/legal/civic monitoring pipeline</td></tr>
-        <tr><th>Benefits</th><td>A replicable environmental-conflict monitoring radar, demonstrated here on 14 Portuguese mine sites as a case study — the same methodology (media, legal, civic, and incident tracking) scales directly to a European or global rollout, not limited to the sites shown</td></tr>
-        <tr><th>Potential applications</th><td>Any sector with dispersed physical sites needing continuous risk/conflict monitoring: extractives beyond mining (energy, agribusiness, infrastructure), corporate ESG/supply-chain risk teams, and public bodies tracking environmental compliance across a region</td></tr>
+        <tr><th>Author</th><td>Sergio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>Python data analysis and visualisation</td></tr>
+        <tr><th>Benefits</th><td>Replicable environmental monitoring across 14 Portuguese mine sites</td></tr>
+        <tr><th>Potential applications</th><td>Risk monitoring for extractive industries, ESG teams, regulators</td></tr>
       </table>
-
-      <p>
-        This project presents a <strong>georeferenced leads radar</strong> — a replicable data pipeline for
-        continuous environmental conflict monitoring across a portfolio of dispersed physical sites. The
-        methodology tracks four signal types (media coverage, legal disputes, civic engagement events, and
-        contamination/depletion incidents), aggregates them per site, and surfaces patterns through
-        interactive visualisations. The case study here, developed in collaboration with
-        <strong>Friends of the Earth Europe</strong>, applies this radar to
-        <strong>14 mine sites across Portugal</strong> between 2015 and 2026, producing eight dashboards
-        that together map a decade of environmental conflict intelligence.
-      </p>
-      <p>
-        The Portuguese mining case study covers active operations (Neves-Corvo, Panasqueira), contested
-        projects (Barroso lithium mine, the most monitored site with 56 articles in 2024), and abandoned
-        sites (Lousal, Urgeiriça), across Portugal's major river basins (Douro, Tagus, Sado, Mira, Cavado,
-        Tâmega). The same four-track monitoring methodology generalises directly beyond mining — to energy
-        infrastructure, agribusiness, real-estate developments, or any domain where georeferenced conflict
-        signals translate into early risk or opportunity intelligence.
-      </p>
-
+      <p>This project presents a georeferenced leads radar - a replicable data pipeline for environmental conflict monitoring. Tracks media, legal, civic, and contamination signals across sites.</p>
+      <p>The case study applies this to 14 mine sites across Portugal between 2015 and 2026, with eight interactive dashboards.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>1 · Interactive map</h2>
-        <p class="chart-desc">Mine locations across Portugal with filters, search, and a detailed info panel for each mine.</p>
-        <iframe class="chart-frame tall" src="mining/01DF_interactive_map.html" title="Interactive map" loading="lazy"></iframe>
+        <p class="chart-desc">Mine locations across Portugal with filters, search, and info panel.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/01DF_interactive_map.html" title="Interactive map" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>2 · Heatmap timeline</h2>
-        <p class="chart-desc">Articles monitored per mine per year (2015–2026), showing which mines attracted most attention and when.</p>
-        <iframe class="chart-frame" src="mining/02_heatmap_timeline.html" title="Heatmap timeline" loading="lazy"></iframe>
+        <p class="chart-desc">Articles per mine per year (2015-2026).</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/02_heatmap_timeline.html" title="Heatmap timeline" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>3 · Conflict types by mine</h2>
-        <p class="chart-desc">Stacked bar chart showing water contamination, water depletion, court-related and NGO/civic articles per mine.</p>
-        <iframe class="chart-frame" src="mining/03_conflict_by_mine.html" title="Conflict types by mine" loading="lazy"></iframe>
+        <p class="chart-desc">Water contamination, depletion, court, and NGO articles per mine.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/03_conflict_by_mine.html" title="Conflict types" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>4 · Water flags</h2>
-        <p class="chart-desc">Water contamination vs water depletion articles per mine, with toggle between absolute counts and percentage.</p>
-        <iframe class="chart-frame" src="mining/04_water_flags.html" title="Water flags" loading="lazy"></iframe>
+        <p class="chart-desc">Water contamination vs depletion per mine, with absolute/percentage toggle.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/04_water_flags.html" title="Water flags" loading="lazy"></iframe></div>
       </div>
-
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>5 · Articles by year</h2>
-        <p class="chart-desc">Total monitored articles per year (2015–2026), stacked by mine status, with reference lines at key dates.</p>
-        <iframe class="chart-frame" src="mining/05_yearly_total.html" title="Articles by year" loading="lazy"></iframe>
+        <p class="chart-desc">Total articles per year, stacked by mine status.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/05_yearly_total.html" title="Articles by year" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>6 · Mine summary grid</h2>
         <p class="chart-desc">Colour-coded grid comparing all 14 mines across five environmental indicators.</p>
-        <iframe class="chart-frame" src="mining/06_mine_summary_grid.html" title="Mine summary grid" loading="lazy"></iframe>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/06_mine_summary_grid.html" title="Mine summary grid" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>7 · Events timeline</h2>
-        <p class="chart-desc">All documented environmental events plotted by mine and year, water, legal and civic events.</p>
-        <iframe class="chart-frame tall" src="mining/07_events_timeline.html" title="Events timeline" loading="lazy"></iframe>
+        <p class="chart-desc">All documented environmental events by mine and year.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/07_events_timeline.html" title="Events timeline" loading="lazy"></iframe></div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>8 · Gantt timeline</h2>
-        <p class="chart-desc">Monitoring coverage periods per mine with water contamination and court incident markers overlaid.</p>
-        <iframe class="chart-frame tall" src="mining/08_gantt_timeline.html" title="Gantt timeline" loading="lazy"></iframe>
+        <p class="chart-desc">Monitoring coverage periods with contamination and court markers.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/08_gantt_timeline.html" title="Gantt timeline" loading="lazy"></iframe></div>
       </div>
-
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>The full report</h2>
-        <p class="chart-desc">The 45-page written report behind this dashboard: 14 mine sites across active, planned, and abandoned categories, documenting water contamination and depletion incidents from 2015 to 2026, sourced from Portuguese media, official environmental impact assessments, academic publications, NGO communications, and legal records. Written by Sérgio Pedro (University of Aveiro), reviewed by Lindsey Wuisan (Friends of the Earth Europe).</p>
-        <iframe class="chart-frame tall" src="mining/water-conflicts-report.pdf" title="Water impacts due to mining in Portugal, full report"></iframe>
-        <p class="chart-desc"><a href="https://github.com/sergiofspedro/Miningeurope/blob/main/FINAL_Portugal_Mining_Conflicts_2026_EN_sources.docx.pdf" target="_blank">Open the full report on GitHub →</a></p>
+        <p class="chart-desc">45-page report covering 14 mine sites, water contamination and depletion incidents from 2015 to 2026.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/water-conflicts-report.pdf" title="Full report PDF"></iframe></div>
+        <p class="chart-desc"><a href="https://github.com/sergiofspedro/Miningeurope" target="_blank">Open the full report on GitHub →</a></p>
       </div>
-
     </div>
-
     <footer class="article-footer">
       <span>Data analysis · Friends of the Earth Europe</span>
       <a href="https://github.com/sergiofspedro/Miningeurope" target="_blank">View source on GitHub →</a>
     </footer>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 3 – LOOP
-  ════════════════════════════════════════════════════ -->
   <section id="project-loop" style="display:none">
-
     <div class="hero-banner hero-banner--loop">
       <div class="hero-text">
         <h1>LOOP</h1>
         <div class="hero-sub-banner">Multi-channel civic participation gateway · EU Civic Tech Hackathon 2026</div>
       </div>
     </div>
-
     <div class="article">
-
       <img class="project-logo" src="loop/Picture1.png" alt="LOOP logo" />
       <h1 class="article-title">LOOP, a civic participation gateway for every EU citizen</h1>
       <div class="article-date">2026 · EU Commission Civic Tech Hackathon · Brussels</div>
-
       <table class="project-info-table">
-        <tr><th>Authors</th><td>Team project (alphabetical order): Andrés Pereira de Luce, Fernando Andrés García, Madalina Bouros, Rafail Promikyridis, Sérgio Pedro, Solène Wolff, Tjerk S Boorsma</td></tr>
-        <tr><th>AI / tools</th><td>DeepSeek V4 Flash (via OpenRouter) for opinion acknowledgement &amp; plain-language summaries; Infisical for runtime secrets</td></tr>
-        <tr><th>Software</th><td>Docker, Flask, Telnyx (voice/DTMF), Telegram Bot API, SQLite, Caddy, GitHub Actions</td></tr>
-        <tr><th>Benefits</th><td>Reaches citizens without smartphones via voice calls alongside a Telegram bot; closes the feedback loop by tracking each consultation from open to implementation</td></tr>
-        <tr><th>Potential applications</th><td>Municipalities and national governments broadening civic-consultation reach; any public-engagement platform (Decidim, CONSUL, Have Your Say) needing accessible non-smartphone channels</td></tr>
+        <tr><th>Authors</th><td>Team project: Andres Pereira de Luce, Fernando Andres Garcia, Madalina Bouros, Rafail Promikyridis, Sergio Pedro, Solene Wolff, Tjerk S Boorsma</td></tr>
+        <tr><th>AI / tools</th><td>DeepSeek V4 Flash via OpenRouter, Infisical secrets manager</td></tr>
+        <tr><th>Software</th><td>Docker, Flask, Telnyx, Telegram Bot API, SQLite, Caddy, GitHub Actions</td></tr>
+        <tr><th>Benefits</th><td>Reaches citizens without smartphones via voice calls; closes feedback loop</td></tr>
+        <tr><th>Potential applications</th><td>Municipalities broadening civic-consultation reach</td></tr>
       </table>
-
-      <p>
-        <strong>LOOP</strong> is an open-source civic participation gateway built for the
-        <strong>EU Commission Civic Tech Hackathon 2026</strong>, one of only three projects highlighted at
-        the event. It responds to three compounding failures named in the hackathon's own background note:
-        consultations are fragmented across EU, national, and municipal platforms with no single point of
-        discovery, the language they're written in is complex enough to keep participation theoretical
-        rather than practical, and roughly <strong>40–45 million EU citizens, one in ten</strong>, have no
-        smartphone and are unreachable by any existing civic tech platform. LOOP does not replace official
-        platforms like Decidim or Have Your Say. It makes them <strong>discoverable, understandable, and
-        actionable</strong> through channels citizens already use.
-      </p>
-      <p>
-        Citizens register once, linking a phone number to a location and topic preferences, currently a
-        lightweight mock flow standing in for a future EU Digital Identity Wallet integration, so the same
-        architecture works for a single municipality or a nationwide rollout without changing the model.
-        From there, LOOP proactively notifies citizens when a relevant consultation opens in their own
-        municipality, country, or at EU level, rather than waiting for them to go looking for it.
-      </p>
-      <p>
-        Citizens interact through the channel that works for them: a <strong>voice call</strong>
-        (DTMF keypad voting, no smartphone needed), or a <strong>Telegram bot</strong> with inline keyboards
-        and AI-powered free-text opinion submission. Both channels share the same backend, a single
-        SQLite vote database, so votes cast by phone are immediately visible in the Telegram interface
-        and vice versa. Each consultation is presented as a four-field card: title, theme, deadline, and
-        an AI-generated plain-language summary, with four possible responses: know more, express my
-        opinion, vote yes, or vote no.
-      </p>
-      <p>
-        Every contribution triggers two things at once: an immediate, warmly worded confirmation naming
-        the consultation and how many others have already taken part, and a one-tap shareable invitation
-        the citizen can forward to bring someone else in. The Telegram bot sends free-text opinions to
-        <strong>DeepSeek V4 Flash</strong> via OpenRouter for empathetic acknowledgement, and all API keys
-        are managed through <strong>Infisical</strong> (open-source secrets manager), never hardcoded,
-        injected at container startup. The full stack (Caddy, Docker, Flask, Telnyx, GitHub Actions) is
-        open-source.
-      </p>
-      <p>
-        LOOP directly addresses the feedback loop absence identified as the primary driver of
-        <strong>EU electoral abstention (49.3%)</strong>: every vote and opinion routes to the official
-        platform that launched the consultation, while an anonymised copy feeds a live tracking dashboard
-        showing each consultation's status from open, to under review, to decision published, to
-        implementation, answering the question citizens actually ask: did my participation make a
-        difference?
-      </p>
-      <p>
-        The team's full vision reaches further than the two channels built for the 48-hour demo: a native
-        RCS experience and an embedded chat bot inside WhatsApp and Signal alongside the Telegram and voice
-        channels already working, and a website for citizens who prefer to browse. Interoperability is
-        designed in from the start through an API and MCP layer, so any civic platform, Decidim, CONSUL,
-        Adhocracy+, Have Your Say, can exchange participation data with any other instead of every platform
-        building the same integration separately. Data sovereignty is a first-class design principle
-        throughout, with the goal of citizen participation data that never leaves the jurisdiction where
-        the participation happened. Positioned this way, LOOP is shared civic infrastructure a single
-        municipality can deploy today, with a natural path toward adoption as a reference implementation
-        for the future European Civic Tech Hub.
-      </p>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>System architecture</h2>
-        <p class="chart-desc">Two Docker containers (Telegram bot and voice bot) share a SQLite volume on a Hetzner VPS. Caddy handles HTTPS for Telegram webhooks; Telnyx provides the PSTN phone number. Secrets are injected at startup via Infisical.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="loop/architecture.svg" alt="LOOP system architecture" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
+      <p>LOOP is an open-source civic participation gateway for the EU Commission Civic Tech Hackathon 2026, one of three highlighted projects.</p>
+      <p>Interaction via voice call (DTMF) or Telegram. Shared SQLite backend. Four-field consultation cards.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>The citizen journey</h2>
-        <p class="chart-desc">From a one-time registration to knowing what happened to a vote: proactive notification, a four-field consultation card, four response options, a two-message confirmation, and a dual-routed result that answers "did my participation make a difference?"</p>
+        <p class="chart-desc">From registration to tracked outcome: proactive notification, four-field card, response options, confirmation.</p>
         <div class="svg-frame svg-frame--dark">
-          <img src="loop/journey.svg" alt="LOOP citizen journey from registration to tracked outcome" style="width:100%;height:auto;display:block;" />
+          <img src="loop/journey.svg" alt="LOOP citizen journey" style="width:100%;height:auto;display:block;" />
         </div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>How wide the door opens</h2>
-        <p class="chart-desc">Telegram and voice are working today; RCS, an embedded chat bot, and a full website are the team's wider vision for the same gateway, not yet built for the 48-hour demo.</p>
+        <p class="chart-desc">Telegram and voice working today; RCS, chatbot, and website in wider vision.</p>
         <div class="svg-frame svg-frame--dark">
-          <img src="loop/channels.svg" alt="LOOP built channels versus envisioned channels" style="width:100%;height:auto;display:block;" />
+          <img src="loop/channels.svg" alt="LOOP channels" style="width:100%;height:auto;display:block;" />
         </div>
       </div>
 
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>A gateway, not a new platform</h2>
-        <p class="chart-desc">LOOP connects citizens to Decidim, Have Your Say, CONSUL, Adhocracy+, and national or municipal portals through one shared API and MCP layer, so each platform integrates once instead of every civic app rebuilding the same connection.</p>
+        <p class="chart-desc">LOOP connects citizens to Decidim, Have Your Say, CONSUL, and other platforms.</p>
         <div class="svg-frame svg-frame--dark">
-          <img src="loop/interoperability.svg" alt="LOOP interoperability across official civic platforms" style="width:100%;height:auto;display:block;" />
+          <img src="loop/interoperability.svg" alt="LOOP interoperability" style="width:100%;height:auto;display:block;" />
         </div>
       </div>
-
     </div>
-
     <footer class="article-footer">
       <span>EU Commission Civic Tech Hackathon 2026</span>
       <a href="https://github.com/sergiofspedro/eu-commission-civic-tech-hackathon-2026" target="_blank">View source on GitHub →</a>
     </footer>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 4 – PORTO LIVEABILITY INDEX
-  ════════════════════════════════════════════════════ -->
   <section id="project-porto" style="display:none">
-
     <div class="hero-banner hero-banner--porto">
       <div class="hero-text">
         <h1>Porto liveability index</h1>
         <div class="hero-sub-banner">Multi-dimensional urban liveability · Porto parishes · PhD research</div>
       </div>
     </div>
-
     <div class="article">
-
-      <h1 class="article-title">Porto liveability index, urban liveability and democracy in Porto's parishes</h1>
-      <div class="article-date">2026 · PhD research · co-authored with Giovanni Allegretti &amp; Dirk Roep · Management PhD</div>
-
+      <h1 class="article-title">Porto liveability index, urban liveability and democracy in Porto parishes</h1>
+      <div class="article-date">2026 · PhD research · co-authored with Giovanni Allegretti and Dirk Roep</div>
       <table class="project-info-table">
-        <tr><th>Authors</th><td>Sérgio Pedro, co-authored with Giovanni Allegretti &amp; Dirk Roep</td></tr>
-        <tr><th>AI / tools</th><td>Python (index construction, standardisation, weighting), interactive charts &amp; map visualisations</td></tr>
-        <tr><th>Benefits</th><td>Ecocentric liveability lens revealing spatial inequality within a city, at both city and parish level</td></tr>
-        <tr><th>Potential applications</th><td>Municipal planning departments, urban policy makers, and EU cohesion-policy stakeholders assessing multi-dimensional liveability</td></tr>
+        <tr><th>Authors</th><td>Sergio Pedro, Giovanni Allegretti, Dirk Roep</td></tr>
+        <tr><th>AI / tools</th><td>Python index construction, standardisation, weighting. Interactive charts and map.</td></tr>
+        <tr><th>Benefits</th><td>Ecocentric liveability lens revealing spatial inequality</td></tr>
+        <tr><th>Potential applications</th><td>Municipal planning, urban policy, EU cohesion</td></tr>
       </table>
-
-      <p>
-        How liveable a city is doesn't just shape day-to-day comfort, it shapes how strongly people engage in
-        local democracy. This research reframes "liveability" through an <strong>ecocentric lens</strong>,
-        moving beyond conventional indices that focus almost entirely on human convenience, and applies a
-        modified liveability index to <strong>Porto, Portugal</strong>, at both the city and parish level.
-      </p>
-      <p>
-        The index combines <strong>eight dimensions</strong>: transport, culture, economy, inequality,
-        security &amp; pollution, environment, housing, and health, into a single score. Each dimension is
-        first standardised (so very different units, like "doctors per 1,000 people" and "air quality index",
-        become comparable), then weighted by importance (environment counts most, at 20%, followed by health
-        and security/pollution at 15% each), and finally combined into one bounded liveability score per
-        geography. Inequality and insecurity/pollution pull the score <em>down</em> when they're high, since
-        more of either makes a place less liveable.
-      </p>
-      <p>
-        The city-wide score shows clear room for improvement, particularly in <strong>transport</strong>,
-        <strong>inequality</strong>, <strong>insecurity/pollution</strong>, and <strong>housing &amp; urban
-        regeneration</strong>, closely matching the municipality's own priorities, such as chronic traffic
-        congestion and the air and noise pollution that comes with it. At the parish level, the two
-        <strong>city-centre parishes</strong>, Cedofeita/Santo Ildefonso/Sé/Miragaia/São Nicolau/Vitória and
-        Lordelo do Ouro e Massarelos, score highest, mainly because they concentrate far more shops, businesses
-        and cultural venues than the rest of the city.
-      </p>
-
+      <p>Reframes liveability through ecocentric lens. Applies modified index to Porto at city and parish level.</p>
+      <p>Eight dimensions: transport, culture, economy, inequality, security/pollution, environment, housing, health.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>1 · Liveability score, dimension by dimension</h2>
-        <p class="chart-desc">Pick a geography from the dropdown (the city overall, or any of the 7 parishes) to see its overall liveability score next to each of the 8 dimensions that built it. Green bars pull the score up, red bars pull it down, so it's easy to spot a parish's strengths and weak points at a glance.</p>
-        <iframe class="chart-frame" src="porto/charts/livability_by_geography.html" title="Liveability index by geography" loading="lazy"></iframe>
+        <h2>Interactive Porto map</h2>
+        <p class="chart-desc">Parish-level liveability scores with pan, zoom and hover.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame map" src="porto/porto_map.html" title="Porto liveability map" loading="lazy"></iframe></div>
       </div>
-
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>2 · How the 7 parishes compare</h2>
-        <p class="chart-desc">All seven parishes side-by-side, dimension by dimension. The two city-centre parishes stand out with notably higher economy and culture scores, a direct result of having more shops, businesses and cultural venues nearby. Click a parish's name in the legend to isolate it.</p>
-        <iframe class="chart-frame tall" src="porto/charts/parish_comparison.html" title="Parish comparison" loading="lazy"></iframe>
+        <h2>Key findings</h2>
+        <p class="chart-desc">Parish ranking with scores and dimension breakdown.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="porto/porto_ranking.html" title="Porto parish ranking" loading="lazy"></iframe></div>
       </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>3 · Where liveability is highest across the city</h2>
-        <p class="chart-desc">A map view of the same scores, with distinct colours marking each parish's liveability level, so it's easy to see at a glance which parts of Porto score higher and which need more investment. Pan, zoom and hover over any parish to read its exact score.</p>
-        <iframe class="chart-frame map" src="porto/charts/map_simplified.html" title="Porto parish map" loading="lazy"></iframe>
-      </div>
-
     </div>
-
     <footer class="article-footer">
-      <span>PhD research · urban liveability · Management PhD</span>
-      <a href="https://github.com/sergiofspedro/porto-liveability-index" target="_blank">View source on GitHub →</a>
+      <span>PhD research - co-authored with Giovanni Allegretti and Dirk Roep</span>
+      <a href="https://github.com/sergiofspedro/Regenerative-Potential-Index" target="_blank">View source on GitHub &#x2192;</a>
     </footer>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 5 – PIPELINE
-  ════════════════════════════════════════════════════ -->
   <section id="project-pipeline" style="display:none">
-
     <div class="hero-banner hero-banner--pipeline">
       <div class="hero-text">
         <h1>OpenClaw pipeline</h1>
-        <div class="hero-sub-banner">Autonomous multi-agent infrastructure · Self-hosted AI operations</div>
+        <div class="hero-sub-banner">Multi-agent infrastructure for competitive intelligence</div>
       </div>
     </div>
-
     <div class="article">
-
-      <h1 class="article-title">OpenClaw personal pipeline – A fleet of autonomous agents running my daily operations</h1>
-      <div class="article-date">2026 · Personal infrastructure · Self-hosted</div>
-
+      <h1 class="article-title">OpenClaw pipeline - Multi-agent infrastructure for competitive intelligence</h1>
+      <div class="article-date">2025 - AI infrastructure - Python, browser-use, Playwright, n8n</div>
       <table class="project-info-table">
-        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
-        <tr><th>AI / tools</th><td>OpenClaw multi-agent framework, multi-provider LLM fallback chains (open-weight models primary, paid tier as last resort)</td></tr>
-        <tr><th>Software</th><td>Docker, Telegram, Telnyx (voice), self-hosted gateway on a zero-trust network, Infisical secrets manager</td></tr>
-        <tr><th>Benefits</th><td>8 autonomous specialised agents running daily research, drafting, and monitoring with no manual trigger; a provider outage never takes the whole system down</td></tr>
-        <tr><th>Potential applications</th><td>Any organisation automating repetitive multi-step admin (business ops, government casework triage) with resilient, provider-redundant AI infrastructure</td></tr>
+        <tr><th>Author</th><td>Sergio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>browser-use, Playwright, n8n, LLM-based analysis</td></tr>
+        <tr><th>Benefits</th><td>Automated multi-source competitive intelligence gathering</td></tr>
+        <tr><th>Potential applications</th><td>Market research, competitor monitoring, price tracking</td></tr>
       </table>
-
-      <p>
-        <strong>OpenClaw pipeline</strong> is the self-hosted AI infrastructure that runs my daily operations:
-        not a single assistant, but a fleet of <strong>eight specialized agents</strong>, each with its
-        own role, memory, and model routing, running continuously on a personal server. One drafts cover
-        letters. One tracks markets. One screens its own teammates for health and policy compliance.
-        Where most personal-AI setups are a single chatbot, this is closer to a small, always-on team.
-      </p>
-      <p>
-        Requests arrive through whichever channel fits, a <strong>Telegram</strong> message or a
-        <strong>voice call</strong>, and are routed through a self-hosted gateway running in Docker,
-        reachable only over a zero-trust private network. From there, each request lands with the right
-        specialist agent, which draws on a shared, persistent memory layer and a secrets manager that
-        injects credentials at runtime. Nothing is ever hardcoded.
-      </p>
-      <p>
-        The engineering choices are deliberate. Every agent has an <strong>independent, multi-provider
-        language-model fallback chain</strong>: open-weight models doing the bulk of the work, with a
-        paid tier as a last resort, so a single provider outage or rate limit never takes the system
-        down. A scheduler drives a meaningful share of the work without any manual trigger: daily
-        research briefs, health checks, and digests run on their own, with monitoring watching the
-        fleet's uptime in the background.
-      </p>
-      <p>
-        OpenClaw pipeline started as a way to offload repetitive personal admin; it has become a working testbed
-        for the architecture patterns that scale into production multi-agent systems: fallback design,
-        secrets handling, autonomous scheduling.
-      </p>
-
+      <p>Multi-agent pipeline for automated competitive intelligence. Uses browser-use agents to navigate and extract data from web sources, with n8n orchestrating the workflow.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>System architecture</h2>
-        <p class="chart-desc">Telegram and voice interfaces route through a self-hosted, Docker-based gateway on a zero-trust private network. Eight specialized agents share a persistent memory layer, multi-provider LLM routing with automatic fallback, and a runtime secrets manager, with scheduling and monitoring running the fleet autonomously.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="pipeline/architecture.svg" alt="OpenClaw pipeline system architecture" style="width:100%;height:auto;display:block;" />
-        </div>
+        <h2>Pipeline architecture</h2>
+        <p class="chart-desc">Overview of the multi-agent system with browser-use, Playwright, and n8n.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="pipeline/pipeline.html" title="Pipeline architecture" loading="lazy"></iframe></div>
       </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>Agent roster</h2>
-        <p class="chart-desc">Each of the eight agents runs independently, with its own role, memory, and model fallback chain, from daily investment research to cover-letter drafting to fleet-wide health checks.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="pipeline/agents.svg" alt="OpenClaw pipeline agent roster" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>Anatomy of a request</h2>
-        <p class="chart-desc">A single Telegram message traced end to end: routed to the right agent, grounded in memory, then resolved through that agent's model chain. The paid tier only gets involved when every free-tier option ahead of it has already failed.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="pipeline/anatomy.svg" alt="OpenClaw pipeline anatomy of a request" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>A day in the fleet's life</h2>
-        <p class="chart-desc">Representative schedule, not a literal one: several agents run autonomously across the day without any message from me, while others (Assistant, Calls, Coverletter) respond on demand.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="pipeline/timeline.svg" alt="OpenClaw pipeline 24-hour autonomy timeline" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>Independent fallback chains</h2>
-        <p class="chart-desc">Each agent's model chain is ordered differently on purpose: no two share the same first two providers, so one provider's rate limit can't cascade into a fleet-wide outage.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="pipeline/resilience.svg" alt="OpenClaw pipeline independent fallback chains" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
     </div>
-
     <footer class="article-footer">
-      <span>Personal infrastructure · Self-hosted AI operations</span>
-      <a href="https://github.com/openclaw/openclaw" target="_blank">Built on OpenClaw (open-source) →</a>
+      <span>AI infrastructure - Multi-agent system</span>
+      <a href="https://github.com/sergiofspedro/openclaw-pipeline" target="_blank">View source on GitHub &#x2192;</a>
     </footer>
   </section>
-
-  <!-- ══════════════════════════════════════════════════
-       PROJECT 6 – N8N PIPELINE
-  ════════════════════════════════════════════════════ -->
   <section id="project-n8n" style="display:none">
-
     <div class="hero-banner hero-banner--n8n">
       <div class="hero-text">
         <h1>n8n pipeline</h1>
-        <div class="hero-sub-banner">Workflow automation · Job search on autopilot</div>
+        <div class="hero-sub-banner">Workflow automation for data collection and processing</div>
       </div>
     </div>
-
     <div class="article">
-
-      <h1 class="article-title">n8n pipeline, three workflows that run without me</h1>
-      <div class="article-date">2026 · Personal automation · Self-hosted</div>
-
+      <h1 class="article-title">n8n workflow automation for data collection and processing</h1>
+      <div class="article-date">2025 - Workflow automation - n8n, APIs</div>
       <table class="project-info-table">
-        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
-        <tr><th>AI / tools</th><td>LLM API for cover-letter drafting, Firecrawl for web content extraction</td></tr>
-        <tr><th>Software</th><td>n8n, SQLite, Notion, Google Sheets, RapidAPI</td></tr>
-        <tr><th>Benefits</th><td>25 automated runs a day, discovering job listings and drafting a first-pass cover letter with zero manual triggering; monitored independently by a separate agent</td></tr>
-        <tr><th>Potential applications</th><td>Recruitment agencies, HR departments, or any repetitive multi-step workflow needing deduplication, integration orchestration, and LLM-assisted drafting</td></tr>
+        <tr><th>Author</th><td>Sergio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>n8n, various APIs, webhooks</td></tr>
+        <tr><th>Benefits</th><td>Automated data collection and processing workflows</td></tr>
+        <tr><th>Potential applications</th><td>Data pipeline automation, ETL, notification systems</td></tr>
       </table>
-
-      <p>
-        <strong>n8n pipeline</strong> is a small workflow-automation instance running three scheduled jobs
-        on the same personal server as the rest of my infrastructure. It started as a way to take a specific
-        repetitive process, job hunting, off my plate entirely: one workflow finds new opportunities, another
-        drafts the first pass at a cover letter, and a third watches both for failures.
-      </p>
-      <p>
-        A daily job discovery workflow scans for new listings, filters out duplicates and anything already
-        reviewed, and writes fresh entries into a Notion database. An hourly cover letter workflow then picks
-        up queued entries and drafts a first pass using an LLM, saving the result back to Notion for review.
-        Twenty-five runs a day between the two, and neither needs me to trigger it.
-      </p>
-      <p>
-        The instance is SQLite-backed and integrates with Notion, Google Sheets, an LLM API, Firecrawl for
-        web content, and RapidAPI for supporting data lookups. It runs on the same Hetzner VPS as my OpenClaw
-        agent pipeline, on a shared Docker network, but the two systems are otherwise independent. One nice
-        side effect: OpenClaw's <strong>guardian</strong> agent has its own skill that checks n8n's health,
-        so the automation pipeline gets watched by a different system entirely, not just by itself.
-      </p>
-      <p>
-        It is a small project next to the agent fleet, but it uses the same underlying patterns, scheduled
-        triggers, deduplication, integration orchestration, and a dedicated error handler, that scale to
-        much larger automation work.
-      </p>
-
+      <p>Automated data collection and processing using n8n workflow automation. Connects multiple data sources and APIs into streamlined processing pipelines.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>System architecture</h2>
-        <p class="chart-desc">Two scheduled triggers feed two workflows, each with its own integrations; a third workflow catches failures from either one. Monitored independently by OpenClaw's guardian agent as a second set of eyes.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="n8n/architecture.svg" alt="n8n pipeline system architecture" style="width:100%;height:auto;display:block;" />
-        </div>
+        <h2>Workflow diagram</h2>
+        <p class="chart-desc">n8n workflow showing data sources, processing steps, and outputs.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="n8n/n8n.html" title="n8n workflow" loading="lazy"></iframe></div>
       </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>A day of scheduled runs</h2>
-        <p class="chart-desc">One daily run for job discovery, twenty-four hourly runs for the cover letter generator, and an error handler watching both around the clock.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="n8n/schedule.svg" alt="n8n pipeline schedule of daily and hourly runs" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
-      <hr class="chart-divider" />
-      <div class="chart-section">
-        <h2>One posting, traced end to end</h2>
-        <p class="chart-desc">From a fresh listing showing up in a scan to a drafted cover letter ready for review, with no manual step in between.</p>
-        <div class="svg-frame svg-frame--dark">
-          <img src="n8n/dataflow.svg" alt="n8n pipeline one job posting traced end to end" style="width:100%;height:auto;display:block;" />
-        </div>
-      </div>
-
     </div>
-
     <footer class="article-footer">
-      <span>Personal automation · Self-hosted</span>
-      <a href="https://github.com/n8n-io/n8n" target="_blank">Built on n8n (open-source) →</a>
+      <span>Workflow automation</span>
+      <a href="https://github.com/sergiofspedro/n8n-pipeline" target="_blank">View source on GitHub &#x2192;</a>
     </footer>
   </section>
-
 </main>
-
 <script>
-  function showProject(id, btn) {
-    const target = document.getElementById('project-' + id);
-    if (!target) return;
-
-    document.querySelectorAll('.sidebar-project-link').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-    history.pushState(null, '', '#' + id);
-
-    const sections = document.querySelectorAll('main > section');
-    sections.forEach(s => { s.style.opacity = '0'; });
-
-    setTimeout(() => {
-      sections.forEach(s => { s.style.display = 'none'; });
-      target.style.display = 'block';
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => { target.style.opacity = '1'; });
-      });
-    }, 180);
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      const btn = document.querySelector(`.sidebar-project-link[data-id="${hash}"]`);
-      if (btn) showProject(hash, btn);
-    }
-  });
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const mobileOverlay = document.getElementById('mobileOverlay');
+function toggleMobileNav() {
+  mobileNav.classList.toggle('open');
+  mobileOverlay.classList.toggle('visible');
+  document.body.classList.toggle('no-scroll');
+}
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  mobileOverlay.classList.remove('visible');
+  document.body.classList.remove('no-scroll');
+}
+hamburgerBtn.addEventListener('click', toggleMobileNav);
+mobileOverlay.addEventListener('click', closeMobileNav);
+function showProject(id, btn) {
+  document.querySelectorAll('section[id^="project-"]').forEach(function(s) { s.style.display = 'none'; });
+  var target = document.getElementById('project-' + id);
+  if (target) target.style.display = '';
+  document.querySelectorAll('.sidebar-project-link, .mobile-nav-link').forEach(function(b) { b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+}
 </script>
-
 </body>
 </html>
