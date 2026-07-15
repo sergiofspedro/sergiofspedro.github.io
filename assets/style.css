@@ -396,6 +396,16 @@ body {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.mobile-topbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
 .mobile-topbar-title {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.8rem;
