@@ -565,11 +565,11 @@ body.no-scroll { overflow: hidden; }
   }
 
   .chart-frame {
-    width: 700px;
-    height: 400px;
+    width: 100%;
+    height: 520px;
   }
   .chart-frame.tall {
-    height: 500px;
+    height: 700px;
   }
 
   .svg-frame {
@@ -683,11 +683,11 @@ body.no-scroll { overflow: hidden; }
   }
 
   .chart-frame {
-    width: 700px;
-    height: 320px;
+    width: 100%;
+    height: 520px;
   }
   .chart-frame.tall {
-    height: 420px;
+    height: 700px;
   }
 
   .article-footer {
