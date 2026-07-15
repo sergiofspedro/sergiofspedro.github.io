@@ -316,13 +316,13 @@
       <div class="chart-section">
         <h2>Interactive Porto map</h2>
         <p class="chart-desc">Parish-level liveability scores with pan, zoom and hover.</p>
-        <div class="chart-wrapper"><iframe class="chart-frame map" src="porto/porto_map.html" title="Porto liveability map" loading="lazy"></iframe></div>
+        <div class="chart-wrapper"><iframe class="chart-frame map" src="porto/charts/map_simplified.html" title="Porto parish map" loading="lazy"></iframe></div>
       </div>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>Key findings</h2>
         <p class="chart-desc">Parish ranking with scores and dimension breakdown.</p>
-        <div class="chart-wrapper"><iframe class="chart-frame" src="porto/porto_ranking.html" title="Porto parish ranking" loading="lazy"></iframe></div>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="porto/charts/parish_comparison.html" title="Porto parish comparison" loading="lazy"></iframe></div>
       </div>
     </div>
     <footer class="article-footer">
@@ -349,9 +349,43 @@
       <p>Multi-agent pipeline for automated competitive intelligence. Uses browser-use agents to navigate and extract data from web sources, with n8n orchestrating the workflow.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>Pipeline architecture</h2>
-        <p class="chart-desc">Overview of the multi-agent system with browser-use, Playwright, and n8n.</p>
-        <div class="chart-wrapper"><iframe class="chart-frame" src="pipeline/pipeline.html" title="Pipeline architecture" loading="lazy"></iframe></div>
+        <h2>System architecture</h2>
+        <p class="chart-desc">How the multi-agent system works end-to-end.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/architecture.svg" alt="OpenClaw pipeline system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Autonomous agents</h2>
+        <p class="chart-desc">The fleet of agents that run daily operations.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/agents.svg" alt="OpenClaw pipeline agent roster" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Anatomy of a request</h2>
+        <p class="chart-desc">How a task moves through the pipeline.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/anatomy.svg" alt="OpenClaw pipeline anatomy of a request" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>24-hour autonomy</h2>
+        <p class="chart-desc">Timeline of scheduled and event-driven runs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/timeline.svg" alt="OpenClaw pipeline 24-hour autonomy timeline" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Resilience model</h2>
+        <p class="chart-desc">Independent fallback chains keep the system running.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/resilience.svg" alt="OpenClaw pipeline independent fallback chains" style="width:100%;height:auto;display:block;" />
+        </div>
       </div>
     </div>
     <footer class="article-footer">
@@ -378,9 +412,27 @@
       <p>Automated data collection and processing using n8n workflow automation. Connects multiple data sources and APIs into streamlined processing pipelines.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>Workflow diagram</h2>
-        <p class="chart-desc">n8n workflow showing data sources, processing steps, and outputs.</p>
-        <div class="chart-wrapper"><iframe class="chart-frame" src="n8n/n8n.html" title="n8n workflow" loading="lazy"></iframe></div>
+        <h2>System architecture</h2>
+        <p class="chart-desc">How the n8n workflows connect to data sources and outputs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/architecture.svg" alt="n8n pipeline system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Schedule</h2>
+        <p class="chart-desc">Daily and hourly scheduled runs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/schedule.svg" alt="n8n pipeline schedule of daily and hourly runs" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Data flow</h2>
+        <p class="chart-desc">One job posting traced end to end.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/dataflow.svg" alt="n8n pipeline one job posting traced end to end" style="width:100%;height:auto;display:block;" />
+        </div>
       </div>
     </div>
     <footer class="article-footer">
