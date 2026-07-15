@@ -564,9 +564,8 @@ body.no-scroll { overflow: hidden; }
     font-size: 1.05rem;
   }
 
-  .chart-frame,
-  .chart-frame.tall,
-  .chart-frame.map {
+  .chart-frame {
+    width: 700px;
     height: 400px;
   }
   .chart-frame.tall {
@@ -684,13 +683,11 @@ body.no-scroll { overflow: hidden; }
   }
 
   .chart-frame {
+    width: 700px;
     height: 320px;
   }
   .chart-frame.tall {
     height: 420px;
-  }
-  .chart-frame.map {
-    height: 320px;
   }
 
   .article-footer {
