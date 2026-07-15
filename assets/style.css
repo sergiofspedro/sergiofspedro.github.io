@@ -567,8 +567,10 @@ body.no-scroll { overflow: hidden; }
   .chart-frame,
   .chart-frame.tall,
   .chart-frame.map {
-    height: auto;
-    min-height: 380px;
+    height: 400px;
+  }
+  .chart-frame.tall {
+    height: 500px;
   }
 
   .svg-frame {
@@ -681,10 +683,14 @@ body.no-scroll { overflow: hidden; }
     font-size: 0.75rem;
   }
 
-  .chart-frame,
-  .chart-frame.tall,
+  .chart-frame {
+    height: 320px;
+  }
+  .chart-frame.tall {
+    height: 420px;
+  }
   .chart-frame.map {
-    min-height: 280px;
+    height: 320px;
   }
 
   .article-footer {
