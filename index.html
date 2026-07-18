@@ -101,7 +101,7 @@
   <section id="project-rpi">
     <div class="hero-banner">
       <div class="hero-text">
-        <h1>PhD research:<br>Regenerative potential index</h1>
+        <h1>Regenerative Potential Index<br>Evaluation tool</h1>
         <div class="hero-sub-banner">Original framework · Urban regeneration evaluation · Amsterdam case study</div>
       </div>
     </div>
@@ -118,9 +118,29 @@
         <tr><th>Benefits</th><td>Single composite regenerative-capacity score, comparable across geographies and over time</td></tr>
         <tr><th>Potential applications</th><td>Urban planning authorities, real-estate developers, impact investors, policy evaluators</td></tr>
       </table>
-      <p>The <strong>Regenerative Potential Index (RPI)</strong> is an <strong>original evaluation framework</strong> developed as part of PhD research.</p>
-      <p>The RPI framework introduces a novel methodological approach combining dimension weighting, z-score normalisation, and temporal aggregation to produce a score comparable across geographies and over time.</p>
-      <p>This case study applies the RPI to the eight districts of Amsterdam over 2015-2024. The municipality RPI in 2024 is 47.93, down from 49.98 in 2015.</p>
+      <p>
+        The <strong>Regenerative Potential Index (RPI)</strong> is an <strong>original evaluation framework</strong>
+        developed as part of PhD research to measure and compare the regenerative potential of urban territories.
+        Unlike existing sustainability indices, the RPI is designed to be applicable to <strong>both public and private
+        sectors</strong> and asks a forward looking question: how capable is a territory of regenerating itself?
+        It aggregates multiple indicators across four dimensions, economic, environmental, political and social, into
+        a single composite score (0 to 100) per territorial unit per year.
+      </p>
+      <p>
+        This case study applies the RPI to the <strong>eight districts of the municipality of Amsterdam</strong>
+        over a decade of data (2015 to 2024). The municipality's overall RPI in 2024 stands at <strong>47.93</strong>,
+        down from 49.98 in 2015. This modest decline conceals important contrasts: the <strong>environmental</strong>
+        dimension improved (+1.46 points) while <strong>economic</strong> performance deteriorated sharply (-7.21 points,
+        reaching 43.01 in 2024). The visualisations below are interactive, hover to inspect values, click legend
+        entries to isolate districts, and use dropdowns to switch dimensions.
+      </p>
+      <p>
+        For decision-makers, a single comparable score turns scattered sustainability data into something usable.
+        <strong>Municipal planning departments</strong> can prioritise regeneration spend across districts instead of
+        applying a blanket policy citywide. <strong>Real-estate developers and impact investors</strong> get a
+        benchmarkable regenerative-capacity signal before committing capital to a territory. <strong>Policy evaluators</strong>
+        gain a way to track a territory's trajectory over time, rather than relying on a one-off static audit.
+      </p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>RPI overall score, time evolution (2015-2024)</h2>
@@ -181,8 +201,8 @@
         <tr><th>Benefits</th><td>Replicable environmental monitoring across 14 Portuguese mine sites</td></tr>
         <tr><th>Potential applications</th><td>Risk monitoring for extractive industries, ESG teams, regulators</td></tr>
       </table>
-      <p>This project presents a georeferenced leads radar - a replicable data pipeline for environmental conflict monitoring. Tracks media, legal, civic, and contamination signals across sites.</p>
-      <p>The case study applies this to 14 mine sites across Portugal between 2015 and 2026, with eight interactive dashboards.</p>
+      <p>This project presents a georeferenced leads radar, a replicable data pipeline for continuous environmental conflict monitoring across a portfolio of dispersed physical sites. It tracks four signal types, media coverage, legal disputes, civic engagement events, and contamination or depletion incidents, aggregates them per site, and surfaces patterns through interactive visualisations.</p>
+      <p>The case study shown below, developed in collaboration with <strong>Friends of the Earth Europe</strong>, applies this radar to <strong>14 mine sites across Portugal</strong> between 2015 and 2026, producing eight dashboards. It covers active operations (Neves-Corvo, Panasqueira), contested projects (Barroso lithium mine, peaking at 56 articles in 2024), and abandoned sites (Lousal, Urgeiriça), across major river basins (Douro, Tagus, Sado, Mira, Cavado, Tâmega). The charts below reflect this one implementation, not the ceiling of what the methodology can cover, it scales directly to a European or global rollout, and generalises beyond mining to any sector with dispersed sites needing continuous risk or conflict monitoring.</p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>1 · Interactive map</h2>
@@ -253,7 +273,7 @@
   <section id="project-loop" style="display:none">
     <div class="hero-banner hero-banner--loop">
       <div class="hero-text">
-        <h1>LOOP</h1>
+        <h1>LOOP<br>Civic participation gateway</h1>
         <div class="hero-sub-banner">Multi-channel civic participation gateway · EU Civic Tech Hackathon 2026</div>
       </div>
     </div>
@@ -275,8 +295,64 @@
         <tr><th>Benefits</th><td>Reaches citizens without smartphones via voice calls; closes feedback loop</td></tr>
         <tr><th>Potential applications</th><td>Municipalities broadening civic-consultation reach</td></tr>
       </table>
-      <p>LOOP is an open-source civic participation gateway for the EU Commission Civic Tech Hackathon 2026, one of three highlighted projects.</p>
-      <p>Interaction via voice call (DTMF) or Telegram. Shared SQLite backend. Four-field consultation cards.</p>
+      <div class="project-callout">
+        <strong>Recognized by the European Commission.</strong> LOOP was 1 of only around 50 participants the European Commission selected from all applicants to the EU Civic Tech Hackathon 2026, and was recognized as an AI solution highlighted by the Commission during the event, 1 of only 3 projects so recognized.
+      </div>
+      <p>
+        <strong>LOOP</strong> is an open-source civic participation gateway built for the
+        <strong>EU Commission Civic Tech Hackathon 2026</strong>. It responds to three compounding failures named in the hackathon's own background note:
+        consultations are fragmented across EU, national, and municipal platforms with no single point of
+        discovery, the language they're written in is complex enough to keep participation theoretical
+        rather than practical, and roughly <strong>40 to 45 million EU citizens, one in ten</strong>, have no
+        smartphone and are unreachable by any existing civic tech platform. LOOP does not replace official
+        platforms like Decidim or Have Your Say, it makes them <strong>discoverable, understandable, and
+        actionable</strong> through channels citizens already use.
+      </p>
+      <p>
+        Citizens register once, linking a phone number to a location and topic preferences, currently a
+        lightweight mock flow standing in for a future EU Digital Identity Wallet integration, so the same
+        architecture works for a single municipality or a nationwide rollout without changing the model.
+        From there, LOOP proactively notifies citizens when a relevant consultation opens in their own
+        municipality, country, or at EU level, rather than waiting for them to go looking for it.
+      </p>
+      <p>
+        Citizens interact through the channel that works for them: a <strong>voice call</strong>
+        (DTMF keypad voting, no smartphone needed), or a <strong>Telegram bot</strong> with inline keyboards
+        and AI-powered free-text opinion submission. Both channels share the same backend, a single
+        SQLite vote database, so votes cast by phone are immediately visible in the Telegram interface
+        and vice versa. Each consultation is presented as a four-field card: title, theme, deadline, and
+        an AI-generated plain-language summary, with four possible responses: know more, express my
+        opinion, vote yes, or vote no.
+      </p>
+      <p>
+        Every contribution triggers two things at once: an immediate, warmly worded confirmation naming
+        the consultation and how many others have already taken part, and a one-tap shareable invitation
+        the citizen can forward to bring someone else in. The Telegram bot sends free-text opinions to
+        <strong>DeepSeek V4 Flash</strong> via OpenRouter for empathetic acknowledgement, and all API keys
+        are managed through <strong>Infisical</strong> (open-source secrets manager), never hardcoded,
+        injected at container startup. The full stack (Caddy, Docker, Flask, Telnyx, GitHub Actions) is
+        open-source.
+      </p>
+      <p>
+        LOOP directly addresses the feedback loop absence identified as the primary driver of
+        <strong>EU electoral abstention (49.3%)</strong>: every vote and opinion routes to the official
+        platform that launched the consultation, while an anonymised copy feeds a live tracking dashboard
+        showing each consultation's status from open, to under review, to decision published, to
+        implementation, answering the question citizens actually ask: did my participation make a
+        difference?
+      </p>
+      <p>
+        The team's full vision reaches further than the two channels built for the 48-hour demo: a native
+        RCS experience and an embedded chat bot inside WhatsApp and Signal alongside the Telegram and voice
+        channels already working, and a website for citizens who prefer to browse. Interoperability is
+        designed in from the start through an API and MCP layer, so any civic platform, Decidim, CONSUL,
+        Adhocracy+, Have Your Say, can exchange participation data with any other instead of every platform
+        building the same integration separately. Data sovereignty is a first-class design principle
+        throughout, with the goal of citizen participation data that never leaves the jurisdiction where
+        the participation happened. Positioned this way, LOOP is shared civic infrastructure a single
+        municipality can deploy today, with a natural path toward adoption as a reference implementation
+        for the future European Civic Tech Hub.
+      </p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>The citizen journey</h2>
@@ -312,7 +388,7 @@
   <section id="project-porto" style="display:none">
     <div class="hero-banner hero-banner--porto">
       <div class="hero-text">
-        <h1>Porto liveability index</h1>
+        <h1>Urban livability analysis</h1>
         <div class="hero-sub-banner">Multi-dimensional urban liveability · Porto parishes · PhD research</div>
       </div>
     </div>
@@ -330,8 +406,38 @@
         <tr><th>Benefits</th><td>Ecocentric liveability lens revealing spatial inequality</td></tr>
         <tr><th>Potential applications</th><td>Municipal planning, urban policy, EU cohesion</td></tr>
       </table>
-      <p>Reframes liveability through ecocentric lens. Applies modified index to Porto at city and parish level.</p>
-      <p>Eight dimensions: transport, culture, economy, inequality, security/pollution, environment, housing, health.</p>
+      <p>
+        How liveable a city is doesn't just shape day-to-day comfort, it shapes how strongly people engage in
+        local democracy. This research reframes liveability through an <strong>ecocentric lens</strong>,
+        moving beyond conventional indices that focus almost entirely on human convenience, and applies a
+        modified liveability index to <strong>Porto, Portugal</strong>, at both the city and parish level.
+      </p>
+      <p>
+        The index combines <strong>eight dimensions</strong>: transport, culture, economy, inequality,
+        security and pollution, environment, housing, and health, into a single score. Each dimension is
+        first standardised (so very different units, like doctors per 1,000 people and air quality index,
+        become comparable), then weighted by importance (environment counts most, at 20%, followed by health
+        and security/pollution at 15% each), and finally combined into one bounded liveability score per
+        geography. Inequality and insecurity/pollution pull the score down when they're high, since
+        more of either makes a place less liveable.
+      </p>
+      <p>
+        The city-wide score shows clear room for improvement, particularly in <strong>transport</strong>,
+        <strong>inequality</strong>, <strong>insecurity/pollution</strong>, and <strong>housing and urban
+        regeneration</strong>, closely matching the municipality's own priorities, such as chronic traffic
+        congestion and the air and noise pollution that comes with it. At the parish level, the two
+        <strong>city-centre parishes</strong>, Cedofeita/Santo Ildefonso/Sé/Miragaia/São Nicolau/Vitória and
+        Lordelo do Ouro e Massarelos, score highest, mainly because they concentrate far more shops, businesses
+        and cultural venues than the rest of the city.
+      </p>
+      <p>
+        For decision-makers, an eight-dimension breakdown is more actionable than a single liveability number.
+        <strong>Municipal planning departments</strong> can target the specific weak dimension in each parish
+        (transport in one, housing in another) rather than applying a citywide blanket policy that overspends
+        where it isn't needed. <strong>EU cohesion-policy stakeholders</strong> get a comparable, multi-dimensional
+        basis for allocating funds across parishes, instead of relying on a single proxy metric that hides where
+        the real gap is.
+      </p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>Interactive Porto map</h2>
@@ -353,7 +459,7 @@
   <section id="project-pipeline" style="display:none">
     <div class="hero-banner hero-banner--pipeline">
       <div class="hero-text">
-        <h1>OpenClaw pipeline</h1>
+        <h1>OpenClaw pipeline<br>Multi-agent infrastructure</h1>
         <div class="hero-sub-banner">Multi-agent infrastructure for competitive intelligence</div>
       </div>
     </div>
@@ -375,7 +481,24 @@
         <tr><th>Benefits</th><td>Automated multi-source competitive intelligence gathering</td></tr>
         <tr><th>Potential applications</th><td>Market research, competitor monitoring, price tracking</td></tr>
       </table>
-      <p>Multi-agent pipeline for automated competitive intelligence and opportunity monitoring. Uses browser-use agents to navigate and extract data from web sources, a calls bot that scrapes open calls for funding, prizes, competitions, and courses, and n8n orchestrating the full workflow with notifications and reporting.</p>
+      <p>
+        This is a multi-agent pipeline for automated competitive intelligence and opportunity monitoring, built on
+        <strong>OpenClaw</strong>. Browser-use agents navigate and extract data directly from web sources, a
+        dedicated <strong>calls bot</strong> continuously scrapes open calls for funding grants, prizes,
+        competitions, and courses across dozens of sources, and <strong>n8n</strong> orchestrates the full
+        workflow end to end, from collection through processing to notification and reporting.
+      </p>
+      <p>
+        The system runs autonomously around the clock, combining scheduled runs with event-driven triggers so
+        new opportunities and signals surface without anyone checking a source manually. Independent fallback
+        chains keep individual agents running even when a specific source or API is temporarily unavailable.
+      </p>
+      <p>
+        For a business, the value is in what this replaces: continuous, structured monitoring that would
+        otherwise require someone manually checking dozens of sources every day. The same agent architecture
+        applies well beyond this specific use case, to any business that needs ongoing competitive intelligence,
+        opportunity discovery, or market monitoring without adding manual research overhead.
+      </p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>System architecture</h2>
@@ -425,7 +548,7 @@
   <section id="project-n8n" style="display:none">
     <div class="hero-banner hero-banner--n8n">
       <div class="hero-text">
-        <h1>n8n pipeline</h1>
+        <h1>n8n pipeline<br>Workflow automation</h1>
         <div class="hero-sub-banner">Workflow automation for data collection and processing</div>
       </div>
     </div>
@@ -444,7 +567,19 @@
         <tr><th>Benefits</th><td>Automated data collection and processing workflows</td></tr>
         <tr><th>Potential applications</th><td>Data pipeline automation, ETL, notification systems</td></tr>
       </table>
-      <p>Automated data collection and processing using n8n workflow automation. Connects multiple data sources and APIs into streamlined processing pipelines.</p>
+      <p>
+        This project orchestrates scheduled and hourly data-collection runs across multiple job-board and API
+        sources using <strong>n8n</strong>, tracing each listing from initial discovery through normalisation
+        into <strong>SQLite</strong>, then syncing structured results into <strong>Notion</strong> for review
+        and reporting. Custom Python steps handle transformation and API integration wherever a source needs
+        more than a standard connector.
+      </p>
+      <p>
+        The same orchestration pattern generalises well beyond job discovery, to any recurring data-collection
+        need a business has: competitor pricing, lead lists, market listings, or any other source that changes
+        often enough to need continuous monitoring. It removes the manual collection work entirely and replaces
+        scattered manual exports with a single, queryable, always-current dataset.
+      </p>
       <hr class="chart-divider" />
       <div class="chart-section">
         <h2>System architecture</h2>
