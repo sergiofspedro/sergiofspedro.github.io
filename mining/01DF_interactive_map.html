@@ -101,6 +101,17 @@
                 transform: translate(-50%,-50%); background: white; padding: 16px 24px;
                 border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
                 font-size: 14px; color: #666; z-index: 400; text-align: center; }
+
+  @media (max-width: 700px) {
+    #main { flex-direction: column; overflow: auto; }
+    #map { flex: 1 1 55vh; min-height: 280px; }
+    #sidebar { width: 100%; min-width: 0; flex: 1 1 auto; max-height: 45vh;
+               box-shadow: 0 -3px 12px rgba(0,0,0,0.12); }
+    #topbar { padding: 8px 10px; gap: 8px; }
+    .filter-group { flex: 1 1 auto; }
+    #topbar input { width: 100%; min-width: 0; }
+    #clear-btn { margin-left: 0; }
+  }
 </style>
 </head>
 <body>
