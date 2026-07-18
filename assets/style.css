@@ -272,6 +272,22 @@ body {
   line-height: 1.6;
 }
 
+.project-callout {
+  background: linear-gradient(135deg, #0e1a2a 0%, #1f3d6e 40%, #0a1a3a 100%);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  color: #f0f4fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.project-callout strong {
+  color: #ffffff;
+}
+
 .article p {
   font-size: 1rem;
   line-height: 1.8;
