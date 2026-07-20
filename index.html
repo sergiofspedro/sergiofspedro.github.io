@@ -53,6 +53,7 @@
   <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Urban livability analysis</button>
   <button class="mobile-nav-link" data-id="pipeline" onclick="showProject('pipeline', this); closeMobileNav()">OpenClaw pipeline</button>
   <button class="mobile-nav-link" data-id="n8n" onclick="showProject('n8n', this); closeMobileNav()">n8n pipeline</button>
+  <button class="mobile-nav-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this); closeMobileNav()">Interactive Municipal GIS Explorer</button>
   <div class="mobile-nav-section-label" style="margin-top:20px;">Contact</div>
   <div class="mobile-nav-contact">
     <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
@@ -82,6 +83,7 @@
     <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Urban livability analysis</button>
     <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">OpenClaw pipeline - Multi-agent infrastructure</button>
     <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">n8n pipeline - Workflow automation</button>
+    <button class="sidebar-project-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this)">Interactive Municipal GIS Explorer</button>
   </div>
   <div style="margin-top:auto; width:100%; text-align:center;">
     <div class="sidebar-copy">2026 (c) Sérgio Pedro</div>
@@ -608,6 +610,66 @@
     <footer class="article-footer">
       <span>Workflow automation</span>
       <a href="https://github.com/sergiofspedro/n8n-pipeline" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-gisexplorer" style="display:none">
+    <div class="hero-banner hero-banner--gisexplorer">
+      <div class="hero-text">
+        <h1>Interactive Municipal GIS Explorer</h1>
+        <div class="hero-sub-banner">Multi-layer GIS platform · Civic participation · Matosinhos, Portugal</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">A multi-layer civic-participation and infrastructure GIS explorer for a Portuguese municipality</h1>
+      <div class="article-date">2026 · Civic tech / GIS · MOVES-IT, Matosinhos City Council (EU Urban Innovative Actions)</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Leaflet.js + JavaScript</strong> – Multi-layer client-side rendering, filtering, and marker clustering at scale.<br><br>
+          <strong>Python + GeoPandas</strong> – GIS data pipeline normalising shapefiles and live REST feeds into one schema.<br><br>
+          <strong>GitHub Actions</strong> – Automated, scheduled multi-source fetch-and-deploy pipeline.<br><br>
+          <strong>Claude Code</strong> – AI pair-programming agent used to build and iteratively extend the map, data pipeline, and deploy automation.
+        </td></tr>
+        <tr><th>Benefits</th><td>28 independently toggleable GIS layers plus real-time participant search and filtering, in a single dependency-light map with no backend server</td></tr>
+        <tr><th>Potential applications</th><td>Municipal GIS teams, EU-funded civic-participation programmes, field-operations and asset-tracking teams, retail or real-estate site selection, sales-territory mapping</td></tr>
+      </table>
+      <p>
+        This is an interactive map built for <strong>MOVES-IT</strong>, an EU Urban Innovative Actions project
+        run by the Matosinhos City Council, combining a live civic-participation dataset with the municipality's
+        own open GIS data. Visitors can search and filter participants by parish, then layer in any combination
+        of <strong>28 independent thematic overlays</strong>, spanning municipal boundaries, social housing,
+        green space, education and health facilities, culture and heritage, and mobility infrastructure, each
+        sourced from a mix of committed shapefiles and the municipality's live ArcGIS feeds.
+      </p>
+      <p>
+        Two pieces of the underlying engineering generalise well beyond this one map. First, a
+        <strong>point-in-polygon geographic resolver</strong> (a ray-casting even-odd algorithm implemented from
+        scratch) derives each point's administrative parish directly from real boundary geometry, rather than
+        trusting a possibly stale stored label, and a deterministic z-order rule keeps wide "context" polygons
+        from ever occluding more specific layers regardless of the order they're toggled on. Second, a scheduled
+        <strong>CI/CD data pipeline</strong> fetches from a dozen-plus live REST/ArcGIS endpoints and local
+        geodata files on every deploy, normalises them into one client-side schema, and fails soft, so one
+        unreachable source degrades a single layer instead of breaking the map.
+      </p>
+      <p>
+        The same architecture, heterogeneous sources merged into one schema, geospatial computation done
+        client-side, and a dense multi-layer UI kept fast through clustering and lazy rendering, applies well
+        beyond civic participation. <strong>Utilities and telecom field-operations teams</strong> can plot assets
+        and incidents across overlapping data sources the same way; <strong>retail and real-estate analysts</strong>
+        can overlay demographic, competitor, and zoning layers to inform site selection; <strong>sales
+        organisations</strong> can build territory maps from CRM data; and any team doing
+        <strong>ESG or compliance reporting</strong> gets the same pattern for combining regulatory geodata with
+        their own operational footprint.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Interactive map</h2>
+        <p class="chart-desc">Participant markers, parish filtering, and 28 toggleable GIS layers. Participant names are anonymized for this public copy.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="gis-explorer/interactive_map.html" title="Interactive Municipal GIS Explorer" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Civic tech / GIS · MOVES-IT, Matosinhos City Council</span>
     </footer>
   </section>
 </main>
