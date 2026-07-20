@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <!-- Stacked, offset map-layer sheets -->
+  <g fill="#ffffff" fill-opacity="0.055">
+    <rect x="120" y="150" width="520" height="340" rx="10" transform="rotate(-4 380 320)"/>
+    <rect x="220" y="130" width="520" height="340" rx="10" transform="rotate(3 480 300)"/>
+    <rect x="320" y="160" width="520" height="340" rx="10" transform="rotate(-2 580 330)"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.11" stroke-width="2">
+    <rect x="120" y="150" width="520" height="340" rx="10" transform="rotate(-4 380 320)"/>
+    <rect x="220" y="130" width="520" height="340" rx="10" transform="rotate(3 480 300)"/>
+    <rect x="320" y="160" width="520" height="340" rx="10" transform="rotate(-2 580 330)"/>
+  </g>
+
+  <!-- Parish-boundary outline, dashed -->
+  <path fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2" stroke-dasharray="7 6"
+    d="M760,290 C800,230 900,210 960,240 C1040,275 1080,220 1150,235 C1220,250 1240,300 1200,330
+       C1150,320 1080,340 1020,320 C950,340 860,335 800,320 C770,315 750,305 760,290 Z"/>
+
+  <!-- Location pins at a few points inside the boundary -->
+  <g fill="#ffffff" fill-opacity="0.16">
+    <path d="M905,250 c0,-16 -13,-29 -29,-29 s-29,13 -29,29 c0,21 29,52 29,52 s29,-31 29,-52 Z"/>
+    <circle cx="876" cy="249" r="10" fill-opacity="0.4"/>
+    <path d="M1060,270 c0,-14 -11,-25 -25,-25 s-25,11 -25,25 c0,18 25,45 25,45 s25,-27 25,-45 Z"/>
+    <circle cx="1035" cy="269" r="8" fill-opacity="0.4"/>
+    <path d="M1150,300 c0,-12 -9,-21 -21,-21 s-21,9 -21,21 c0,15 21,38 21,38 s21,-23 21,-38 Z"/>
+    <circle cx="1129" cy="299" r="7" fill-opacity="0.4"/>
+  </g>
+</svg>

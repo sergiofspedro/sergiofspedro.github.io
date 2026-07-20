@@ -197,6 +197,13 @@ body {
   background-image: url("motifs/n8n-flowchart.svg");
 }
 
+.hero-banner--gisexplorer {
+  background: linear-gradient(135deg, #140a24 0%, #3d2d6e 42%, #0f2a3a 100%);
+}
+.hero-banner--gisexplorer::before {
+  background-image: url("motifs/gis-explorer-motif.svg");
+}
+
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
 
 .hero-text h1 {
