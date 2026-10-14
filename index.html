@@ -47,6 +47,7 @@
   </div>
   <div class="mobile-nav-section-label">Navigate</div>
   <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
+  <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot</button>
   <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
   <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Georeferenced leads radar</button>
   <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP - Civic participation</button>
@@ -77,6 +78,7 @@
   </div>
   <div class="sidebar-projects">
     <div class="sidebar-projects-title">Projects</div>
+    <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot - Funding, market and regulatory intelligence</button>
     <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index: Evaluation tool</button>
     <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Georeferenced leads radar</button>
     <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP - Civic participation gateway (EU Commission project)</button>
@@ -671,6 +673,83 @@
     </div>
     <footer class="article-footer">
       <span>Civic tech / GIS · MOVES-IT, Matosinhos City Council</span>
+    </footer>
+  </section>
+  <section id="project-funding" style="display:none">
+    <div class="hero-banner hero-banner--funding">
+      <div class="hero-text">
+        <h1>Funding AICopilot<br>Funding, market and regulatory intelligence</h1>
+        <div class="hero-sub-banner">Finds the calls you can apply for, fills in the application, and shows every signal with its evidence</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Funding AICopilot - a copilot for funding, market and regulatory intelligence</h1>
+      <div class="article-date">2026 - Product / SaaS - Next.js, TypeScript, SQLite</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Next.js 15 + TypeScript (Node 20)</strong> – Single application and API, with the Chrome extension behind Auto-apply in the same repository.<br><br>
+          <strong>SQLite</strong> – On-disk storage with versioned, idempotent SQL migrations.<br><br>
+          <strong>AI assistant</strong> – Cited answers and an adversarial validation pass over every synthesis.<br><br>
+          <strong>Playwright</strong> – Production-build tests across Chromium, Firefox and WebKit.<br><br>
+          <strong>Stripe, Resend, Sentry</strong> – Billing, transactional mail and error reporting.
+        </td></tr>
+        <tr><th>Benefits</th><td>Funding, regulation and market signals in one self-service workspace, matched to the company profile and backed by primary-source evidence</td></tr>
+        <tr><th>Potential applications</th><td>Startups, SMEs, research groups, NGOs and consultancies that track EU funding calls and regulatory change</td></tr>
+      </table>
+      <p>
+        Organizations lose weeks every quarter to funding calls they missed, regulatory deadlines that crept up,
+        and market signals scattered across dozens of portals and newsletters. Tracking it all by hand is a junior
+        analyst's full-time job, and most teams do not have one. Alerts arrive without context, official portals
+        stay fragmented, and consultancies are expensive and slow for day-to-day triage. <strong>Funding AICopilot</strong>
+        closes that gap: one workspace where a team sees every open call matched to its profile, every regulatory
+        deadline touching its sector, and the market signals that should change what it does this week.
+      </p>
+      <p>
+        The tedious work is automatic: deduplication, entity resolution, and pulling deadlines out of PDF tables.
+        <strong>Funding auto-search</strong> finds the calls a company can actually apply for across EU public feeds,
+        and <strong>Auto-apply</strong>, a Google Chrome extension, fills the application form from the profile, so the
+        user reviews it and presses submit. A <strong>validated opportunity engine</strong> (signals, evidence,
+        convergence, adversarial validation) delivers conclusions instead of a firehose, <strong>EU regulatory
+        tracking</strong> follows the AI Act, GDPR, NIS2 and national rules in plain language, and a <strong>cited AI
+        assistant</strong> links every claim to its primary source. Short daily or weekly digests arrive by email and
+        Slack, and data is EU-hosted by default with a public sub-processor list.
+      </p>
+      <p>
+        Under the hood it is an ordinary stack held to an unusual standard: a coverage gate that fails on regression,
+        a single <code>verify</code> command for done, real-browser tests against the production build, migrations
+        built to be re-run, and fail-closed defaults. That is why changes can land daily without the quality bar
+        drifting. The same pattern, many fragmented public sources turned into a short, evidenced, profile-matched
+        feed, applies to any team that monitors grants, tenders, standards or regulation.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System architecture</h2>
+        <p class="chart-desc">How public sources become a curated, evidence-backed feed and an application draft.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/architecture.svg" alt="Funding AICopilot system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>How it works</h2>
+        <p class="chart-desc">Four steps from a company profile to a reviewed application.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/journey.svg" alt="Funding AICopilot connect, ingest, synthesise, act" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Engineering standard</h2>
+        <p class="chart-desc">The gates every push to main and every pull request must pass.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/quality.svg" alt="Funding AICopilot quality gates" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Product / SaaS - Funding, market and regulatory intelligence</span>
+      <a href="https://fundingaicopilot.tech" target="_blank">Visit fundingaicopilot.tech &#x2192;</a>
     </footer>
   </section>
 </main>

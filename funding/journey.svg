@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#2a2410"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f0c05e"/></marker>
+  </defs>
+  <rect width="1000" height="330" rx="22" fill="url(#bg)"/><rect width="1000" height="330" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#f0c05e">HOW IT WORKS</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Connect, ingest, synthesise, act</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">From a company profile to a reviewed application, with the tedious work done automatically</text>
+<rect x="40" y="130" width="195" height="150" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.45"/>
+<text x="56" y="162" font-size="15" font-weight="600" fill="#f3f6fa">1  Connect</text>
+<text x="56" y="190" font-size="11" fill="#9fb3c8">Set sector, geography and</text>
+<text x="56" y="207" font-size="11" fill="#9fb3c8">signals; default EU</text>
+<text x="56" y="224" font-size="11" fill="#9fb3c8">portals and feeds pre-</text>
+<text x="56" y="241" font-size="11" fill="#9fb3c8">wired</text>
+<line x1="237" y1="205" x2="273" y2="205" stroke="#f0c05e" stroke-opacity="0.7" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="275" y="130" width="195" height="150" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.45"/>
+<text x="291" y="162" font-size="15" font-weight="600" fill="#f3f6fa">2  Ingest</text>
+<text x="291" y="190" font-size="11" fill="#9fb3c8">Each source fetched on its</text>
+<text x="291" y="207" font-size="11" fill="#9fb3c8">own schedule; calls</text>
+<text x="291" y="224" font-size="11" fill="#9fb3c8">structured, documents</text>
+<text x="291" y="241" font-size="11" fill="#9fb3c8">indexed</text>
+<line x1="472" y1="205" x2="508" y2="205" stroke="#f0c05e" stroke-opacity="0.7" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="510" y="130" width="195" height="150" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.45"/>
+<text x="526" y="162" font-size="15" font-weight="600" fill="#f3f6fa">3  Synthesise</text>
+<text x="526" y="190" font-size="11" fill="#9fb3c8">Curated short list;</text>
+<text x="526" y="207" font-size="11" fill="#9fb3c8">adversarial pass checks it</text>
+<text x="526" y="224" font-size="11" fill="#9fb3c8">against raw sources</text>
+<line x1="707" y1="205" x2="743" y2="205" stroke="#f0c05e" stroke-opacity="0.7" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="745" y="130" width="195" height="150" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.45"/>
+<text x="761" y="162" font-size="15" font-weight="600" fill="#f3f6fa">4  Act</text>
+<text x="761" y="190" font-size="11" fill="#9fb3c8">Save, ask follow-ups, edit</text>
+<text x="761" y="207" font-size="11" fill="#9fb3c8">the drafted application</text>
+<text x="761" y="224" font-size="11" fill="#9fb3c8">narrative</text>
+</svg>

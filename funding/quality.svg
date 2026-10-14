@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#2a2410"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f0c05e"/></marker>
+  </defs>
+  <rect width="1000" height="330" rx="22" fill="url(#bg)"/><rect width="1000" height="330" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#f0c05e">ENGINEERING STANDARD</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">An ordinary stack, held to an unusual standard</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Every push to main and every pull request passes the same gates</text>
+<rect x="20" y="125" width="178" height="165" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.45"/>
+<text x="34" y="155" font-size="13.5" font-weight="600" fill="#f3f6fa">Coverage gate</text>
+<text x="34" y="180" font-size="10.5" fill="#9fb3c8">92% lines and</text>
+<text x="34" y="196" font-size="10.5" fill="#9fb3c8">statements, 96%</text>
+<text x="34" y="212" font-size="10.5" fill="#9fb3c8">functions, 88% branches;</text>
+<text x="34" y="228" font-size="10.5" fill="#9fb3c8">a regression fails the</text>
+<text x="34" y="244" font-size="10.5" fill="#9fb3c8">build</text>
+<rect x="212" y="125" width="178" height="165" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.45"/>
+<text x="226" y="155" font-size="13.5" font-weight="600" fill="#f3f6fa">verify</text>
+<text x="226" y="180" font-size="10.5" fill="#9fb3c8">both typechecks, full</text>
+<text x="226" y="196" font-size="10.5" fill="#9fb3c8">coverage suite and a</text>
+<text x="226" y="212" font-size="10.5" fill="#9fb3c8">production build in one</text>
+<text x="226" y="228" font-size="10.5" fill="#9fb3c8">command</text>
+<rect x="404" y="125" width="178" height="165" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.45"/>
+<text x="418" y="155" font-size="13.5" font-weight="600" fill="#f3f6fa">Real browsers</text>
+<text x="418" y="180" font-size="10.5" fill="#9fb3c8">Playwright on the</text>
+<text x="418" y="196" font-size="10.5" fill="#9fb3c8">production build:</text>
+<text x="418" y="212" font-size="10.5" fill="#9fb3c8">Chromium, Firefox and</text>
+<text x="418" y="228" font-size="10.5" fill="#9fb3c8">WebKit; full matrix</text>
+<text x="418" y="244" font-size="10.5" fill="#9fb3c8">weekly</text>
+<rect x="596" y="125" width="178" height="165" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.45"/>
+<text x="610" y="155" font-size="13.5" font-weight="600" fill="#f3f6fa">Idempotent migrations</text>
+<text x="610" y="180" font-size="10.5" fill="#9fb3c8">versioned SQL, so</text>
+<text x="610" y="196" font-size="10.5" fill="#9fb3c8">repeating a deploy step</text>
+<text x="610" y="212" font-size="10.5" fill="#9fb3c8">is a no-op</text>
+<rect x="788" y="125" width="178" height="165" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.45"/>
+<text x="802" y="155" font-size="13.5" font-weight="600" fill="#f3f6fa">Fail-closed</text>
+<text x="802" y="180" font-size="10.5" fill="#9fb3c8">auth fails closed</text>
+<text x="802" y="196" font-size="10.5" fill="#9fb3c8">without its key; admin</text>
+<text x="802" y="212" font-size="10.5" fill="#9fb3c8">answers 503 until</text>
+<text x="802" y="228" font-size="10.5" fill="#9fb3c8">configured; pre-commit</text>
+<text x="802" y="244" font-size="10.5" fill="#9fb3c8">secret scan</text>
+</svg>

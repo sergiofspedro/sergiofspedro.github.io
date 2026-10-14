@@ -204,6 +204,13 @@ body {
   background-image: url("motifs/gis-explorer-motif.svg");
 }
 
+.hero-banner--funding {
+  background: linear-gradient(135deg, #1a1405 0%, #5a3d0f 45%, #10243a 100%);
+}
+.hero-banner--funding::before {
+  background-image: url("motifs/funding-signals.svg");
+}
+
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
 
 .hero-text h1 {

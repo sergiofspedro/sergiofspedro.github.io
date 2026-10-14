@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.6">
+<path d="M80,260 L140,200 L200,230 L260,150"/>
+<path d="M270,260 L330,170 L390,190 L450,170"/>
+<path d="M460,260 L520,140 L580,230 L640,190"/>
+<path d="M650,260 L710,200 L770,190 L830,150"/>
+<path d="M840,260 L900,170 L960,230 L1020,170"/>
+<path d="M1030,260 L1090,140 L1150,190 L1210,190"/>
+<path d="M1220,260 L1280,200 L1340,230 L1400,150"/>
+</g>
+<g fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.12">
+<rect x="90" y="240" width="40" height="60" rx="6"/>
+<rect x="280" y="190" width="40" height="110" rx="6"/>
+<rect x="470" y="220" width="40" height="80" rx="6"/>
+<rect x="660" y="150" width="40" height="150" rx="6"/>
+<rect x="850" y="180" width="40" height="120" rx="6"/>
+<rect x="1040" y="110" width="40" height="190" rx="6"/>
+<rect x="1230" y="140" width="40" height="160" rx="6"/>
+</g>
+</svg>
