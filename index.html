@@ -48,13 +48,14 @@
   <div class="mobile-nav-section-label">Navigate</div>
   <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
   <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot</button>
+  <button class="mobile-nav-link" data-id="litreview" onclick="showProject('litreview', this); closeMobileNav()">Literature Miner</button>
   <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
-  <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Georeferenced leads radar</button>
+  <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Leads Radar</button>
   <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP - Civic participation</button>
-  <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Urban livability analysis</button>
-  <button class="mobile-nav-link" data-id="pipeline" onclick="showProject('pipeline', this); closeMobileNav()">OpenClaw pipeline</button>
-  <button class="mobile-nav-link" data-id="n8n" onclick="showProject('n8n', this); closeMobileNav()">n8n pipeline</button>
-  <button class="mobile-nav-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this); closeMobileNav()">Interactive Municipal GIS Explorer</button>
+  <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Livability Lens</button>
+  <button class="mobile-nav-link" data-id="pipeline" onclick="showProject('pipeline', this); closeMobileNav()">OpenClaw</button>
+  <button class="mobile-nav-link" data-id="n8n" onclick="showProject('n8n', this); closeMobileNav()">Job Hunter Autopilot</button>
+  <button class="mobile-nav-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this); closeMobileNav()">Matosinhos Map Explorer</button>
   <div class="mobile-nav-section-label" style="margin-top:20px;">Contact</div>
   <div class="mobile-nav-contact">
     <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
@@ -78,14 +79,15 @@
   </div>
   <div class="sidebar-projects">
     <div class="sidebar-projects-title">Projects</div>
-    <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot - Funding, market and regulatory intelligence</button>
-    <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index: Evaluation tool</button>
-    <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Georeferenced leads radar</button>
-    <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP - Civic participation gateway (EU Commission project)</button>
-    <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Urban livability analysis</button>
-    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">OpenClaw pipeline - Multi-agent infrastructure</button>
-    <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">n8n pipeline - Workflow automation</button>
-    <button class="sidebar-project-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this)">Interactive Municipal GIS Explorer</button>
+    <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot<span class="sl-tag">AI analyst for EU grants</span></button>
+    <button class="sidebar-project-link" data-id="litreview" onclick="showProject('litreview', this)">Literature Miner<span class="sl-tag">ML that reads 1,150 papers</span></button>
+    <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">A credit score for cities</span></button>
+    <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Leads Radar<span class="sl-tag">Where the next leads are</span></button>
+    <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP<span class="sl-tag">One front door to EU decisions</span></button>
+    <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Livability Lens<span class="sl-tag">Best Porto areas to live in</span></button>
+    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">OpenClaw<span class="sl-tag">AI agents watching the web 24/7</span></button>
+    <button class="sidebar-project-link" data-id="n8n" onclick="showProject('n8n', this)">Job Hunter Autopilot<span class="sl-tag">Finds and files job postings</span></button>
+    <button class="sidebar-project-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this)">Matosinhos Map Explorer<span class="sl-tag">28 layers of city data</span></button>
   </div>
   <div style="margin-top:auto; width:100%; text-align:center;">
     <div class="sidebar-copy">2026 (c) Sérgio Pedro</div>
@@ -107,7 +109,7 @@
   <section id="project-rpi">
     <div class="hero-banner">
       <div class="hero-text">
-        <h1>Regenerative Potential Index<br>Evaluation tool</h1>
+        <h1>Regenerative Potential Index<br><span class="hero-tagline">A credit score for how well a city can heal itself</span></h1>
         <div class="hero-sub-banner">Original framework · Urban regeneration evaluation · Amsterdam case study</div>
       </div>
     </div>
@@ -190,7 +192,7 @@
   <section id="project-miningeurope" style="display:none">
     <div class="hero-banner hero-banner--mining">
       <div class="hero-text">
-        <h1>Georeferenced leads radar</h1>
+        <h1>Leads Radar<br><span class="hero-tagline">A map that shows where the next opportunities are</span></h1>
         <div class="hero-sub-banner">Georeferenced radar methodology · Portugal mining sites</div>
       </div>
     </div>
@@ -279,7 +281,7 @@
   <section id="project-loop" style="display:none">
     <div class="hero-banner hero-banner--loop">
       <div class="hero-text">
-        <h1>LOOP<br>Civic participation gateway</h1>
+        <h1>LOOP<br><span class="hero-tagline">One front door for citizens to take part in EU decisions</span></h1>
         <div class="hero-sub-banner">Multi-channel civic participation gateway · EU Civic Tech Hackathon 2026</div>
       </div>
     </div>
@@ -394,7 +396,7 @@
   <section id="project-porto" style="display:none">
     <div class="hero-banner hero-banner--porto">
       <div class="hero-text">
-        <h1>Urban livability analysis</h1>
+        <h1>Livability Lens<br><span class="hero-tagline">Which Porto neighbourhoods are best to live in, in data</span></h1>
         <div class="hero-sub-banner">Multi-dimensional urban liveability · Porto parishes · PhD research</div>
       </div>
     </div>
@@ -465,7 +467,7 @@
   <section id="project-pipeline" style="display:none">
     <div class="hero-banner hero-banner--pipeline">
       <div class="hero-text">
-        <h1>OpenClaw pipeline<br>Multi-agent infrastructure</h1>
+        <h1>OpenClaw<br><span class="hero-tagline">A team of AI agents that watch the web for you 24/7</span></h1>
         <div class="hero-sub-banner">Multi-agent infrastructure for competitive intelligence</div>
       </div>
     </div>
@@ -554,7 +556,7 @@
   <section id="project-n8n" style="display:none">
     <div class="hero-banner hero-banner--n8n">
       <div class="hero-text">
-        <h1>n8n pipeline<br>Workflow automation</h1>
+        <h1>Job Hunter Autopilot<br><span class="hero-tagline">Workflows that find, clean and file job postings for you</span></h1>
         <div class="hero-sub-banner">Workflow automation for data collection and processing</div>
       </div>
     </div>
@@ -619,7 +621,7 @@
   <section id="project-gisexplorer" style="display:none">
     <div class="hero-banner hero-banner--gisexplorer">
       <div class="hero-text">
-        <h1>Interactive Municipal GIS Explorer</h1>
+        <h1>Matosinhos Map Explorer<br><span class="hero-tagline">28 layers of city data in one interactive map</span></h1>
         <div class="hero-sub-banner">Multi-layer GIS platform · Civic participation · Matosinhos, Portugal</div>
       </div>
     </div>
@@ -678,12 +680,12 @@
   <section id="project-funding" style="display:none">
     <div class="hero-banner hero-banner--funding">
       <div class="hero-text">
-        <h1>Funding AICopilot<br>Funding, market and regulatory intelligence</h1>
+        <h1>Funding AICopilot<br><span class="hero-tagline">The AI analyst that finds EU grants and fills the forms</span></h1>
         <div class="hero-sub-banner">Finds the calls you can apply for, fills in the application, and shows every signal with its evidence</div>
       </div>
     </div>
     <div class="article">
-      <h1 class="article-title">Funding AICopilot - a copilot for funding, market and regulatory intelligence</h1>
+      <h1 class="article-title">Funding AICopilot: the AI analyst that finds EU grants, fills the forms and cites its sources</h1>
       <div class="article-date">2026 - Product / SaaS - Next.js, TypeScript, SQLite</div>
       <table class="project-info-table">
         <tr><th>Author</th><td>Sérgio Pedro</td></tr>
@@ -753,6 +755,93 @@
     <footer class="article-footer">
       <span>Product / SaaS - Funding, market and regulatory intelligence</span>
       <a href="https://fundingaicopilot.tech" target="_blank">Visit fundingaicopilot.tech &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-litreview" style="display:none">
+    <div class="hero-banner hero-banner--litreview">
+      <div class="hero-text">
+        <h1>Literature Miner<br><span class="hero-tagline">Machine learning that reads 1,150 papers for you</span></h1>
+        <div class="hero-sub-banner">Unsupervised machine learning reads the research so you do not have to</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Reading 1,150 scientific papers with machine learning: a topic map of regenerative cities</h1>
+      <div class="article-date">2024 - PhD research - Python, NLP, unsupervised ML</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Python + pandas</strong> – Loading, cleaning and merging bibliographic exports from Scopus.<br><br>
+          <strong>litstudy</strong> – Corpus building with n-gram detection and a bibliometric toolkit for the analysis.<br><br>
+          <strong>NMF topic modelling</strong> – Unsupervised ML (non-negative matrix factorisation) that discovers 15 research themes from paper abstracts.<br><br>
+          <strong>matplotlib + seaborn</strong> – Publication trends, journal rankings, word clouds and a 2D document landscape.
+        </td></tr>
+        <tr><th>Benefits</th><td>A reproducible, data-driven map of a research field that would take weeks to read manually</td></tr>
+        <tr><th>Potential applications</th><td>Research teams, R&amp;D and innovation units, policy analysts and consultancies doing state-of-the-art reviews, horizon scanning or competitor and patent landscaping</td></tr>
+      </table>
+      <p>
+        A literature review is usually a person reading hundreds of abstracts. Here the reading is done by a
+        <strong>machine-learning pipeline</strong>. Scopus returned about 1,700 documents for regenerative and
+        net-positive urban development, of which 1,150 were selected as relevant. The abstracts were turned into a
+        text corpus, and an <strong>NMF topic model</strong> (unsupervised learning, so no labels were needed)
+        discovered <strong>15 themes</strong> by itself, from forests and nature-based solutions to circular
+        economy, built environment, energy and climate, and public space and housing.
+      </p>
+      <p>
+        The result is a <strong>landscape</strong>: every paper is a dot, placed near the papers that use similar
+        language and coloured by its main theme. Alongside it sit the classic bibliometrics: how fast the field
+        is growing (from a handful of papers a year before 2000 to roughly 170 in 2023) and which journals
+        publish it. The topic model also supports follow-up questions, for instance picking the papers that most
+        strongly belong to a theme and tracking how that theme's share changes over time.
+      </p>
+      <p>
+        The same approach works on any large pile of text: customer feedback, patents, tenders, policy documents or
+        support tickets. Part of a PhD research process on regenerative development, the notebook is
+        reproducible end to end, from raw export to final figures.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Method</h2>
+        <p class="chart-desc">Two phases: pre-selecting the Scopus search results, then cleaning, clustering and visualising.</p>
+        <div class="svg-frame">
+          <img src="litreview/method.jpg" alt="Systematic literature review method: Scopus search, selection, cleaning, litstudy clustering, visualisation" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The field at a glance</h2>
+        <p class="chart-desc">Fifteen themes discovered by the model, shown as word clouds. The bigger the word, the more it defines the theme.</p>
+        <div class="svg-frame">
+          <img src="litreview/topic-wordclouds.png" alt="Word clouds of the 15 NMF topics" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Document landscape</h2>
+        <p class="chart-desc">Each dot is a paper. Papers with similar language sit close together; colour and number show the main topic.</p>
+        <div class="svg-frame">
+          <img src="litreview/topic-landscape.png" alt="2D landscape of papers coloured by topic" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Growth of the field</h2>
+        <p class="chart-desc">Publications per year: a small niche until the 2000s, then a steep rise.</p>
+        <div class="svg-frame">
+          <img src="litreview/publications-per-year.png" alt="Histogram of publications per year" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Where it is published</h2>
+        <p class="chart-desc">The most frequent journals and conference series.</p>
+        <div class="svg-frame">
+          <img src="litreview/top-journals.png" alt="Most frequent publication sources" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>PhD research - Literature mining</span>
+      <a href="https://github.com/sergiofspedro/Lit-review-on-regenerative-ecology-2024-" target="_blank">View source on GitHub &#x2192;</a>
     </footer>
   </section>
 </main>

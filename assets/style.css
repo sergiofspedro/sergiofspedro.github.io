@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 36px 20px 24px;
+  padding: 24px 20px 16px;
   text-align: center;
   overflow-y: auto;
   z-index: 100;
@@ -95,6 +95,26 @@ body {
   transition: background .15s, color .15s;
   border: none; background: none; width: 100%;
 }
+
+/* sidebar: project name + short tagline */
+.sidebar-project-link .sl-tag {
+  display: block;
+  font-size: 0.64rem;
+  opacity: .75;
+  margin-top: 1px;
+}
+
+/* hero: name on line 1, ELI5 tagline on a balanced line 2 */
+.hero-text h1 { text-wrap: balance; }
+.hero-text h1 .hero-tagline {
+  display: block;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-top: 6px;
+  opacity: .92;
+  text-wrap: balance;
+}
+.article-title { text-wrap: balance; }
 
 .sidebar-project-link:hover,
 .sidebar-project-link.active {
@@ -209,6 +229,13 @@ body {
 }
 .hero-banner--funding::before {
   background-image: url("motifs/funding-signals.svg");
+}
+
+.hero-banner--litreview {
+  background: linear-gradient(135deg, #0a1a10 0%, #1f5a2f 45%, #0f2a3a 100%);
+}
+.hero-banner--litreview::before {
+  background-image: url("motifs/loop-arcs.svg");
 }
 
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
@@ -577,6 +604,7 @@ body.no-scroll { overflow: hidden; }
   .hero-text h1 {
     font-size: 1.6rem;
   }
+  .hero-text h1 .hero-tagline { font-size: 1.05rem; }
   .hero-text .hero-sub-banner {
     font-size: 0.72rem;
   }
@@ -688,6 +716,7 @@ body.no-scroll { overflow: hidden; }
     font-size: 1.2rem;
     margin-bottom: 4px;
   }
+  .hero-text h1 .hero-tagline { font-size: 0.9rem; }
   .hero-text .hero-sub-banner {
     font-size: 0.65rem;
   }
