@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#0f2a1c"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#6fd8c7"/></marker>
+  </defs>
+  <rect width="1000" height="470" rx="22" fill="url(#bg)"/><rect width="1000" height="470" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">THE ML PIPELINE</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">From raw paper text to a map of a research field</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Unsupervised learning: no labelled data, the model discovers the structure by itself</text>
+<text x="30" y="125" font-size="10" letter-spacing="2" font-weight="700" fill="#f0c05e">1  DATA</text>
+<text x="265" y="125" font-size="10" letter-spacing="2" font-weight="700" fill="#f0c05e">2  NLP PREPROCESSING</text>
+<text x="500" y="125" font-size="10" letter-spacing="2" font-weight="700" fill="#f0c05e">3  FEATURES</text>
+<rect x="30" y="135" width="195" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="44" y="161" font-size="13.5" font-weight="600" fill="#f3f6fa">Scopus export</text>
+<text x="44" y="183" font-size="10.5" fill="#9fb3c8">About 1,700 documents</text>
+<text x="44" y="198" font-size="10.5" fill="#9fb3c8">identified, 1,150 selected.</text>
+<text x="44" y="213" font-size="10.5" fill="#9fb3c8">Bibliographic records with</text>
+<text x="44" y="228" font-size="10.5" fill="#9fb3c8">title, year and source.</text>
+<rect x="265" y="135" width="195" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="279" y="161" font-size="13.5" font-weight="600" fill="#f3f6fa">Text cleaning</text>
+<text x="279" y="183" font-size="10.5" fill="#9fb3c8">Tokenisation and cleaning of</text>
+<text x="279" y="198" font-size="10.5" fill="#9fb3c8">the paper text, plus frequent</text>
+<text x="279" y="213" font-size="10.5" fill="#9fb3c8">n-gram detection (e.g.</text>
+<text x="279" y="228" font-size="10.5" fill="#9fb3c8">nature_solutions).</text>
+<rect x="500" y="135" width="195" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="514" y="161" font-size="13.5" font-weight="600" fill="#f3f6fa">Document-term matrix</text>
+<text x="514" y="183" font-size="10.5" fill="#9fb3c8">Each paper becomes a numeric</text>
+<text x="514" y="198" font-size="10.5" fill="#9fb3c8">vector over the learned</text>
+<text x="514" y="213" font-size="10.5" fill="#9fb3c8">vocabulary.</text>
+<line x1="225" y1="185" x2="263" y2="185" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="460" y1="185" x2="498" y2="185" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="735" y="125" font-size="10" letter-spacing="2" font-weight="700" fill="#f0c05e">4  MODEL</text>
+<rect x="735" y="135" width="235" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.5"/>
+<text x="749" y="161" font-size="13.5" font-weight="600" fill="#f3f6fa">NMF, k = 15 topics</text>
+<text x="749" y="183" font-size="10.5" fill="#9fb3c8">Non-negative matrix factorisation: V</text>
+<text x="749" y="198" font-size="10.5" fill="#9fb3c8">= W x H. Unsupervised, parts-based,</text>
+<text x="749" y="213" font-size="10.5" fill="#9fb3c8">readable topics.</text>
+<line x1="695" y1="185" x2="733" y2="185" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="30" y="285" font-size="10" letter-spacing="2" font-weight="700" fill="#f0c05e">5  OUTPUTS</text>
+<rect x="30" y="295" width="290" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="44" y="321" font-size="13.5" font-weight="600" fill="#f3f6fa">Topic-term matrix (H)</text>
+<text x="44" y="343" font-size="10.5" fill="#9fb3c8">Top words per topic and one word cloud per</text>
+<text x="44" y="358" font-size="10.5" fill="#9fb3c8">topic: the label of each theme.</text>
+<rect x="355" y="295" width="290" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="369" y="321" font-size="13.5" font-weight="600" fill="#f3f6fa">Document-topic matrix (W)</text>
+<text x="369" y="343" font-size="10.5" fill="#9fb3c8">Every paper gets a weight per topic. Threshold</text>
+<text x="369" y="358" font-size="10.5" fill="#9fb3c8">(0.2) tags a theme; non-linear 2D embedding</text>
+<text x="369" y="373" font-size="10.5" fill="#9fb3c8">gives the landscape.</text>
+<rect x="680" y="295" width="290" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="694" y="321" font-size="13.5" font-weight="600" fill="#f3f6fa">Trend analysis</text>
+<text x="694" y="343" font-size="10.5" fill="#9fb3c8">Share of one theme per year and per journal, to</text>
+<text x="694" y="358" font-size="10.5" fill="#9fb3c8">see how a research topic evolves.</text>
+<path d="M852,235 L852,265 L175,265 L175,293" fill="none" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="852" y1="265" x2="852" y2="293" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="500" y1="265" x2="500" y2="293" stroke="#6fd8c7" stroke-opacity="0.75" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="30" y="418" width="940" height="38" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#f08a8a" stroke-opacity="0.45"/>
+<text x="500" y="442" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Validation loop: read the most representative papers of each topic, then adjust the number of topics k and re-run</text>
+</svg>
