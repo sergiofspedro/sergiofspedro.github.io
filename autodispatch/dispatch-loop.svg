@@ -1,0 +1,71 @@
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#2a2410"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f0c05e"/></marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f08a8a"/></marker>
+  </defs>
+  <rect width="1000" height="480" rx="22" fill="url(#bg)"/><rect width="1000" height="480" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#f0c05e">THE DISPATCH LOOP</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">One tick every five minutes, one wave at a time</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">A controller that decides if it is safe to launch an AI work session, writes the brief and waits for the report</text>
+<rect x="30" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="44" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">1  Cron tick</text>
+<text x="44" y="178" font-size="10.5" fill="#9fb3c8">Wakes up every 5 minutes</text>
+<text x="44" y="193" font-size="10.5" fill="#9fb3c8">and asks one question: may</text>
+<text x="44" y="208" font-size="10.5" fill="#9fb3c8">I dispatch?</text>
+<rect x="225" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="239" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">2  Runner</text>
+<text x="239" y="178" font-size="10.5" fill="#9fb3c8">Takes the edit lock so two</text>
+<text x="239" y="193" font-size="10.5" fill="#9fb3c8">sessions never write code</text>
+<text x="239" y="208" font-size="10.5" fill="#9fb3c8">at once, and checks the</text>
+<text x="239" y="223" font-size="10.5" fill="#9fb3c8">brake.</text>
+<rect x="420" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="434" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">3  Observer</text>
+<text x="434" y="178" font-size="10.5" fill="#9fb3c8">Evaluates every safety</text>
+<text x="434" y="193" font-size="10.5" fill="#9fb3c8">gate. Any closed gate: no</text>
+<text x="434" y="208" font-size="10.5" fill="#9fb3c8">launch, the reason is</text>
+<text x="434" y="223" font-size="10.5" fill="#9fb3c8">logged.</text>
+<rect x="615" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="629" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">4  Parser</text>
+<text x="629" y="178" font-size="10.5" fill="#9fb3c8">Reads the product</text>
+<text x="629" y="193" font-size="10.5" fill="#9fb3c8">requirements document and</text>
+<text x="629" y="208" font-size="10.5" fill="#9fb3c8">returns the pending work</text>
+<text x="629" y="223" font-size="10.5" fill="#9fb3c8">as a JSON queue.</text>
+<rect x="810" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="824" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">5  Generator</text>
+<text x="824" y="178" font-size="10.5" fill="#9fb3c8">Writes the brief for the</text>
+<text x="824" y="193" font-size="10.5" fill="#9fb3c8">next wave: scope, rules</text>
+<text x="824" y="208" font-size="10.5" fill="#9fb3c8">and the report it must</text>
+<text x="824" y="223" font-size="10.5" fill="#9fb3c8">deliver.</text>
+<line x1="200" y1="182" x2="223" y2="182" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="395" y1="182" x2="418" y2="182" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="182" x2="613" y2="182" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="785" y1="182" x2="808" y2="182" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="810" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="824" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">6  Launcher</text>
+<text x="824" y="338" font-size="10.5" fill="#9fb3c8">Creates the session on the</text>
+<text x="824" y="353" font-size="10.5" fill="#9fb3c8">server and injects the</text>
+<text x="824" y="368" font-size="10.5" fill="#9fb3c8">brief.</text>
+<rect x="615" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="629" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">7  Wave</text>
+<text x="629" y="338" font-size="10.5" fill="#9fb3c8">An autonomous session</text>
+<text x="629" y="353" font-size="10.5" fill="#9fb3c8">works through the night.</text>
+<rect x="420" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="434" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">8  Night report</text>
+<text x="434" y="338" font-size="10.5" fill="#9fb3c8">The wave writes its report</text>
+<text x="434" y="353" font-size="10.5" fill="#9fb3c8">before it ends.</text>
+<line x1="895" y1="234" x2="895" y2="290" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="810" y1="340" x2="787" y2="340" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="615" y1="340" x2="592" y2="340" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="505" y1="290" x2="505" y2="236" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="515" y="268" text-anchor="start" font-size="10.5" fill="#f0c05e">no report, no new wave</text>
+<rect x="30" y="410" width="455" height="46" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#5ec8e0" stroke-opacity="0.5"/>
+<text x="257.5" y="432" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Owner in the loop: answers arrive through a web form</text>
+<text x="257.5" y="448" text-anchor="middle" font-size="11.5" fill="#f3f6fa">and are written into the requirements document</text>
+<rect x="515" y="410" width="455" height="46" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#5ec8e0" stroke-opacity="0.5"/>
+<text x="742.5" y="432" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Validated code is published repo-first: branch and review,</text>
+<text x="742.5" y="448" text-anchor="middle" font-size="11.5" fill="#f3f6fa">then merge. Work status is mirrored to a Kanban board</text>
+</svg>

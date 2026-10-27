@@ -49,6 +49,8 @@
   <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
   <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot</button>
   <button class="mobile-nav-link" data-id="litreview" onclick="showProject('litreview', this); closeMobileNav()">Literature Miner</button>
+  <button class="mobile-nav-link" data-id="autodispatch" onclick="showProject('autodispatch', this); closeMobileNav()">24/7 AI harness with kanban board</button>
+  <button class="mobile-nav-link" data-id="selfimprove" onclick="showProject('selfimprove', this); closeMobileNav()">Self-improvement loop for AI harness</button>
   <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
   <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Leads Radar</button>
   <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP</button>
@@ -81,6 +83,8 @@
     <div class="sidebar-projects-title">Projects</div>
     <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot<span class="sl-tag">Custom AI agents for funding</span></button>
     <button class="sidebar-project-link" data-id="litreview" onclick="showProject('litreview', this)">Literature Miner<span class="sl-tag">NLP and unsupervised ML</span></button>
+    <button class="sidebar-project-link" data-id="autodispatch" onclick="showProject('autodispatch', this)">24/7 AI harness with kanban board<span class="sl-tag">Autonomous AI work dispatch</span></button>
+    <button class="sidebar-project-link" data-id="selfimprove" onclick="showProject('selfimprove', this)">Self-improvement loop for AI harness<span class="sl-tag">Detect, approve, fix, prove</span></button>
     <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">Evaluation and futures modelling</span></button>
     <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Leads Radar<span class="sl-tag">Automatic monitoring and reporting</span></button>
     <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP<span class="sl-tag">Multi-channel AI platform</span></button>
@@ -834,6 +838,138 @@
     <footer class="article-footer">
       <span>PhD research - NLP and machine learning</span>
       <a href="https://github.com/sergiofspedro/Lit-review-on-regenerative-ecology-2024-" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-autodispatch" style="display:none">
+    <div class="hero-banner hero-banner--autodispatch">
+      <div class="hero-text">
+        <h1>24/7 AI harness with kanban board<br><span class="hero-tagline">Self-dispatching AI work sessions, held back by safety gates</span></h1>
+        <div class="hero-sub-banner">Workflow orchestration · Safety gates · Human-in-the-loop · Bash, Python, cron</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">24/7 AI harness with kanban board: an autonomous controller that launches AI work sessions only when it is safe to do so</h1>
+      <div class="article-date">2026 - Autonomous systems and DevOps - Bash, Python, cron</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>Engineering</th><td>
+          <strong>Scheduler and runner</strong> – A cron tick every five minutes enters through one script that takes an edit lock, so two sessions never write code at the same time.<br><br>
+          <strong>Observer and safety gates</strong> – Six independent checks (brake, previous report, fuse, stall and retry, empty queue, QA pre-flight). Any closed gate stops the launch and the reason is logged.<br><br>
+          <strong>Parser, generator and launcher</strong> – The requirements document is parsed into a JSON work queue, a brief is written for the next wave, and the session is created and briefed on the server.<br><br>
+          <strong>Publishing and reporting</strong> – Validated code is published repo-first (branch and review, then merge) and work status is mirrored to a Kanban board.
+        </td></tr>
+        <tr><th>Business value</th><td>Removes the manual work of opening, briefing and babysitting overnight AI sessions, while a human keeps control of every decision that matters</td></tr>
+        <tr><th>Use cases</th><td>Overnight batch automation, orchestration of AI agents, controlled release pipelines, and any workflow where autonomy has to be bounded by auditable rules</td></tr>
+      </table>
+      <p>
+        <strong>The problem:</strong> when there is pending work overnight, someone has to open a session, write
+        the instructions and watch the result. Doing that by hand does not scale, and removing the human entirely
+        is how automation runs away. This project automates the routine part and keeps the risky part gated.
+      </p>
+      <p>
+        <strong>The approach:</strong> a small controller wakes up every five minutes and asks one question: is it
+        safe to dispatch? It reads the pending work from the requirements document, writes the brief for the next
+        wave, launches an autonomous session and then does nothing until that session delivers its report. The
+        golden rule is <strong>no report, no new wave</strong>: work is never launched on top of unfinished work.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> safety is built from independent gates rather than one clever
+        check, so a single failure is enough to stop. A fuse disarms the loop after several dispatches with no new
+        report, and a stalled wave gets one authorised retry and then a safe stop. The scope is deliberately fixed
+        to one project, and anything that needs an owner decision goes to a form instead of being decided by the
+        machine. There is no force-push, and no secrets or state are stored in the repository.
+      </p>
+      <p>
+        <strong>The result:</strong> a loop that has emitted waves up to number 52, guarded by 99 test suites and a
+        single entry point for automation (green means it may dispatch). It is the execution half of a pair: the
+        <em>Self-improvement loop for AI harness</em> decides what is worth fixing, and that harness runs the fix.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The dispatch loop</h2>
+        <p class="chart-desc">Eight steps from the clock to the report, and back. The report is what unlocks the next wave.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/dispatch-loop.svg" alt="Dispatch loop: cron tick, runner, observer, parser, generator, launcher, wave and night report, with owner replies and repo-first publishing" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The safety gates</h2>
+        <p class="chart-desc">One closed gate is enough to stop the launch, and every stop leaves a reason in the log.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/gates.svg" alt="Six safety gates between the cron tick and a launch: brake, previous report, fuse, stall and retry, empty queue and QA pre-flight" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Autonomous systems - orchestration and safety</span>
+    </footer>
+  </section>
+  <section id="project-selfimprove" style="display:none">
+    <div class="hero-banner hero-banner--selfimprove">
+      <div class="hero-text">
+        <h1>Self-improvement loop for AI harness<br><span class="hero-tagline">Defects found, approved by a human, fixed and proven</span></h1>
+        <div class="hero-sub-banner">Human-in-the-loop automation · Governance · Deduplication · Auditable evidence</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Self-improvement loop for AI harness: a governed pipeline that turns defects found overnight into approved, proven fixes</h1>
+      <div class="article-date">2026 - Autonomous systems and governance - Python, Bash</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>Engineering</th><td>
+          <strong>Extractor and intake gate</strong> – Reads each wave's report and turns new defects into candidates. A gate decides what deserves to become a candidate at all.<br><br>
+          <strong>Fingerprinting</strong> – Every defect gets a fingerprint, so the same problem is never raised twice.<br><br>
+          <strong>Human approval</strong> – The owner approves or rejects each candidate in a form. A consumer script records the answer and never touches the proposal itself.<br><br>
+          <strong>Weighted, repeatable selection</strong> – An approved candidate is picked by score with a deterministic seed, then fixed by an autonomous wave that records its own proof.
+        </td></tr>
+        <tr><th>Business value</th><td>Turns the lessons buried in reports into a prioritised, auditable backlog and fixes them autonomously, with no change made without human approval</td></tr>
+        <tr><th>Use cases</th><td>Continuous-improvement programmes for AI agents and automated pipelines, incident follow-up, tech-debt management, and any process that needs autonomy with an approval trail</td></tr>
+      </table>
+      <p>
+        <strong>The problem:</strong> a system that runs by itself overnight accumulates defects that nobody
+        writes down, and the knowledge ends up buried in reports. This project collects those defects, shows them
+        to the owner, and only after an explicit human answer sends a wave to fix them, recording in one place
+        exactly what changed and with what evidence.
+      </p>
+      <p>
+        <strong>The approach:</strong> each wave writes a report. An extractor turns the new defects into
+        candidates, an intake gate filters them, and a fingerprint removes duplicates. The owner then approves,
+        rejects or asks for more context in a form. Approved candidates are picked by weighted score and
+        implemented by an improvement wave that writes back its proof: commits, passing test suites and
+        measurements.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> nothing is implemented without a human answer. That rule has
+        no exceptions, and there is no language model deciding and no auto-approval. Every script has narrow write
+        permissions: the extractor never edits or deletes, the reply consumer only touches status and answer, and
+        the improvement waves never create or edit candidates. A first version kept a second queue file, which was
+        removed on purpose, because two sources of truth were a defect in themselves.
+      </p>
+      <p>
+        <strong>The result:</strong> 200 candidates tracked in a single git-tracked document of about 4,400 lines,
+        improvement waves emitted up to number 52 since early October 2026, and ten dedicated test suites. It is
+        the decision half of a pair: this loop chooses what is worth fixing, and the <em>24/7 AI harness with kanban board</em> launches the work.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The improvement loop</h2>
+        <p class="chart-desc">Nine steps from a defect in a report to a proven fix. The only human step is also the only gate that cannot be skipped.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="selfimprove/improvement-loop.svg" alt="Improvement loop: wave reports, extractor, intake gate, fingerprint, requirements document, human approval, wave selection, improvement wave and archive" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Life cycle and write permissions</h2>
+        <p class="chart-desc">A candidate leaves its first state only through a human answer, and each script can write only its own part of the document.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="selfimprove/governance.svg" alt="Candidate life cycle from pending_form to archived, and a table of which script may write which part of the document" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Autonomous systems - governance and human-in-the-loop</span>
     </footer>
   </section>
 </main>

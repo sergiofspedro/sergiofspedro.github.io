@@ -238,6 +238,20 @@ body {
   background-image: url("motifs/loop-arcs.svg");
 }
 
+.hero-banner--autodispatch {
+  background: linear-gradient(135deg, #140f05 0%, #6a4a12 42%, #0f2a3a 100%);
+}
+.hero-banner--autodispatch::before {
+  background-image: url("motifs/autodispatch-clock.svg");
+}
+
+.hero-banner--selfimprove {
+  background: linear-gradient(135deg, #07160f 0%, #17604a 45%, #12243f 100%);
+}
+.hero-banner--selfimprove::before {
+  background-image: url("motifs/selfimprove-cycle.svg");
+}
+
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
 
 .hero-text h1 {

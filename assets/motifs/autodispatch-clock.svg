@@ -1,0 +1,17 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.6">
+<circle cx="120" cy="200" r="40"/>
+<path d="M120,200 l0,-28 M120,200 l20,8"/>
+<circle cx="365" cy="150" r="54"/>
+<path d="M365,150 l0,-36 M365,150 l25,8"/>
+<circle cx="610" cy="200" r="68"/>
+<path d="M610,200 l0,-44 M610,200 l30,8"/>
+<circle cx="855" cy="150" r="40"/>
+<path d="M855,150 l0,-28 M855,150 l20,8"/>
+<circle cx="1100" cy="200" r="54"/>
+<path d="M1100,200 l0,-36 M1100,200 l25,8"/>
+<circle cx="1345" cy="150" r="68"/>
+<path d="M1345,150 l0,-44 M1345,150 l30,8"/>
+<path d="M120,200 L365,150 L610,200 L855,150 L1100,200 L1345,150" stroke-dasharray="6 8"/>
+</g>
+</svg>

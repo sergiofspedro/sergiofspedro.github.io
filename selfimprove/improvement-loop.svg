@@ -1,0 +1,77 @@
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#0f2a1c"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#6fd8c7"/></marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f08a8a"/></marker>
+  </defs>
+  <rect width="1000" height="480" rx="22" fill="url(#bg)"/><rect width="1000" height="480" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#6fd8c7">THE IMPROVEMENT LOOP</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">From a defect in a report to a proven fix</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Defects are collected automatically, approved by a human, fixed by an autonomous wave and recorded with evidence</text>
+<rect x="30" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="44" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">1  Wave reports</text>
+<text x="44" y="178" font-size="10.5" fill="#9fb3c8">Every night wave writes a</text>
+<text x="44" y="193" font-size="10.5" fill="#9fb3c8">report of what it did and</text>
+<text x="44" y="208" font-size="10.5" fill="#9fb3c8">what went wrong.</text>
+<rect x="225" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="239" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">2  Extractor</text>
+<text x="239" y="178" font-size="10.5" fill="#9fb3c8">Turns each new defect into</text>
+<text x="239" y="193" font-size="10.5" fill="#9fb3c8">a candidate, always</text>
+<text x="239" y="208" font-size="10.5" fill="#9fb3c8">starting as pending_form.</text>
+<rect x="420" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="434" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">3  Intake gate</text>
+<text x="434" y="178" font-size="10.5" fill="#9fb3c8">Decides what deserves to</text>
+<text x="434" y="193" font-size="10.5" fill="#9fb3c8">become a candidate. What</text>
+<text x="434" y="208" font-size="10.5" fill="#9fb3c8">fails the gate never</text>
+<text x="434" y="223" font-size="10.5" fill="#9fb3c8">enters.</text>
+<rect x="615" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="629" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">4  Fingerprint</text>
+<text x="629" y="178" font-size="10.5" fill="#9fb3c8">Gives each defect a</text>
+<text x="629" y="193" font-size="10.5" fill="#9fb3c8">fingerprint, so the same</text>
+<text x="629" y="208" font-size="10.5" fill="#9fb3c8">problem is never raised</text>
+<text x="629" y="223" font-size="10.5" fill="#9fb3c8">twice.</text>
+<rect x="810" y="130" width="170" height="104" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="824" y="156" font-size="13.5" font-weight="600" fill="#f3f6fa">5  Requirements doc</text>
+<text x="824" y="178" font-size="10.5" fill="#9fb3c8">The single source of</text>
+<text x="824" y="193" font-size="10.5" fill="#9fb3c8">truth, tracked in git. No</text>
+<text x="824" y="208" font-size="10.5" fill="#9fb3c8">second queue exists.</text>
+<line x1="200" y1="182" x2="223" y2="182" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="395" y1="182" x2="418" y2="182" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="590" y1="182" x2="613" y2="182" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="785" y1="182" x2="808" y2="182" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="810" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="824" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">6  Human approval</text>
+<text x="824" y="338" font-size="10.5" fill="#9fb3c8">The owner approves or</text>
+<text x="824" y="353" font-size="10.5" fill="#9fb3c8">rejects each candidate in</text>
+<text x="824" y="368" font-size="10.5" fill="#9fb3c8">a form.</text>
+<rect x="615" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="629" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">7  Wave selection</text>
+<text x="629" y="338" font-size="10.5" fill="#9fb3c8">Picks one approved</text>
+<text x="629" y="353" font-size="10.5" fill="#9fb3c8">candidate by weighted</text>
+<text x="629" y="368" font-size="10.5" fill="#9fb3c8">score, seeded and</text>
+<text x="629" y="383" font-size="10.5" fill="#9fb3c8">repeatable.</text>
+<rect x="420" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="434" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">8  Improvement wave</text>
+<text x="434" y="338" font-size="10.5" fill="#9fb3c8">Implements the fix and</text>
+<text x="434" y="353" font-size="10.5" fill="#9fb3c8">writes the proof: commits,</text>
+<text x="434" y="368" font-size="10.5" fill="#9fb3c8">tests, measurements.</text>
+<rect x="225" y="290" width="170" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="239" y="316" font-size="13.5" font-weight="600" fill="#f3f6fa">9  Archive</text>
+<text x="239" y="338" font-size="10.5" fill="#9fb3c8">Closed items are archived.</text>
+<text x="239" y="353" font-size="10.5" fill="#9fb3c8">Status lives only in the</text>
+<text x="239" y="368" font-size="10.5" fill="#9fb3c8">document.</text>
+<line x1="895" y1="234" x2="895" y2="290" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="810" y1="340" x2="787" y2="340" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="615" y1="340" x2="592" y2="340" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="420" y1="340" x2="397" y2="340" stroke="#6fd8c7" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="895" y1="390" x2="895" y2="412" stroke="#f08a8a" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arrR)"/>
+<rect x="640" y="414" width="330" height="42" rx="10" fill="#f08a8a" fill-opacity="0.08" stroke="#f08a8a" stroke-opacity="0.55"/>
+<text font-weight="600" x="805" y="432" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Rejected or needs context</text>
+<text x="805" y="447" text-anchor="middle" font-size="10" fill="#9fb3c8">Stays on record. Nothing is implemented.</text>
+<rect x="30" y="414" width="580" height="42" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#f0c05e" stroke-opacity="0.5"/>
+<text x="320.0" y="436" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Hard rule: nothing is built without an explicit human answer.</text>
+<text x="320.0" y="452" text-anchor="middle" font-size="11.5" fill="#f3f6fa">No language model and no auto-approval anywhere in the loop</text>
+</svg>

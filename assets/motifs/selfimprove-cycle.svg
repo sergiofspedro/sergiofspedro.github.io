@@ -1,0 +1,17 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.6">
+<path d="M140,230 a60,60 0 1,1 -5,-45"/>
+<path d="M134,182 l-14,2 l8,12" />
+<path d="M375,185 a60,60 0 1,1 -5,-45"/>
+<path d="M369,137 l-14,2 l8,12" />
+<path d="M610,140 a60,60 0 1,1 -5,-45"/>
+<path d="M604,92 l-14,2 l8,12" />
+<path d="M845,230 a60,60 0 1,1 -5,-45"/>
+<path d="M839,182 l-14,2 l8,12" />
+<path d="M1080,185 a60,60 0 1,1 -5,-45"/>
+<path d="M1074,137 l-14,2 l8,12" />
+<path d="M1315,140 a60,60 0 1,1 -5,-45"/>
+<path d="M1309,92 l-14,2 l8,12" />
+<path d="M140,230 L375,185 L610,140 L845,230 L1080,185 L1315,140" stroke-dasharray="6 8"/>
+</g>
+</svg>

@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#2a2410"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f0c05e"/></marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f08a8a"/></marker>
+  </defs>
+  <rect width="1000" height="430" rx="22" fill="url(#bg)"/><rect width="1000" height="430" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#f0c05e">SAFETY BY DESIGN</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Six gates stand between the clock and a launch</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Every tick walks the same checklist. One closed gate is enough to stop, and the reason is always logged</text>
+<rect x="31" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="45" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">Brake</text>
+<text x="45" y="168" font-size="10.5" fill="#9fb3c8">A dry-run flag. While</text>
+<text x="45" y="183" font-size="10.5" fill="#9fb3c8">it is armed, nothing</text>
+<text x="45" y="198" font-size="10.5" fill="#9fb3c8">is ever dispatched.</text>
+<rect x="189" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="203" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">Previous report</text>
+<text x="203" y="168" font-size="10.5" fill="#9fb3c8">The last wave has no</text>
+<text x="203" y="183" font-size="10.5" fill="#9fb3c8">report yet? Then no</text>
+<text x="203" y="198" font-size="10.5" fill="#9fb3c8">new wave starts.</text>
+<rect x="347" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="361" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">Fuse</text>
+<text x="361" y="168" font-size="10.5" fill="#9fb3c8">Disarms the loop after</text>
+<text x="361" y="183" font-size="10.5" fill="#9fb3c8">several dispatches</text>
+<text x="361" y="198" font-size="10.5" fill="#9fb3c8">with no new report.</text>
+<rect x="505" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="519" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">Stall and retry</text>
+<text x="519" y="168" font-size="10.5" fill="#9fb3c8">A silent old wave gets</text>
+<text x="519" y="183" font-size="10.5" fill="#9fb3c8">one authorised retry,</text>
+<text x="519" y="198" font-size="10.5" fill="#9fb3c8">then a safe stop.</text>
+<rect x="663" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="677" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">Empty queue</text>
+<text x="677" y="168" font-size="10.5" fill="#9fb3c8">Nothing pending in the</text>
+<text x="677" y="183" font-size="10.5" fill="#9fb3c8">backlog: the whole</text>
+<text x="677" y="198" font-size="10.5" fill="#9fb3c8">cycle stops.</text>
+<rect x="821" y="120" width="148" height="112" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="835" y="146" font-size="13.5" font-weight="600" fill="#f3f6fa">QA pre-flight</text>
+<text x="835" y="168" font-size="10.5" fill="#9fb3c8">A quality check runs</text>
+<text x="835" y="183" font-size="10.5" fill="#9fb3c8">before every dispatch,</text>
+<text x="835" y="198" font-size="10.5" fill="#9fb3c8">not after.</text>
+<path d="M105,232 L105,258 M263,232 L263,258 M421,232 L421,258 M579,232 L579,258 M737,232 L737,258 M895,232 L895,258 M105,258 L895,258" stroke="#f0c05e" stroke-opacity="0.5" stroke-width="1.4" fill="none"/>
+<line x1="300" y1="258" x2="300" y2="288" stroke="#f08a8a" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arrR)"/>
+<line x1="700" y1="258" x2="700" y2="288" stroke="#f0c05e" stroke-opacity="0.8" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130" y="290" width="340" height="44" rx="10" fill="#f08a8a" fill-opacity="0.08" stroke="#f08a8a" stroke-opacity="0.55"/>
+<text font-weight="600" x="300" y="310" text-anchor="middle" font-size="12.5" fill="#f3f6fa">Any gate closed: no launch</text>
+<text x="300" y="326" text-anchor="middle" font-size="10" fill="#9fb3c8">The reason is written to the log</text>
+<rect x="530" y="290" width="340" height="44" rx="10" fill="#8fd68a" fill-opacity="0.08" stroke="#8fd68a" stroke-opacity="0.55"/>
+<text font-weight="600" x="700" y="310" text-anchor="middle" font-size="12.5" fill="#f3f6fa">All gates open: wave launched</text>
+<text x="700" y="326" text-anchor="middle" font-size="10" fill="#9fb3c8">Then nothing else until its report arrives</text>
+<rect x="30" y="360" width="940" height="44" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#f0c05e" stroke-opacity="0.5"/>
+<text x="500.0" y="382" text-anchor="middle" font-size="11.5" fill="#f3f6fa">Hard limits: one project only, no force-push, no secrets or state in the repository,</text>
+<text x="500.0" y="398" text-anchor="middle" font-size="11.5" fill="#f3f6fa">and every decision that belongs to the owner goes to a form, never to the machine</text>
+</svg>
