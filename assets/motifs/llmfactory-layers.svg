@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1400 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.6">
+<rect x="60" y="70" width="200" height="46" rx="10" transform="translate(0,0)"/>
+<rect x="60" y="140" width="170" height="46" rx="10" transform="translate(15,0)"/>
+<rect x="60" y="210" width="140" height="46" rx="10" transform="translate(30,0)"/>
+<path d="M280,140 L330,140" stroke-dasharray="5 7"/>
+<rect x="340" y="70" width="200" height="46" rx="10" transform="translate(0,0)"/>
+<rect x="340" y="140" width="170" height="46" rx="10" transform="translate(15,0)"/>
+<rect x="340" y="210" width="140" height="46" rx="10" transform="translate(30,0)"/>
+<path d="M560,140 L610,140" stroke-dasharray="5 7"/>
+<rect x="620" y="70" width="200" height="46" rx="10" transform="translate(0,0)"/>
+<rect x="620" y="140" width="170" height="46" rx="10" transform="translate(15,0)"/>
+<rect x="620" y="210" width="140" height="46" rx="10" transform="translate(30,0)"/>
+<path d="M840,140 L890,140" stroke-dasharray="5 7"/>
+<rect x="900" y="70" width="200" height="46" rx="10" transform="translate(0,0)"/>
+<rect x="900" y="140" width="170" height="46" rx="10" transform="translate(15,0)"/>
+<rect x="900" y="210" width="140" height="46" rx="10" transform="translate(30,0)"/>
+<path d="M1120,140 L1170,140" stroke-dasharray="5 7"/>
+<rect x="1180" y="70" width="200" height="46" rx="10" transform="translate(0,0)"/>
+<rect x="1180" y="140" width="170" height="46" rx="10" transform="translate(15,0)"/>
+<rect x="1180" y="210" width="140" height="46" rx="10" transform="translate(30,0)"/>
+<path d="M1400,140 L1450,140" stroke-dasharray="5 7"/>
+</g>
+</svg>

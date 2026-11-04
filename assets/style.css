@@ -252,6 +252,13 @@ body {
   background-image: url("motifs/selfimprove-cycle.svg");
 }
 
+.hero-banner--llmfactory {
+  background: linear-gradient(135deg, #0d0a24 0%, #3a2a7a 45%, #0f2a3a 100%);
+}
+.hero-banner--llmfactory::before {
+  background-image: url("motifs/llmfactory-layers.svg");
+}
+
 .hero-text { text-align: center; z-index: 1; padding: 0 40px; }
 
 .hero-text h1 {

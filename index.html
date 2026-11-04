@@ -49,6 +49,7 @@
   <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
   <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot (SaaS)</button>
   <button class="mobile-nav-link" data-id="litreview" onclick="showProject('litreview', this); closeMobileNav()">Machine learning text analysis and clustering</button>
+  <button class="mobile-nav-link" data-id="llmfactory" onclick="showProject('llmfactory', this); closeMobileNav()">Custom LLM Factory</button>
   <button class="mobile-nav-link" data-id="autodispatch" onclick="showProject('autodispatch', this); closeMobileNav()">24/7 AI harness with kanban board</button>
   <button class="mobile-nav-link" data-id="selfimprove" onclick="showProject('selfimprove', this); closeMobileNav()">Self-improvement loop for AI harness</button>
   <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
@@ -83,6 +84,7 @@
     <div class="sidebar-projects-title">Projects (Selected)</div>
     <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot (SaaS)<span class="sl-tag">Professional AI agents for funding</span></button>
     <button class="sidebar-project-link" data-id="litreview" onclick="showProject('litreview', this)">Machine learning text analysis and clustering<span class="sl-tag">NLP and ML</span></button>
+    <button class="sidebar-project-link" data-id="llmfactory" onclick="showProject('llmfactory', this)">Custom LLM Factory<span class="sl-tag">Custom fitted LLM solutions</span></button>
     <button class="sidebar-project-link" data-id="autodispatch" onclick="showProject('autodispatch', this)">24/7 AI harness with kanban board<span class="sl-tag">Autonomous AI work dispatch</span></button>
     <button class="sidebar-project-link" data-id="selfimprove" onclick="showProject('selfimprove', this)">Self-improvement loop for AI harness<span class="sl-tag">Detect, approve, fix, prove</span></button>
     <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">Big data analysis and scenarios modelling</span></button>
@@ -970,6 +972,110 @@
     </div>
     <footer class="article-footer">
       <span>Autonomous systems - governance and human-in-the-loop</span>
+    </footer>
+  </section>
+  <section id="project-llmfactory" style="display:none">
+    <div class="hero-banner hero-banner--llmfactory">
+      <div class="hero-text">
+        <h1>Custom LLM Factory<br><span class="hero-tagline">Creation of small, specialised LLM custom fitted to public and private sector clients</span></h1>
+        <div class="hero-sub-banner">LLM fine-tuning (QLoRA) · Calibration and abstention · Quality gate · Python, DuckDB</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Custom LLM Factory: a repeatable method for fine-tuning small language models, proven first on a multilingual food-data case</h1>
+      <div class="article-date">2026 - LLM fine-tuning and applied AI - Python, QLoRA, DuckDB</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>Status</th><td>MVP designed as a 7-day build plan with frozen success criteria. In development: no results are claimed on this page.</td></tr>
+        <tr><th>LLM / tools</th><td>
+          <strong>QLoRA fine-tuning</strong> – A small open-weight language model is trained with 4-bit quantisation and LoRA adapters on a rented 24 GB GPU, inside a hard budget.<br><br>
+          <strong>Retrieval plus selection</strong> – A search step shortlists 20 candidates and the LLM answers with a candidate number or &ldquo;none&rdquo;, so it can never invent an invalid code.<br><br>
+          <strong>Calibration and abstention</strong> – Temperature scaling, expected calibration error and risk-coverage curves, so the model's confidence can be trusted and it can decline to answer.<br><br>
+          <strong>Baselines and quality gate</strong> – TF-IDF with logistic regression, a multilingual encoder and zero-shot and few-shot LLMs are compared with the fine-tuned model on one frozen test set.<br><br>
+          <strong>Data stack</strong> – DuckDB reads an 8 GB Parquet file out-of-core on a 10 GB CPU server, so the data work costs nothing.
+        </td></tr>
+        <tr><th>Business value</th><td>A small model that runs on the client's own data, costs little per item, reports how sure it is and ships only after a repeatable quality gate. A hypothesis still to be validated with customers.</td></tr>
+        <tr><th>Use cases</th><td>Retail and consumer goods, industry, IT, sustainability reporting and public-sector clients: any place where messy text has to be mapped onto a reference list</td></tr>
+      </table>
+      <p>
+        <strong>The idea in plain words:</strong> imagine hiring an intern who has to read thousands of food
+        labels and match each one to the right line in an official carbon-footprint table. A general-purpose
+        assistant can do it, but it is expensive, it sends your data elsewhere, and it never says &ldquo;I am
+        not sure&rdquo;. This project teaches a <em>small</em> language model to do that one job well, and
+        builds the workshop that makes the next job (another sector, another client) cheap to repeat.
+      </p>
+      <p>
+        <strong>How the model is trained:</strong> instead of retraining a whole model, only a thin layer of
+        extra weights (a LoRA adapter) is trained, on top of a base model compressed to 4 bits (QLoRA). That is
+        what makes it possible on a single rented GPU for a few tens of euros. The factory has three layers: a
+        fixed core (base model, training harness and quality gate), a shared adapter per sector, and a small
+        adapter per client. Only the thin layers change from one project to the next.
+      </p>
+      <p>
+        <strong>The first case:</strong> Open Food Facts product labels, in seven languages, mapped onto the
+        official French Agribalyse life-cycle database, which has about 1,700 distinct food entries in a first
+        sample. Every correct or wrong match converts into kilograms of CO2e, so quality is measured in the
+        language of environmental policy and not only in accuracy. The model is trained to pick from a shortlist
+        and to abstain when it is unsure.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> a plain TF-IDF classifier gets the first try, so the LLM has
+        to earn its place; if the simple model is good enough, the project says so. Success thresholds are frozen
+        before the test set is touched, and near-duplicate products are kept in the same split to prevent
+        leakage. Estimates from text alone are described as estimates for triage, never as certified footprints,
+        and where the model disagrees with an existing label it reports a ranked &ldquo;suspect&rdquo;, not a
+        verified error.
+      </p>
+      <p>
+        <strong>The business hypothesis:</strong> the food case is the proof of concept, not the product. The
+        product would be a custom small model per client, built with the same factory and delivered with a model
+        card and an audit report. Which sectors will pay for it is still to be validated with customer interviews.
+        What the MVP can prove is that the method works end to end, what it costs per 1,000 items, and how many
+        hours and euros each new sector takes. It cannot prove that a client will pay.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The factory in three layers</h2>
+        <p class="chart-desc">Build the expensive part once. Each new sector or client only adds a thin adapter on top.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/factory-layers.svg" alt="Factory in three layers: fixed core, shared sector adapter and client adapter" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>From label to footprint entry</h2>
+        <p class="chart-desc">The first case, step by step. The model can answer, or decline when its confidence is too low.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/data-journey.svg" alt="From ingredient text through cleaning, shortlist, LLM choice and calibration to an answer or an abstention" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The honesty test</h2>
+        <p class="chart-desc">The LLM has to earn its place. A cheap baseline is tried first, and a null result is a valid outcome.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/honesty-test.svg" alt="Honesty test: simple baselines first, then the LLM must beat them by a pre-agreed margin, or the null result is reported" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The quality gate</h2>
+        <p class="chart-desc">A repeatable check that must accept a good model and reject a bad one, with hard limits on spending.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/quality-gate.svg" alt="Quality gate checks, with a good adapter accepted and a deliberately bad adapter rejected, plus spend rails" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>One pattern, many sectors</h2>
+        <p class="chart-desc">The commercial hypothesis: the same method serves several sectors. To be validated with customers.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/segments.svg" alt="One pattern for retail, industry, IT and sustainability: messy text mapped to a reference list" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Applied AI - LLM fine-tuning in development</span>
     </footer>
   </section>
 </main>

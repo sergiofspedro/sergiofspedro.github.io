@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#1a1840"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#9db4ff"/></marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f08a8a"/></marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8fd68a"/></marker>
+  </defs>
+  <rect width="1000" height="430" rx="22" fill="url(#bg)"/><rect width="1000" height="430" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#9db4ff">THE FACTORY</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">Three layers: build the core once, specialise it cheaply</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">One model and one harness are reused. Only the thin layers on top change for each sector and client</text>
+<rect x="150" y="125" width="700" height="68" rx="14" fill="#9db4ff" fill-opacity="0.10" stroke="#9db4ff" stroke-opacity="0.65"/>
+<text x="172" y="153" text-anchor="start" font-size="15" fill="#f3f6fa" font-weight="600">1  Fixed core</text>
+<text x="172" y="173" text-anchor="start" font-size="11" fill="#9fb3c8">One small open-weight base model, one training and evaluation harness, one quality gate. It never</text>
+<text x="172" y="187" text-anchor="start" font-size="11" fill="#9fb3c8">changes per domain.</text>
+<rect x="868" y="145" width="112" height="28" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#9db4ff" stroke-opacity="0.5"/>
+<text x="924" y="163" text-anchor="middle" font-size="10.5" fill="#9db4ff" font-weight="600">Built once</text>
+<rect x="150" y="210" width="700" height="68" rx="14" fill="#6fd8c7" fill-opacity="0.10" stroke="#6fd8c7" stroke-opacity="0.65"/>
+<text x="172" y="238" text-anchor="start" font-size="15" fill="#f3f6fa" font-weight="600">2  Shared sector adapter</text>
+<text x="172" y="258" text-anchor="start" font-size="11" fill="#9fb3c8">A small LoRA adapter trained on public data for one sector. The first sector is food products.</text>
+<rect x="868" y="230" width="112" height="28" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.5"/>
+<text x="924" y="248" text-anchor="middle" font-size="10.5" fill="#6fd8c7" font-weight="600">Once per sector</text>
+<rect x="150" y="295" width="700" height="68" rx="14" fill="#f0c05e" fill-opacity="0.10" stroke="#f0c05e" stroke-opacity="0.65"/>
+<text x="172" y="323" text-anchor="start" font-size="15" fill="#f3f6fa" font-weight="600">3  Client adapter</text>
+<text x="172" y="343" text-anchor="start" font-size="11" fill="#9fb3c8">A further small adapter per language, market or real client, trained on that client's own data.</text>
+<rect x="868" y="315" width="112" height="28" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.5"/>
+<text x="924" y="333" text-anchor="middle" font-size="10.5" fill="#f0c05e" font-weight="600">Once per client</text>
+<line x1="500" y1="193" x2="500" y2="208" stroke="#9db4ff" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="500" y1="278" x2="500" y2="293" stroke="#9db4ff" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="78" y="165" text-anchor="middle" font-size="9.5" fill="#9fb3c8" font-weight="600">MORE</text>
+<text x="78" y="178" text-anchor="middle" font-size="9.5" fill="#9fb3c8" font-weight="600">REUSED</text>
+<text x="78" y="335" text-anchor="middle" font-size="9.5" fill="#9fb3c8" font-weight="600">MORE</text>
+<text x="78" y="348" text-anchor="middle" font-size="9.5" fill="#9fb3c8" font-weight="600">SPECIFIC</text>
+<rect x="30" y="378" width="940" height="38" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#9db4ff" stroke-opacity="0.5"/>
+<text x="500.0" y="400" text-anchor="middle" font-size="11.5" fill="#f3f6fa">The test of the idea: how many hours, lines of code and GPU euros does each new sector cost? The MVP measures it</text>
+</svg>
