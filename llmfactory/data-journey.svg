@@ -9,7 +9,7 @@
     <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8fd68a"/></marker>
   </defs>
   <rect width="1000" height="490" rx="22" fill="url(#bg)"/><rect width="1000" height="490" rx="22" fill="url(#dots)"/>
-  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#9db4ff">THE FIRST CASE</text>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#9db4ff">PILOT 1: FOOD PRODUCTS</text>
   <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">From an ingredient list to a carbon-footprint entry</text>
   <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">Open Food Facts text in, an Agribalyse food entry out, with a calibrated confidence and the right to say "not sure"</text>
 <rect x="30" y="125" width="290" height="100" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#9db4ff" stroke-opacity="0.55"/>

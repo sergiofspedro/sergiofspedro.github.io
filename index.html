@@ -982,11 +982,10 @@
       </div>
     </div>
     <div class="article">
-      <h1 class="article-title">Custom LLM Factory: a repeatable method for fine-tuning small language models, proven first on a multilingual food-data case</h1>
+      <h1 class="article-title">Custom LLM Factory: a scalable method for fine-tuning small language models, individually fitted for private and public sector organisations</h1>
       <div class="article-date">2026 - LLM fine-tuning and applied AI - Python, QLoRA, DuckDB</div>
       <table class="project-info-table">
         <tr><th>Author</th><td>Sérgio Pedro</td></tr>
-        <tr><th>Status</th><td>MVP designed as a 7-day build plan with frozen success criteria. In development: no results are claimed on this page.</td></tr>
         <tr><th>LLM / tools</th><td>
           <strong>QLoRA fine-tuning</strong> – A small open-weight language model is trained with 4-bit quantisation and LoRA adapters on a rented 24 GB GPU, inside a hard budget.<br><br>
           <strong>Retrieval plus selection</strong> – A search step shortlists 20 candidates and the LLM answers with a candidate number or &ldquo;none&rdquo;, so it can never invent an invalid code.<br><br>
@@ -994,7 +993,13 @@
           <strong>Baselines and quality gate</strong> – TF-IDF with logistic regression, a multilingual encoder and zero-shot and few-shot LLMs are compared with the fine-tuned model on one frozen test set.<br><br>
           <strong>Data stack</strong> – DuckDB reads an 8 GB Parquet file out-of-core on a 10 GB CPU server, so the data work costs nothing.
         </td></tr>
-        <tr><th>Business value</th><td>A small model that runs on the client's own data, costs little per item, reports how sure it is and ships only after a repeatable quality gate. A hypothesis still to be validated with customers.</td></tr>
+        <tr><th>Business value</th><td>
+          <strong>Fitted to your processes</strong> – The model is trained on the organisation's own workflows and data, for better results on the tasks that matter to it.<br><br>
+          <strong>Lower cost</strong> – A small specialised model costs far less per item than a large commercial one.<br><br>
+          <strong>Faster</strong> – Small models answer quickly and can run close to the data.<br><br>
+          <strong>Private by design</strong> – Internal data is never shared with a commercial LLM in the cloud.<br><br>
+          <strong>Trustworthy</strong> – Calibrated confidence, the option to abstain, and a quality gate before anything ships.
+        </td></tr>
         <tr><th>Use cases</th><td>Retail and consumer goods, industry, IT, sustainability reporting and public-sector clients: any place where messy text has to be mapped onto a reference list</td></tr>
       </table>
       <p>
@@ -1005,6 +1010,15 @@
         builds the workshop that makes the next job (another sector, another client) cheap to repeat.
       </p>
       <p>
+        <strong>Why a custom model for each organisation:</strong> the model is individually fitted to the
+        organisation's own internal processes, which should give <strong>better results</strong> on the tasks that
+        matter to it than a general-purpose model. It <strong>costs less</strong> per item and runs
+        <strong>faster</strong>, because it is small. Above all it protects <strong>data privacy</strong>: internal
+        data stays inside the organisation and is never sent to a commercial LLM in the cloud. It also reports how
+        sure it is, and abstains when it is not. These are design goals, and the pilots are where they get
+        measured.
+      </p>
+      <p>
         <strong>How the model is trained:</strong> instead of retraining a whole model, only a thin layer of
         extra weights (a LoRA adapter) is trained, on top of a base model compressed to 4 bits (QLoRA). That is
         what makes it possible on a single rented GPU for a few tens of euros. The factory has three layers: a
@@ -1012,11 +1026,12 @@
         adapter per client. Only the thin layers change from one project to the next.
       </p>
       <p>
-        <strong>The first case:</strong> Open Food Facts product labels, in seven languages, mapped onto the
+        <strong>Pilot 1, food products:</strong> Open Food Facts product labels, in seven languages, mapped onto the
         official French Agribalyse life-cycle database, which has about 1,700 distinct food entries in a first
         sample. Every correct or wrong match converts into kilograms of CO2e, so quality is measured in the
         language of environmental policy and not only in accuracy. The model is trained to pick from a shortlist
-        and to abstain when it is unsure.
+        and to abstain when it is unsure. <strong>Pilot 2 will be in the energy sector</strong>, to show that the
+        same factory transfers to a different domain.
       </p>
       <p>
         <strong>The decisions that matter:</strong> a plain TF-IDF classifier gets the first try, so the LLM has
@@ -1027,11 +1042,11 @@
         verified error.
       </p>
       <p>
-        <strong>The business hypothesis:</strong> the food case is the proof of concept, not the product. The
+        <strong>The business hypothesis:</strong> the pilots are the proof of concept, not the product. The
         product would be a custom small model per client, built with the same factory and delivered with a model
         card and an audit report. Which sectors will pay for it is still to be validated with customer interviews.
-        What the MVP can prove is that the method works end to end, what it costs per 1,000 items, and how many
-        hours and euros each new sector takes. It cannot prove that a client will pay.
+        What the pilots can prove is that the method works end to end, what it costs per 1,000 items, and how many
+        hours and euros each new sector takes. They cannot prove that a client will pay.
       </p>
       <hr class="chart-divider" />
       <div class="chart-section">
@@ -1043,8 +1058,8 @@
       </div>
       <hr class="chart-divider" />
       <div class="chart-section">
-        <h2>From label to footprint entry</h2>
-        <p class="chart-desc">The first case, step by step. The model can answer, or decline when its confidence is too low.</p>
+        <h2>Pilot 1: from label to footprint entry</h2>
+        <p class="chart-desc">The food pilot, step by step. The model can answer, or decline when its confidence is too low.</p>
         <div class="svg-frame svg-frame--dark">
           <img src="llmfactory/data-journey.svg" alt="From ingredient text through cleaning, shortlist, LLM choice and calibration to an answer or an abstention" style="width:100%;height:auto;display:block;" />
         </div>
