@@ -46,13 +46,13 @@
     <div class="mobile-nav-name">Sérgio Pedro</div>
   </div>
   <div class="mobile-nav-section-label">Navigate</div>
-  <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
+  <button class="mobile-nav-link active" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
   <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot (SaaS)</button>
   <button class="mobile-nav-link" data-id="litreview" onclick="showProject('litreview', this); closeMobileNav()">Machine learning text analysis and clustering</button>
   <button class="mobile-nav-link" data-id="llmfactory" onclick="showProject('llmfactory', this); closeMobileNav()">Custom LLM Factory</button>
   <button class="mobile-nav-link" data-id="autodispatch" onclick="showProject('autodispatch', this); closeMobileNav()">24/7 AI harness with kanban board</button>
   <button class="mobile-nav-link" data-id="selfimprove" onclick="showProject('selfimprove', this); closeMobileNav()">Self-improvement loop for AI harness</button>
-  <button class="mobile-nav-link active" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
+  <button class="mobile-nav-link" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
   <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Leads Radar</button>
   <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP - EU Commission highlighted solution</button>
   <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Georeferenced urban monitoring</button>
@@ -73,7 +73,7 @@
   <div class="sidebar-dot"></div>
   <p class="sidebar-bio">DATA SCIENTIST | DEVELOPER AND AI ANALYST | PROJECT MANAGEMENT | ENVIRONMENTAL POLICY | EU CLIMATE PACT AMBASSADOR</p>
   <div class="sidebar-about-link">
-    <button class="sidebar-project-link" data-id="about" onclick="showProject('about', this)">About me</button>
+    <button class="sidebar-project-link active" data-id="about" onclick="showProject('about', this)">About me</button>
   </div>
   <div class="contact-icons">
     <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
@@ -87,7 +87,7 @@
     <button class="sidebar-project-link" data-id="llmfactory" onclick="showProject('llmfactory', this)">Custom LLM Factory<span class="sl-tag">Custom fitted LLM solutions</span></button>
     <button class="sidebar-project-link" data-id="autodispatch" onclick="showProject('autodispatch', this)">24/7 AI harness with kanban board<span class="sl-tag">Autonomous AI work dispatch</span></button>
     <button class="sidebar-project-link" data-id="selfimprove" onclick="showProject('selfimprove', this)">Self-improvement loop for AI harness<span class="sl-tag">Detect, approve, fix, prove</span></button>
-    <button class="sidebar-project-link active" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">Big data analysis and scenarios modelling</span></button>
+    <button class="sidebar-project-link" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">Big data analysis and scenarios modelling</span></button>
     <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Leads Radar<span class="sl-tag">Automatic monitoring and reporting</span></button>
     <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP - EU Commission highlighted solution<span class="sl-tag">Multi-channel AI platform</span></button>
     <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Georeferenced urban monitoring<span class="sl-tag">Geospatial decision support</span></button>
@@ -101,7 +101,7 @@
 </aside>
 
 <main class="main">
-    <section id="project-about" style="display:none">
+    <section id="project-about">
     <div class="article" style="margin-top:60px;">
       <h1 class="article-title">About me</h1>
       <div class="article-date">Porto, Portugal</div>
@@ -112,7 +112,7 @@
       <p>Two-time European Commission's EUTalentON selected participant, including Best Pitch winner during the first edition.</p>
     </div>
   </section>
-  <section id="project-rpi">
+  <section id="project-rpi" style="display:none">
     <div class="hero-banner">
       <div class="hero-text">
         <h1>Regenerative Potential Index<br><span class="hero-tagline">Big data analysis and scenarios modelling</span></h1>
