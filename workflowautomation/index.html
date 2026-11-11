@@ -1,0 +1,1157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <title>Workflow Automation Engine - Sérgio Pedro</title>
+  <link rel="canonical" href="https://sergiofspedro.github.io/workflowautomation/" />
+  <meta name="description" content="Portfolio of Sérgio Pedro: INNOVATION MANAGEMENT & ENVIRONMENT | DATA ANALYST AND DEVELOPER | EU CLIMATE PACT AMBASSADOR" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Workflow Automation Engine - Sérgio Pedro" />
+  <meta property="og:description" content="INNOVATION MANAGEMENT & ENVIRONMENT | DATA ANALYST AND DEVELOPER | EU CLIMATE PACT AMBASSADOR" />
+  <meta property="og:image" content="https://sergiofspedro.github.io/assets/favicon.png" />
+  <meta property="og:url" content="https://sergiofspedro.github.io/workflowautomation/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="mobile-topbar">
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  <img class="mobile-topbar-avatar" src="https://github.com/sergiofspedro.png" alt="Sérgio Pedro" />
+  <span class="mobile-topbar-title">Sérgio Pedro</span>
+</div>
+<div class="mobile-identity">
+  <div class="mobile-identity-row">
+    <img class="mobile-identity-avatar" src="https://github.com/sergiofspedro.png" alt="Sérgio Pedro" />
+    <div>
+      <div class="mobile-identity-name">Sérgio Pedro</div>
+      <p class="mobile-identity-bio">DATA SCIENTIST | DEVELOPER AND AI ANALYST | PROJECT MANAGEMENT | ENVIRONMENTAL POLICY | EU CLIMATE PACT AMBASSADOR</p>
+    </div>
+  </div>
+  <div class="mobile-identity-contacts">
+    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="mailto:emailsergiopedro@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img class="mobile-nav-avatar" src="https://github.com/sergiofspedro.png" alt="Sérgio Pedro" />
+    <div class="mobile-nav-name">Sérgio Pedro</div>
+  </div>
+  <div class="mobile-nav-section-label">Navigate</div>
+  <button class="mobile-nav-link" data-id="about" onclick="showProject('about', this); closeMobileNav()">About me</button>
+  <button class="mobile-nav-link" data-id="funding" onclick="showProject('funding', this); closeMobileNav()">Funding AICopilot (SaaS)</button>
+  <button class="mobile-nav-link" data-id="litreview" onclick="showProject('litreview', this); closeMobileNav()">Machine learning text analysis and clustering</button>
+  <button class="mobile-nav-link" data-id="llmfactory" onclick="showProject('llmfactory', this); closeMobileNav()">Custom LLM Factory</button>
+  <button class="mobile-nav-link" data-id="autodispatch" onclick="showProject('autodispatch', this); closeMobileNav()">24/7 AI harness with kanban board</button>
+  <button class="mobile-nav-link" data-id="selfimprove" onclick="showProject('selfimprove', this); closeMobileNav()">Self-improvement loop for AI harness</button>
+  <button class="mobile-nav-link" data-id="rpi" onclick="showProject('rpi', this); closeMobileNav()">Regenerative Potential Index</button>
+  <button class="mobile-nav-link" data-id="miningeurope" onclick="showProject('miningeurope', this); closeMobileNav()">Leads Radar</button>
+  <button class="mobile-nav-link" data-id="loop" onclick="showProject('loop', this); closeMobileNav()">LOOP - EU Commission highlighted solution</button>
+  <button class="mobile-nav-link" data-id="porto" onclick="showProject('porto', this); closeMobileNav()">Georeferenced urban monitoring</button>
+  <button class="mobile-nav-link" data-id="pipeline" onclick="showProject('pipeline', this); closeMobileNav()">AI agents 24/7</button>
+  <button class="mobile-nav-link active" data-id="n8n" onclick="showProject('n8n', this); closeMobileNav()">Workflow Automation Engine</button>
+  <button class="mobile-nav-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this); closeMobileNav()">Interactive GIS dashboard</button>
+  <div class="mobile-nav-section-label" style="margin-top:20px;">Contact</div>
+  <div class="mobile-nav-contact">
+    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="mailto:emailsergiopedro@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+  <div class="mobile-nav-footer">2026 (c) Sérgio Pedro</div>
+</nav>
+<aside class="sidebar">
+  <img class="sidebar-avatar" src="https://github.com/sergiofspedro.png" alt="Sérgio Pedro" />
+  <div class="sidebar-name">Sérgio Pedro</div>
+  <div class="sidebar-dot"></div>
+  <p class="sidebar-bio">DATA SCIENTIST | DEVELOPER AND AI ANALYST | PROJECT MANAGEMENT | ENVIRONMENTAL POLICY | EU CLIMATE PACT AMBASSADOR</p>
+  <div class="sidebar-about-link">
+    <button class="sidebar-project-link" data-id="about" onclick="showProject('about', this)">About me</button>
+  </div>
+  <div class="contact-icons">
+    <a href="https://github.com/sergiofspedro" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="https://www.linkedin.com/in/sergiofspedro" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="mailto:emailsergiopedro@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+  <div class="sidebar-projects">
+    <div class="sidebar-projects-title">Projects (Selected)</div>
+    <button class="sidebar-project-link" data-id="funding" onclick="showProject('funding', this)">Funding AICopilot (SaaS)<span class="sl-tag">Professional AI agents for funding</span></button>
+    <button class="sidebar-project-link" data-id="litreview" onclick="showProject('litreview', this)">Machine learning text analysis and clustering<span class="sl-tag">NLP and ML</span></button>
+    <button class="sidebar-project-link" data-id="llmfactory" onclick="showProject('llmfactory', this)">Custom LLM Factory<span class="sl-tag">Custom fitted LLM solutions</span></button>
+    <button class="sidebar-project-link" data-id="autodispatch" onclick="showProject('autodispatch', this)">24/7 AI harness with kanban board<span class="sl-tag">Autonomous AI work dispatch</span></button>
+    <button class="sidebar-project-link" data-id="selfimprove" onclick="showProject('selfimprove', this)">Self-improvement loop for AI harness<span class="sl-tag">Detect, approve, fix, prove</span></button>
+    <button class="sidebar-project-link" data-id="rpi" onclick="showProject('rpi', this)">Regenerative Potential Index<span class="sl-tag">Big data analysis and scenarios modelling</span></button>
+    <button class="sidebar-project-link" data-id="miningeurope" onclick="showProject('miningeurope', this)">Leads Radar<span class="sl-tag">Automatic monitoring and reporting</span></button>
+    <button class="sidebar-project-link" data-id="loop" onclick="showProject('loop', this)">LOOP - EU Commission highlighted solution<span class="sl-tag">Multi-channel AI platform</span></button>
+    <button class="sidebar-project-link" data-id="porto" onclick="showProject('porto', this)">Georeferenced urban monitoring<span class="sl-tag">Geospatial decision support</span></button>
+    <button class="sidebar-project-link" data-id="pipeline" onclick="showProject('pipeline', this)">AI agents 24/7<span class="sl-tag">Custom personal AI agents</span></button>
+    <button class="sidebar-project-link active" data-id="n8n" onclick="showProject('n8n', this)">Workflow Automation Engine<span class="sl-tag">Scheduled ETL on autopilot</span></button>
+    <button class="sidebar-project-link" data-id="gisexplorer" onclick="showProject('gisexplorer', this)">Interactive GIS dashboard<span class="sl-tag">Multilayer self-updating map</span></button>
+  </div>
+  <div style="margin-top:auto; width:100%; text-align:center;">
+    <div class="sidebar-copy">2026 (c) Sérgio Pedro</div>
+  </div>
+</aside>
+
+<main class="main">
+    <section id="project-about" style="display:none">
+    <div class="article" style="margin-top:60px;">
+      <h1 class="article-title">About me</h1>
+      <div class="article-date">Porto, Portugal</div>
+      <p>Data analyst and developer who builds custom AI agents, automated data pipelines and analytics products, with a background in innovation management and environmental policy. PhD candidate in regenerative development, innovation management and data analysis at the University of Coimbra under a joint supervision agreement with Wageningen University in the Netherlands (thesis concluded, awaiting PhD jury).</p>
+      <p>Over 12 years working across government, academia, and civil society, from project management to designing AI-based data pipelines and co-authoring EU-commissioned climate policy reports.</p>
+      <p>Team member of one of the three AI-infrastructure projects highlighted by the European Commission during the EU's Civic Tech Hackathon 2026 (Brussels, June).</p>
+      <p>Former appointed member of Portugal's governmental task force for the National Sustainability Investment Plan. EU Climate Pact Ambassador. Member of the research network of the European Union Agency for Fundamental Rights (EU's FRANET).</p>
+      <p>Two-time European Commission's EUTalentON selected participant, including Best Pitch winner during the first edition.</p>
+    </div>
+  </section>
+  <section id="project-rpi" style="display:none">
+    <div class="hero-banner">
+      <div class="hero-text">
+        <h1>Regenerative Potential Index<br><span class="hero-tagline">Big data analysis and scenarios modelling</span></h1>
+        <div class="hero-sub-banner">Composite-indicator model · Scenario forecasting to 2050 · Python, Plotly, QGIS</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Regenerative Potential Index: a composite-indicator and scenario model applied to a decade of Amsterdam data</h1>
+      <div class="article-date">2024 - Data science and forecasting - Python, Plotly, QGIS</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Python</strong> – Statistical normalisation, dimension weighting, and temporal aggregation of urban regeneration data.<br><br>
+          <strong>Plotly</strong> – Interactive time-series and comparison charts for exploring RPI scores across districts.<br><br>
+          <strong>QGIS</strong> – Spatial analysis and map composition of district-level regeneration indicators.
+        </td></tr>
+        <tr><th>Business value</th><td>One comparable score per territory and year, plus 2030 and 2050 scenario projections: scattered indicators become a decision tool</td></tr>
+        <tr><th>Use cases</th><td>Urban planning authorities, real-estate developers, impact investors, policy evaluators</td></tr>
+      </table>
+      <p>
+        The <strong>Regenerative Potential Index (RPI)</strong> is an <strong>original evaluation framework</strong>
+        from my PhD research that scores how capable a territory is of regenerating itself. It is built for
+        <strong>both public and private sectors</strong>, and asks a forward-looking question rather than
+        auditing the past. The model aggregates indicators across four dimensions (economic, environmental,
+        political and social) into a single composite score (0 to 100) per territorial unit per year, and
+        projects it to <strong>2030 and 2050</strong> under constrained, business-as-usual and optimistic scenarios.
+      </p>
+      <p>
+        This case study applies the RPI to the <strong>eight districts of the municipality of Amsterdam</strong>
+        over a decade of data (2015 to 2024). The municipality's overall RPI in 2024 stands at <strong>47.93</strong>,
+        down from 49.98 in 2015. This modest decline conceals important contrasts: the <strong>environmental</strong>
+        dimension improved (+1.46 points) while <strong>economic</strong> performance deteriorated sharply (-7.21 points,
+        reaching 43.01 in 2024). The visualisations below are interactive, hover to inspect values, click legend
+        entries to isolate districts, and use dropdowns to switch dimensions.
+      </p>
+      <p>
+        For decision-makers, a single comparable score turns scattered sustainability data into something usable.
+        <strong>Municipal planning departments</strong> can prioritise regeneration spend across districts instead of
+        applying a blanket policy citywide. <strong>Real-estate developers and impact investors</strong> get a
+        benchmarkable regenerative-capacity signal before committing capital to a territory. <strong>Policy evaluators</strong>
+        gain a way to track a territory's trajectory over time, rather than relying on a one-off static audit.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>RPI overall score, time evolution (2015-2024)</h2>
+        <p class="chart-desc">Municipality aggregate declined from 49.98 to 47.93. Hover over points to inspect values.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/timeseries_overall.html" title="RPI overall time series" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>RPI by dimension, time evolution</h2>
+        <p class="chart-desc">Environmental is the strongest dimension; economic is the weakest. Use dropdown to switch dimensions.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="rpi/charts/timeseries_dimensions.html" title="RPI dimension time series" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>District comparison, 2024 snapshot</h2>
+        <p class="chart-desc">Ranks all eight districts plus the municipality aggregate for each dimension.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/histogram_2024.html" title="District histogram 2024" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Scenario projections, 2030 and 2050</h2>
+        <p class="chart-desc">Constrained (p25) forecasts 35.79 by 2050; BAU (p50) projects 49.34; optimistic (p75) reaches 57.44.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="rpi/charts/scenarios.html" title="RPI scenarios" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Interactive district map, Amsterdam (2024)</h2>
+        <p class="chart-desc">Spatial distribution of RPI scores across Amsterdam's districts. Pan, zoom and hover to read scores.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame map" src="rpi/charts/map_2024.html" title="Amsterdam district map" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>PhD research · Urban regeneration · Management PhD</span>
+      <a href="https://github.com/sergiofspedro/Regenerative-Potential-Index" target="_blank">View source on GitHub →</a>
+    </footer>
+  </section>
+  <section id="project-miningeurope" style="display:none">
+    <div class="hero-banner hero-banner--mining">
+      <div class="hero-text">
+        <h1>Leads Radar<br><span class="hero-tagline">Automatic monitoring and reporting pipeline</span></h1>
+        <div class="hero-sub-banner">Signal collection · Aggregation · Interactive dashboards · 14 sites, 2015-2026</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Leads Radar: an automatic monitoring and reporting pipeline for dispersed physical sites</h1>
+      <div class="article-date">2026 - Data pipeline and analytics - Friends of the Earth Europe (NGO)</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Python</strong> – Data pipeline for collecting, cleaning, and analysing environmental conflict data across 14 mine sites.<br><br>
+          <strong>Plotly</strong> – Interactive dashboards for exploring media coverage, legal actions, and contamination signals.<br><br>
+          <strong>Leaflet</strong> – Interactive map with filters, search, and info panels for mine site visualisation.
+        </td></tr>
+        <tr><th>Business value</th><td>Replicable, continuous risk and conflict monitoring across 14 sites, from raw signals to dashboards and a 45-page report</td></tr>
+        <tr><th>Use cases</th><td>Risk monitoring for extractive industries, ESG and compliance teams, regulators and NGOs</td></tr>
+      </table>
+      <p>This project presents a georeferenced leads radar, a replicable data pipeline for continuous environmental conflict monitoring across a portfolio of dispersed physical sites. It tracks four signal types, media coverage, legal disputes, civic engagement events, and contamination or depletion incidents, aggregates them per site, and surfaces patterns through interactive visualisations.</p>
+      <p>The case study shown below, developed in collaboration with <strong>Friends of the Earth Europe</strong>, applies this radar to <strong>14 mine sites across Portugal</strong> between 2015 and 2026, producing eight dashboards. It covers active operations (Neves-Corvo, Panasqueira), contested projects (Barroso lithium mine, peaking at 56 articles in 2024), and abandoned sites (Lousal, Urgeiriça), across major river basins (Douro, Tagus, Sado, Mira, Cavado, Tâmega). The charts below reflect this one implementation, not the ceiling of what the methodology can cover, it scales directly to a European or global rollout, and generalises beyond mining to any sector with dispersed sites needing continuous risk or conflict monitoring.</p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>1 · Interactive map</h2>
+        <p class="chart-desc">Mine locations across Portugal with filters, search, and info panel.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/01DF_interactive_map.html" title="Interactive map" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>2 · Heatmap timeline</h2>
+        <p class="chart-desc">Articles per mine per year (2015-2026).</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/02_heatmap_timeline.html" title="Heatmap timeline" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>3 · Conflict types by mine</h2>
+        <p class="chart-desc">Water contamination, depletion, court, and NGO articles per mine.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/03_conflict_by_mine.html" title="Conflict types" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>4 · Water flags</h2>
+        <p class="chart-desc">Water contamination vs depletion per mine, with absolute/percentage toggle.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/04_water_flags.html" title="Water flags" loading="lazy"></iframe></div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>5 · Articles by year</h2>
+        <p class="chart-desc">Total articles per year, stacked by mine status.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/05_yearly_total.html" title="Articles by year" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>6 · Mine summary grid</h2>
+        <p class="chart-desc">Colour-coded grid comparing all 14 mines across five environmental indicators.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame" src="mining/06_mine_summary_grid.html" title="Mine summary grid" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>7 · Events timeline</h2>
+        <p class="chart-desc">All documented environmental events by mine and year.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/07_events_timeline.html" title="Events timeline" loading="lazy"></iframe></div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>8 · Gantt timeline</h2>
+        <p class="chart-desc">Monitoring coverage periods with contamination and court markers.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/08_gantt_timeline.html" title="Gantt timeline" loading="lazy"></iframe></div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The full report</h2>
+        <p class="chart-desc">45-page report covering 14 mine sites, water contamination and depletion incidents from 2015 to 2026.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="mining/water-conflicts-report.pdf" title="Full report PDF"></iframe></div>
+        <p class="chart-desc"><a href="https://github.com/sergiofspedro/Miningeurope" target="_blank">Open the full report on GitHub →</a></p>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Data analysis · Friends of the Earth Europe</span>
+      <a href="https://github.com/sergiofspedro/Miningeurope" target="_blank">View source on GitHub →</a>
+    </footer>
+  </section>
+  <section id="project-loop" style="display:none">
+    <div class="hero-banner hero-banner--loop">
+      <div class="hero-text">
+        <h1>LOOP - EU Commission highlighted solution<br><span class="hero-tagline">Multi-channel AI platform: voice, chatbot and open APIs</span></h1>
+        <div class="hero-sub-banner">Voice and Telegram channels · LLM summaries · One of 3 AI solutions highlighted by the European Commission</div>
+      </div>
+    </div>
+    <div class="article">
+      <img class="project-logo" src="loop/Picture1.png" alt="LOOP logo" />
+      <h1 class="article-title">LOOP: an open-source, multi-channel AI platform that lets every EU citizen take part in public consultations</h1>
+      <div class="article-date">2026 - Team project - EU Commission Civic Tech Hackathon, Brussels</div>
+      <table class="project-info-table">
+        <tr><th>Authors</th><td>Team project: Andres Pereira de Luce, Fernando Andres Garcia, Madalina Bouros, Rafail Promikyridis, Sérgio Pedro, Solene Wolff, Tjerk S Boorsma</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>DeepSeek V4 Flash (via OpenRouter)</strong> – LLM for generating and summarising civic consultation content.<br><br>
+          <strong>OpenClaw</strong> – Multi-agent orchestration framework used during development of the LOOP platform.<br><br>
+          <strong>Infisical</strong> – Secrets management for API keys across the multi-channel platform.<br><br>
+          <strong>Docker</strong> – Containerisation for reproducible deployment across development and production environments.<br><br>
+          <strong>Tailscale</strong> – Secure peer-to-peer networking connecting LOOP services.<br><br>
+          <strong>Telnyx</strong> – Voice call API for reaching citizens without smartphones via DTMF interactive menus.
+        </td></tr>
+        <tr><th>Software</th><td>Flask, Telegram Bot API, SQLite, Caddy, GitHub Actions</td></tr>
+        <tr><th>Business value</th><td>One shared backend serves voice and chat channels, reaching citizens without smartphones and closing the feedback loop</td></tr>
+        <tr><th>Use cases</th><td>Municipalities and public bodies broadening the reach of consultations, any organisation collecting feedback across several channels</td></tr>
+      </table>
+      <div class="project-callout">
+        <strong>Recognized by the European Commission.</strong> LOOP was one of only 3 AI solutions highlighted by the European Commission during the EU Civic Tech Hackathon, held in Brussels in June 2026. All participants were selected by the Commission and organized into 8 teams.
+      </div>
+      <p>
+        <strong>LOOP</strong> is an open-source civic participation gateway built for the
+        <strong>EU Commission Civic Tech Hackathon 2026</strong>. It responds to three compounding failures named in the hackathon's own background note:
+        consultations are fragmented across EU, national, and municipal platforms with no single point of
+        discovery, the language they're written in is complex enough to keep participation theoretical
+        rather than practical, and roughly <strong>40 to 45 million EU citizens, one in ten</strong>, have no
+        smartphone and are unreachable by any existing civic tech platform. LOOP does not replace official
+        platforms like Decidim or Have Your Say, it makes them <strong>discoverable, understandable, and
+        actionable</strong> through channels citizens already use.
+      </p>
+      <p>
+        Citizens register once, linking a phone number to a location and topic preferences, currently a
+        lightweight mock flow standing in for a future EU Digital Identity Wallet integration, so the same
+        architecture works for a single municipality or a nationwide rollout without changing the model.
+        From there, LOOP proactively notifies citizens when a relevant consultation opens in their own
+        municipality, country, or at EU level, rather than waiting for them to go looking for it.
+      </p>
+      <p>
+        Citizens interact through the channel that works for them: a <strong>voice call</strong>
+        (DTMF keypad voting, no smartphone needed), or a <strong>Telegram bot</strong> with inline keyboards
+        and AI-powered free-text opinion submission. Both channels share the same backend, a single
+        SQLite vote database, so votes cast by phone are immediately visible in the Telegram interface
+        and vice versa. Each consultation is presented as a four-field card: title, theme, deadline, and
+        an AI-generated plain-language summary, with four possible responses: know more, express my
+        opinion, vote yes, or vote no.
+      </p>
+      <p>
+        Every contribution triggers two things at once: an immediate, warmly worded confirmation naming
+        the consultation and how many others have already taken part, and a one-tap shareable invitation
+        the citizen can forward to bring someone else in. The Telegram bot sends free-text opinions to
+        <strong>DeepSeek V4 Flash</strong> via OpenRouter for empathetic acknowledgement, and all API keys
+        are managed through <strong>Infisical</strong> (open-source secrets manager), never hardcoded,
+        injected at container startup. The full stack (Caddy, Docker, Flask, Telnyx, GitHub Actions) is
+        open-source.
+      </p>
+      <p>
+        LOOP directly addresses the feedback loop absence identified as the primary driver of
+        <strong>EU electoral abstention (49.3%)</strong>: every vote and opinion routes to the official
+        platform that launched the consultation, while an anonymised copy feeds a live tracking dashboard
+        showing each consultation's status from open, to under review, to decision published, to
+        implementation, answering the question citizens actually ask: did my participation make a
+        difference?
+      </p>
+      <p>
+        The team's full vision reaches further than the two channels built for the 48-hour demo: a native
+        RCS experience and an embedded chat bot inside WhatsApp and Signal alongside the Telegram and voice
+        channels already working, and a website for citizens who prefer to browse. Interoperability is
+        designed in from the start through an API and MCP layer, so any civic platform, Decidim, CONSUL,
+        Adhocracy+, Have Your Say, can exchange participation data with any other instead of every platform
+        building the same integration separately. Data sovereignty is a first-class design principle
+        throughout, with the goal of citizen participation data that never leaves the jurisdiction where
+        the participation happened. Positioned this way, LOOP is shared civic infrastructure a single
+        municipality can deploy today, with a natural path toward adoption as a reference implementation
+        for the future European Civic Tech Hub.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The citizen journey</h2>
+        <p class="chart-desc">From registration to tracked outcome: proactive notification, four-field card, response options, confirmation.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/journey.svg" alt="LOOP citizen journey" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>How wide the door opens</h2>
+        <p class="chart-desc">Telegram and voice working today; RCS, chatbot, and website in wider vision.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/channels.svg" alt="LOOP channels" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>A gateway, not a new platform</h2>
+        <p class="chart-desc">LOOP connects citizens to Decidim, Have Your Say, CONSUL, and other platforms.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="loop/interoperability.svg" alt="LOOP interoperability" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>EU Commission Civic Tech Hackathon 2026</span>
+      <a href="https://github.com/sergiofspedro/eu-commission-civic-tech-hackathon-2026" target="_blank">View source on GitHub →</a>
+    </footer>
+  </section>
+  <section id="project-porto" style="display:none">
+    <div class="hero-banner hero-banner--porto">
+      <div class="hero-text">
+        <h1>Georeferenced urban monitoring<br><span class="hero-tagline">Multi-criteria scoring and geospatial analytics for decision support</span></h1>
+        <div class="hero-sub-banner">Index modelling · Interactive maps · Porto parishes · Python, Plotly, Leaflet, QGIS</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Georeferenced urban monitoring: a geospatial scoring model that shows where a city underperforms, down to the parish</h1>
+      <div class="article-date">2026 - Data analytics and geospatial modelling - PhD research, co-authored with Giovanni Allegretti and Dirk Roep</div>
+      <table class="project-info-table">
+        <tr><th>Authors</th><td>Sérgio Pedro, Giovanni Allegretti, Dirk Roep</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Python</strong> – Index construction, z-score standardisation, and dimension weighting for the livability framework.<br><br>
+          <strong>Plotly</strong> – Interactive bar charts and comparison visualisations for parish-level data.<br><br>
+          <strong>Leaflet</strong> – Interactive map with colour-coded parish scores and hover details.<br><br>
+          <strong>QGIS</strong> – Spatial data preparation and cartographic composition.
+        </td></tr>
+        <tr><th>Business value</th><td>An eight-dimension breakdown that pinpoints the weak spot of each parish, instead of one opaque score</td></tr>
+        <tr><th>Use cases</th><td>Municipal planning, urban policy, EU cohesion funding, site selection and territory analytics</td></tr>
+      </table>
+      <p>
+        How liveable a city is doesn't just shape day-to-day comfort, it shapes how strongly people engage in
+        local democracy. This research reframes liveability through an <strong>ecocentric lens</strong>,
+        moving beyond conventional indices that focus almost entirely on human convenience, and applies a
+        modified liveability index to <strong>Porto, Portugal</strong>, at both the city and parish level.
+      </p>
+      <p>
+        The index combines <strong>eight dimensions</strong>: transport, culture, economy, inequality,
+        security and pollution, environment, housing, and health, into a single score. Each dimension is
+        first standardised (so very different units, like doctors per 1,000 people and air quality index,
+        become comparable), then weighted by importance (environment counts most, at 20%, followed by health
+        and security/pollution at 15% each), and finally combined into one bounded liveability score per
+        geography. Inequality and insecurity/pollution pull the score down when they're high, since
+        more of either makes a place less liveable.
+      </p>
+      <p>
+        The city-wide score shows clear room for improvement, particularly in <strong>transport</strong>,
+        <strong>inequality</strong>, <strong>insecurity/pollution</strong>, and <strong>housing and urban
+        regeneration</strong>, closely matching the municipality's own priorities, such as chronic traffic
+        congestion and the air and noise pollution that comes with it. At the parish level, the two
+        <strong>city-centre parishes</strong>, Cedofeita/Santo Ildefonso/Sé/Miragaia/São Nicolau/Vitória and
+        Lordelo do Ouro e Massarelos, score highest, mainly because they concentrate far more shops, businesses
+        and cultural venues than the rest of the city.
+      </p>
+      <p>
+        For decision-makers, an eight-dimension breakdown is more actionable than a single liveability number.
+        <strong>Municipal planning departments</strong> can target the specific weak dimension in each parish
+        (transport in one, housing in another) rather than applying a citywide blanket policy that overspends
+        where it isn't needed. <strong>EU cohesion-policy stakeholders</strong> get a comparable, multi-dimensional
+        basis for allocating funds across parishes, instead of relying on a single proxy metric that hides where
+        the real gap is.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Interactive Porto map</h2>
+        <p class="chart-desc">Parish-level liveability scores with pan, zoom and hover.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame map" src="porto/charts/map_simplified.html" title="Porto parish map" loading="lazy"></iframe></div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Key findings</h2>
+        <p class="chart-desc">Parish ranking with scores and dimension breakdown.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="porto/charts/parish_comparison.html" title="Porto parish comparison" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>PhD research - co-authored with Giovanni Allegretti and Dirk Roep</span>
+      <a href="https://github.com/sergiofspedro/Regenerative-Potential-Index" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-pipeline" style="display:none">
+    <div class="hero-banner hero-banner--pipeline">
+      <div class="hero-text">
+        <h1>AI agents 24/7<br><span class="hero-tagline">Custom personal AI agents</span></h1>
+        <div class="hero-sub-banner">Multi-agent orchestration · Browser automation · Self-hosted · Docker, Tailscale, Infisical</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">OpenClaw: a self-hosted fleet of custom AI agents for competitive intelligence and opportunity monitoring</h1>
+      <div class="article-date">2026 - AI agents and infrastructure - Python, browser-use, Playwright, n8n</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>OpenClaw</strong> – Multi-agent orchestration framework for managing autonomous AI agents.<br><br>
+          <strong>browser-use</strong> – Agent-based browser navigation for extracting data from web sources.<br><br>
+          <strong>Playwright</strong> – Browser automation for reliable page interaction and data extraction.<br><br>
+          <strong>n8n</strong> – Workflow automation orchestrating data collection, processing, and notifications.<br><br>
+          <strong>Tavily</strong> – AI-powered search API for gathering relevant web content.<br><br>
+          <strong>Tailscale</strong> – Secure peer-to-peer networking connecting all pipeline services.<br><br>
+          <strong>Docker</strong> – Containerisation for isolated, reproducible agent runtimes.<br><br>
+          <strong>Infisical</strong> – Secrets management across the pipeline infrastructure.
+        </td></tr>
+        <tr><th>Business value</th><td>Continuous, structured multi-source intelligence gathering that replaces daily manual checking of dozens of sources</td></tr>
+        <tr><th>Use cases</th><td>Market research, competitor monitoring, price tracking</td></tr>
+      </table>
+      <p>
+        This is a multi-agent pipeline for automated competitive intelligence and opportunity monitoring, built on
+        <strong>OpenClaw</strong>. Browser-use agents navigate and extract data directly from web sources, a
+        dedicated <strong>calls bot</strong> continuously scrapes open calls for funding grants, prizes,
+        competitions, and courses across dozens of sources, and <strong>n8n</strong> orchestrates the full
+        workflow end to end, from collection through processing to notification and reporting.
+      </p>
+      <p>
+        The system runs autonomously around the clock, combining scheduled runs with event-driven triggers so
+        new opportunities and signals surface without anyone checking a source manually. Independent fallback
+        chains keep individual agents running even when a specific source or API is temporarily unavailable.
+      </p>
+      <p>
+        For a business, the value is in what this replaces: continuous, structured monitoring that would
+        otherwise require someone manually checking dozens of sources every day. The same agent architecture
+        applies well beyond this specific use case, to any business that needs ongoing competitive intelligence,
+        opportunity discovery, or market monitoring without adding manual research overhead.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System architecture</h2>
+        <p class="chart-desc">How the multi-agent system works end-to-end.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/architecture.svg" alt="OpenClaw pipeline system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Autonomous agents</h2>
+        <p class="chart-desc">The fleet of agents that run daily operations.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/agents.svg" alt="OpenClaw pipeline agent roster" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Anatomy of a request</h2>
+        <p class="chart-desc">How a task moves through the pipeline.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/anatomy.svg" alt="OpenClaw pipeline anatomy of a request" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>24-hour autonomy</h2>
+        <p class="chart-desc">Timeline of scheduled and event-driven runs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/timeline.svg" alt="OpenClaw pipeline 24-hour autonomy timeline" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Resilience model</h2>
+        <p class="chart-desc">Independent fallback chains keep the system running.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="pipeline/resilience.svg" alt="OpenClaw pipeline independent fallback chains" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>AI infrastructure - Multi-agent system</span>
+      <a href="https://github.com/sergiofspedro/openclaw-pipeline" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-n8n">
+    <div class="hero-banner hero-banner--n8n">
+      <div class="hero-text">
+        <h1>Workflow Automation Engine<br><span class="hero-tagline">Scheduled ETL that finds, cleans and files job postings</span></h1>
+        <div class="hero-sub-banner">n8n · Python · SQLite · Notion API · Daily and hourly schedules</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Workflow Automation Engine: scheduled n8n ETL pipelines from job boards and APIs into SQLite and Notion</h1>
+      <div class="article-date">2026 - Workflow automation and ETL - n8n, Python, APIs</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>n8n</strong> – Workflow automation for scheduling and orchestrating data collection pipelines.<br><br>
+          <strong>Python</strong> – Custom data transformation and API integration scripts within workflows.<br><br>
+          <strong>SQLite</strong> – Embedded database for storing collected data and workflow outputs.<br><br>
+          <strong>Notion API</strong> – Integration for structured data storage and reporting.<br><br>
+          <strong>RapidAPI</strong> – Access to third-party data sources and API connectors.
+        </td></tr>
+        <tr><th>Business value</th><td>Fully automated collection, normalisation and reporting: manual exports become one queryable, always-current dataset</td></tr>
+        <tr><th>Use cases</th><td>Data pipeline automation, ETL, competitor and price monitoring, lead lists, notification systems</td></tr>
+      </table>
+      <p>
+        This project orchestrates scheduled and hourly data-collection runs across multiple job-board and API
+        sources using <strong>n8n</strong>, tracing each listing from initial discovery through normalisation
+        into <strong>SQLite</strong>, then syncing structured results into <strong>Notion</strong> for review
+        and reporting. Custom Python steps handle transformation and API integration wherever a source needs
+        more than a standard connector.
+      </p>
+      <p>
+        The same orchestration pattern generalises well beyond job discovery, to any recurring data-collection
+        need a business has: competitor pricing, lead lists, market listings, or any other source that changes
+        often enough to need continuous monitoring. It removes the manual collection work entirely and replaces
+        scattered manual exports with a single, queryable, always-current dataset.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System architecture</h2>
+        <p class="chart-desc">How the n8n workflows connect to data sources and outputs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/architecture.svg" alt="n8n pipeline system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Schedule</h2>
+        <p class="chart-desc">Daily and hourly scheduled runs.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/schedule.svg" alt="n8n pipeline schedule of daily and hourly runs" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Data flow</h2>
+        <p class="chart-desc">One job posting traced end to end.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="n8n/dataflow.svg" alt="n8n pipeline one job posting traced end to end" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Workflow automation</span>
+      <a href="https://github.com/sergiofspedro/n8n-pipeline" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-gisexplorer" style="display:none">
+    <div class="hero-banner hero-banner--gisexplorer">
+      <div class="hero-text">
+        <h1>Interactive GIS dashboard<br><span class="hero-tagline">Multilayer self-updating map</span></h1>
+        <div class="hero-sub-banner">Leaflet · Python and GeoPandas · GitHub Actions CI/CD · Matosinhos, Portugal</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Interactive GIS dashboard: a serverless geospatial dashboard with an automated multi-source data pipeline</h1>
+      <div class="article-date">2026 - Geospatial data platform - MOVES-IT, Matosinhos City Council (EU Urban Innovative Actions)</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Leaflet.js + JavaScript</strong> – Multi-layer client-side rendering, filtering, and marker clustering at scale.<br><br>
+          <strong>Python + GeoPandas</strong> – GIS data pipeline normalising shapefiles and live REST feeds into one schema.<br><br>
+          <strong>GitHub Actions</strong> – Automated, scheduled multi-source fetch-and-deploy pipeline.
+        </td></tr>
+        <tr><th>Business value</th><td>28 independently toggleable layers plus real-time participant search and filtering, in one dependency-light map with no backend server</td></tr>
+        <tr><th>Use cases</th><td>Municipal GIS teams, EU-funded civic-participation programmes, field-operations and asset-tracking teams, retail or real-estate site selection, sales-territory mapping</td></tr>
+      </table>
+      <p>
+        This is an interactive map built for <strong>MOVES-IT</strong>, an EU Urban Innovative Actions project
+        run by the Matosinhos City Council, combining a live civic-participation dataset with the municipality's
+        own open GIS data. Visitors can search and filter participants by parish, then layer in any combination
+        of <strong>28 independent thematic overlays</strong>, spanning municipal boundaries, social housing,
+        green space, education and health facilities, culture and heritage, and mobility infrastructure, each
+        sourced from a mix of committed shapefiles and the municipality's live ArcGIS feeds.
+      </p>
+      <p>
+        Two pieces of the underlying engineering generalise well beyond this one map. First, a
+        <strong>point-in-polygon geographic resolver</strong> (a ray-casting even-odd algorithm implemented from
+        scratch) derives each point's administrative parish directly from real boundary geometry, rather than
+        trusting a possibly stale stored label, and a deterministic z-order rule keeps wide "context" polygons
+        from ever occluding more specific layers regardless of the order they're toggled on. Second, a scheduled
+        <strong>CI/CD data pipeline</strong> fetches from a dozen-plus live REST/ArcGIS endpoints and local
+        geodata files on every deploy, normalises them into one client-side schema, and fails soft, so one
+        unreachable source degrades a single layer instead of breaking the map.
+      </p>
+      <p>
+        The same architecture, heterogeneous sources merged into one schema, geospatial computation done
+        client-side, and a dense multi-layer UI kept fast through clustering and lazy rendering, applies well
+        beyond civic participation. <strong>Utilities and telecom field-operations teams</strong> can plot assets
+        and incidents across overlapping data sources the same way; <strong>retail and real-estate analysts</strong>
+        can overlay demographic, competitor, and zoning layers to inform site selection; <strong>sales
+        organisations</strong> can build territory maps from CRM data; and any team doing
+        <strong>ESG or compliance reporting</strong> gets the same pattern for combining regulatory geodata with
+        their own operational footprint.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Interactive map</h2>
+        <p class="chart-desc">Participant markers, parish filtering, and 28 toggleable GIS layers. Participant names are anonymized for this public copy.</p>
+        <div class="chart-wrapper"><iframe class="chart-frame tall" src="gis-explorer/interactive_map.html" title="Interactive GIS dashboard" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Civic tech / GIS · MOVES-IT, Matosinhos City Council</span>
+    </footer>
+  </section>
+  <section id="project-funding" style="display:none">
+    <div class="hero-banner hero-banner--funding">
+      <div class="hero-text">
+        <h1>Funding AICopilot (SaaS)<br><span class="hero-tagline">Professional AI agent solution for funding acquisition and predictive market analysis</span></h1>
+        <div class="hero-sub-banner">Full-stack SaaS · Multi-source ingestion · Cited AI assistant · CI-gated quality</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Funding AICopilot: custom AI agents that find EU funding, fill in the applications and cite every source</h1>
+      <div class="article-date">2026 - Full-stack AI product - Next.js, TypeScript, SQLite</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>AI / tools</th><td>
+          <strong>Next.js 15 + TypeScript (Node 20)</strong> – Single application and API, with the Chrome extension behind Auto-apply in the same repository.<br><br>
+          <strong>SQLite</strong> – On-disk storage with versioned, idempotent SQL migrations.<br><br>
+          <strong>AI assistant</strong> – Cited answers and an adversarial validation pass over every synthesis.<br><br>
+          <strong>Playwright</strong> – Production-build tests across Chromium, Firefox and WebKit.<br><br>
+          <strong>Stripe, Resend, Sentry</strong> – Billing, transactional mail and error reporting.
+        </td></tr>
+        <tr><th>Business value</th><td>Turns fragmented funding, regulatory and market data into a short, evidenced, profile-matched feed, and automates the application form filling</td></tr>
+        <tr><th>Use cases</th><td>Startups, SMEs, research groups, NGOs and consultancies that track EU funding calls and regulatory change</td></tr>
+      </table>
+      <p>
+        <strong>Website:</strong> <a href="https://fundingaicopilot.tech" target="_blank">fundingaicopilot.tech</a>
+      </p>
+      <p>
+        Organizations lose weeks every quarter to funding calls they missed, regulatory deadlines that crept up,
+        and market signals scattered across dozens of portals and newsletters. Tracking it all by hand is a junior
+        analyst's full-time job, and most teams do not have one. Alerts arrive without context, official portals
+        stay fragmented, and consultancies are expensive and slow for day-to-day triage. <strong>Funding AICopilot</strong>
+        closes that gap: one workspace where a team sees every open call matched to its profile, every regulatory
+        deadline touching its sector, and the market signals that should change what it does this week.
+      </p>
+      <p>
+        The tedious work is automatic: deduplication, entity resolution, and pulling deadlines out of PDF tables.
+        <strong>Funding auto-search</strong> finds the calls a company can actually apply for across EU public feeds,
+        and <strong>Auto-apply</strong>, a Google Chrome extension, fills the application form from the profile, so the
+        user reviews it and presses submit. A <strong>validated opportunity engine</strong> (signals, evidence,
+        convergence, adversarial validation) delivers conclusions instead of a firehose, <strong>EU regulatory
+        tracking</strong> follows the AI Act, GDPR, NIS2 and national rules in plain language, and a <strong>cited AI
+        assistant</strong> links every claim to its primary source. Short daily or weekly digests arrive by email and
+        Slack, and data is EU-hosted by default with a public sub-processor list.
+      </p>
+      <p>
+        Under the hood it is an ordinary stack held to an unusual standard: a coverage gate that fails on regression,
+        a single <code>verify</code> command for done, real-browser tests against the production build, migrations
+        built to be re-run, and fail-closed defaults. That is why changes can land daily without the quality bar
+        drifting. The same pattern, many fragmented public sources turned into a short, evidenced, profile-matched
+        feed, applies to any team that monitors grants, tenders, standards or regulation.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>System architecture</h2>
+        <p class="chart-desc">How public sources become a curated, evidence-backed feed and an application draft.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/architecture.svg" alt="Funding AICopilot system architecture" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>How it works</h2>
+        <p class="chart-desc">Four steps from a company profile to a reviewed application.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/journey.svg" alt="Funding AICopilot connect, ingest, synthesise, act" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Engineering standard</h2>
+        <p class="chart-desc">The gates every push to main and every pull request must pass.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="funding/quality.svg" alt="Funding AICopilot quality gates" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Product / SaaS - Funding, market and regulatory intelligence</span>
+      <a href="https://fundingaicopilot.tech" target="_blank">Visit fundingaicopilot.tech &#x2192;</a>
+    </footer>
+  </section>
+    <section id="project-litreview" style="display:none">
+    <div class="hero-banner hero-banner--litreview">
+      <div class="hero-text">
+        <h1>Machine learning text analysis and clustering<br><span class="hero-tagline">NLP and machine learning at scale</span></h1>
+        <div class="hero-sub-banner">Text mining · Topic modelling (NMF) · Embeddings and visualisation · Python</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Machine learning text analysis and clustering: an NLP and topic-modelling pipeline that turns 1,150 papers into a map of a research field</h1>
+      <div class="article-date">2024 - NLP and machine learning - Python, litstudy, NMF</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>ML / tools</th><td>
+          <strong>NLP preprocessing</strong> – Tokenisation, cleaning and automatic n-gram (collocation) detection, so that multi-word concepts such as <em>nature_solutions</em> become single features.<br><br>
+          <strong>NMF topic model</strong> – Non-negative matrix factorisation: unsupervised learning that splits a document-term matrix into topic-term and document-topic matrices, with 15 topics.<br><br>
+          <strong>Embedding and visualisation</strong> – A non-linear 2D embedding of the documents, one word cloud per topic, and topic trends over time.<br><br>
+          <strong>Python stack</strong> – litstudy, pandas, NumPy, matplotlib and seaborn, in a reproducible notebook.
+        </td></tr>
+        <tr><th>Business value</th><td>Replaces weeks of manual reading with a reproducible ML pipeline that discovers the structure of a text collection without any labelled data</td></tr>
+        <tr><th>Use cases</th><td>State-of-the-art and horizon-scanning reviews for R&amp;D and innovation teams, policy analysis, patent and tender landscaping, customer-feedback and support-ticket analysis</td></tr>
+      </table>
+      <p>
+        <strong>The problem:</strong> a research field with more than a thousand papers cannot be read by one
+        person, and there are no labels that say which paper belongs to which theme. This project solves it
+        with <strong>unsupervised machine learning</strong>. Scopus returned about 1,700 documents for regenerative
+        and net-positive urban development, of which 1,150 were selected as relevant, and a topic model learned
+        the themes of the field from the text itself.
+      </p>
+      <p>
+        <strong>The approach:</strong> the paper text is cleaned and turned into a document-term matrix, with
+        frequent n-grams detected automatically. <strong>Non-negative matrix factorisation (NMF)</strong> then
+        factorises that matrix into a topic-term matrix (what each theme is about) and a document-topic matrix
+        (how strongly each paper belongs to each theme). Because NMF is non-negative, topics are additive and
+        easy to read, which makes the model interpretable rather than a black box.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> the number of topics (15) is the main hyperparameter, a
+        trade-off between coarse and fine-grained themes, chosen by inspecting the results. Each topic was
+        validated qualitatively, by reading its top words and its most representative papers. The document-topic
+        weights are thresholded (0.2) to tag papers with a theme, which makes it possible to follow how one
+        theme's share of the literature changes per year and per journal.
+      </p>
+      <p>
+        <strong>The result:</strong> 15 themes found without supervision, from forests and nature-based solutions
+        to circular economy, the built environment, energy and climate, and public space and housing, and a
+        landscape in which every paper sits next to the papers that use similar language. The same pipeline
+        applies to any large collection of text. It was built as part of a PhD research process and is
+        reproducible end to end.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The ML pipeline</h2>
+        <p class="chart-desc">Five stages: data, NLP preprocessing, features, model and outputs, with a validation loop on the number of topics.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="litreview/ml-pipeline.svg" alt="Machine-learning pipeline: Scopus export, NLP preprocessing, document-term matrix, NMF with 15 topics, topic-term and document-topic outputs" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>What the model learned</h2>
+        <p class="chart-desc">Fifteen themes discovered without labels, one word cloud per topic. The bigger the word, the more it defines the topic.</p>
+        <div class="svg-frame">
+          <img src="litreview/topic-wordclouds.png" alt="Word clouds of the 15 NMF topics" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Document landscape</h2>
+        <p class="chart-desc">Each dot is a paper. Papers with similar language sit close together; colour and number show the main topic.</p>
+        <div class="svg-frame">
+          <img src="litreview/topic-landscape.png" alt="2D landscape of papers coloured by topic" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>PhD research - NLP and machine learning</span>
+      <a href="https://github.com/sergiofspedro/Lit-review-on-regenerative-ecology-2024-" target="_blank">View source on GitHub &#x2192;</a>
+    </footer>
+  </section>
+  <section id="project-autodispatch" style="display:none">
+    <div class="hero-banner hero-banner--autodispatch">
+      <div class="hero-text">
+        <h1>24/7 AI harness with kanban board<br><span class="hero-tagline">Self-dispatching AI work sessions, held back by safety gates</span></h1>
+        <div class="hero-sub-banner">Workflow orchestration · Safety gates · Human-in-the-loop · Bash, Python, cron</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">24/7 AI harness with kanban board: an autonomous controller that launches AI work sessions only when it is safe to do so</h1>
+      <div class="article-date">2026 - Autonomous systems and DevOps - Bash, Python, cron</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>Engineering</th><td>
+          <strong>Scheduler and runner</strong> – A cron tick every five minutes enters through one script that takes an edit lock, so two sessions never write code at the same time.<br><br>
+          <strong>Observer and safety gates</strong> – Six independent checks (brake, previous report, fuse, stall and retry, empty queue, QA pre-flight). Any closed gate stops the launch and the reason is logged.<br><br>
+          <strong>Parser, generator and launcher</strong> – The requirements document is parsed into a JSON work queue, a brief is written for the next wave, and the session is created and briefed on the server.<br><br>
+          <strong>Publishing and reporting</strong> – Validated code is published repo-first (branch and review, then merge) and work status is mirrored to a Kanban board.
+        </td></tr>
+        <tr><th>Business value</th><td>Removes the manual work of opening, briefing and babysitting overnight AI sessions, while a human keeps control of every decision that matters</td></tr>
+        <tr><th>Use cases</th><td>Overnight batch automation, orchestration of AI agents, controlled release pipelines, and any workflow where autonomy has to be bounded by auditable rules</td></tr>
+      </table>
+      <p>
+        <strong>The problem:</strong> when there is pending work overnight, someone has to open a session, write
+        the instructions and watch the result. Doing that by hand does not scale, and removing the human entirely
+        is how automation runs away. This project automates the routine part and keeps the risky part gated.
+      </p>
+      <p>
+        <strong>The approach:</strong> a small controller wakes up every five minutes and asks one question: is it
+        safe to dispatch? It reads the pending work from the requirements document, writes the brief for the next
+        wave, launches an autonomous session and then does nothing until that session delivers its report. The
+        golden rule is <strong>no report, no new wave</strong>: work is never launched on top of unfinished work.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> safety is built from independent gates rather than one clever
+        check, so a single failure is enough to stop. A fuse disarms the loop after several dispatches with no new
+        report, and a stalled wave gets one authorised retry and then a safe stop. The scope is deliberately fixed
+        to one project, and anything that needs an owner decision goes to a form instead of being decided by the
+        machine. There is no force-push, and no secrets or state are stored in the repository.
+      </p>
+      <p>
+        <strong>The result:</strong> a loop that has emitted waves up to number 52, guarded by 99 test suites and a
+        single entry point for automation (green means it may dispatch). It is the execution half of a pair: the
+        <em>Self-improvement loop for AI harness</em> decides what is worth fixing, and that harness runs the fix.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The life of one wave</h2>
+        <p class="chart-desc">In plain words: a job card is written, a night-shift worker does the job, an inspector checks it, and a shift report is handed in before the next job starts.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/wave-lifecycle.svg" alt="Life of one wave: job in the PRD backlog, safety gates, job card, launch, the work, test gates, marked done with proof, final night report with its sections, then the Tally form, Notion kanban and the archive" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The dispatch loop</h2>
+        <p class="chart-desc">Eight steps from the clock to the report, and back. The report is what unlocks the next wave.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/dispatch-loop.svg" alt="Dispatch loop: cron tick, runner, observer, parser, generator, launcher, wave and night report, with owner replies and repo-first publishing" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The safety gates</h2>
+        <p class="chart-desc">One closed gate is enough to stop the launch, and every stop leaves a reason in the log.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/gates.svg" alt="Six safety gates between the cron tick and a launch: brake, previous report, fuse, stall and retry, empty queue and QA pre-flight" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Autonomous systems - orchestration and safety</span>
+    </footer>
+  </section>
+  <section id="project-selfimprove" style="display:none">
+    <div class="hero-banner hero-banner--selfimprove">
+      <div class="hero-text">
+        <h1>Self-improvement loop for AI harness<br><span class="hero-tagline">Defects found, approved by a human, fixed and proven</span></h1>
+        <div class="hero-sub-banner">Human-in-the-loop automation · Governance · Deduplication · Auditable evidence</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Self-improvement loop for AI harness: a governed pipeline that turns defects found overnight into approved, proven fixes</h1>
+      <div class="article-date">2026 - Autonomous systems and governance - Python, Bash</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>Engineering</th><td>
+          <strong>Extractor and intake gate</strong> – Reads each wave's report and turns new defects into candidates. A gate decides what deserves to become a candidate at all.<br><br>
+          <strong>Fingerprinting</strong> – Every defect gets a fingerprint, so the same problem is never raised twice.<br><br>
+          <strong>Human approval</strong> – The owner approves or rejects each candidate in a form. A consumer script records the answer and never touches the proposal itself.<br><br>
+          <strong>Weighted, repeatable selection</strong> – An approved candidate is picked by score with a deterministic seed, then fixed by an autonomous wave that records its own proof.
+        </td></tr>
+        <tr><th>Business value</th><td>Turns the lessons buried in reports into a prioritised, auditable backlog and fixes them autonomously, with no change made without human approval</td></tr>
+        <tr><th>Use cases</th><td>Continuous-improvement programmes for AI agents and automated pipelines, incident follow-up, tech-debt management, and any process that needs autonomy with an approval trail</td></tr>
+      </table>
+      <p>
+        <strong>The problem:</strong> a system that runs by itself overnight accumulates defects that nobody
+        writes down, and the knowledge ends up buried in reports. This project collects those defects, shows them
+        to the owner, and only after an explicit human answer sends a wave to fix them, recording in one place
+        exactly what changed and with what evidence.
+      </p>
+      <p>
+        <strong>The approach:</strong> each wave writes a report. An extractor turns the new defects into
+        candidates, an intake gate filters them, and a fingerprint removes duplicates. The owner then approves,
+        rejects or asks for more context in a form. Approved candidates are picked by weighted score and
+        implemented by an improvement wave that writes back its proof: commits, passing test suites and
+        measurements.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> nothing is implemented without a human answer. That rule has
+        no exceptions, and there is no language model deciding and no auto-approval. Every script has narrow write
+        permissions: the extractor never edits or deletes, the reply consumer only touches status and answer, and
+        the improvement waves never create or edit candidates. A first version kept a second queue file, which was
+        removed on purpose, because two sources of truth were a defect in themselves.
+      </p>
+      <p>
+        <strong>The result:</strong> 200 candidates tracked in a single git-tracked document of about 4,400 lines,
+        improvement waves emitted up to number 52 since early October 2026, and ten dedicated test suites. It is
+        the decision half of a pair: this loop chooses what is worth fixing, and the <em>24/7 AI harness with kanban board</em> launches the work.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The improvement loop</h2>
+        <p class="chart-desc">Nine steps from a defect in a report to a proven fix. The only human step is also the only gate that cannot be skipped.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="selfimprove/improvement-loop.svg" alt="Improvement loop: wave reports, extractor, intake gate, fingerprint, requirements document, human approval, wave selection, improvement wave and archive" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Life cycle and write permissions</h2>
+        <p class="chart-desc">A candidate leaves its first state only through a human answer, and each script can write only its own part of the document.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="selfimprove/governance.svg" alt="Candidate life cycle from pending_form to archived, and a table of which script may write which part of the document" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Autonomous systems - governance and human-in-the-loop</span>
+    </footer>
+  </section>
+  <section id="project-llmfactory" style="display:none">
+    <div class="hero-banner hero-banner--llmfactory">
+      <div class="hero-text">
+        <h1>Custom LLM Factory<br><span class="hero-tagline">Creation of small, specialised LLM custom fitted to public and private sector clients</span></h1>
+        <div class="hero-sub-banner">LLM fine-tuning (QLoRA) · Calibration and abstention · Quality gate · Python, DuckDB</div>
+      </div>
+    </div>
+    <div class="article">
+      <h1 class="article-title">Custom LLM Factory: a scalable method for fine-tuning small language models, individually fitted for private and public sector organisations</h1>
+      <div class="article-date">2026 - LLM fine-tuning and applied AI - Python, QLoRA, DuckDB</div>
+      <table class="project-info-table">
+        <tr><th>Author</th><td>Sérgio Pedro</td></tr>
+        <tr><th>LLM / tools</th><td>
+          <strong>QLoRA fine-tuning</strong> – A small open-weight language model is trained with 4-bit quantisation and LoRA adapters on a rented 24 GB GPU, inside a hard budget.<br><br>
+          <strong>Retrieval plus selection</strong> – A search step shortlists 20 candidates and the LLM answers with a candidate number or &ldquo;none&rdquo;, so it can never invent an invalid code.<br><br>
+          <strong>Calibration and abstention</strong> – Temperature scaling, expected calibration error and risk-coverage curves, so the model's confidence can be trusted and it can decline to answer.<br><br>
+          <strong>Baselines and quality gate</strong> – TF-IDF with logistic regression, a multilingual encoder and zero-shot and few-shot LLMs are compared with the fine-tuned model on one frozen test set.<br><br>
+          <strong>Data stack</strong> – DuckDB reads an 8 GB Parquet file out-of-core on a 10 GB CPU server, so the data work costs nothing.
+        </td></tr>
+        <tr><th>Business value</th><td>
+          <strong>Fitted to your processes</strong> – The model is trained on the organisation's own workflows and data, for better results on the tasks that matter to it.<br><br>
+          <strong>Lower cost</strong> – A small specialised model costs far less per item than a large commercial one.<br><br>
+          <strong>Faster</strong> – Small models answer quickly and can run close to the data.<br><br>
+          <strong>Private by design</strong> – Internal data is never shared with a commercial LLM in the cloud.<br><br>
+          <strong>Trustworthy</strong> – Calibrated confidence, the option to abstain, and a quality gate before anything ships.
+        </td></tr>
+        <tr><th>Use cases</th><td>Retail and consumer goods, industry, IT, sustainability reporting and public-sector clients: any place where messy text has to be mapped onto a reference list</td></tr>
+      </table>
+      <p>
+        <strong>The idea in plain words:</strong> imagine hiring an intern who has to read thousands of food
+        labels and match each one to the right line in an official carbon-footprint table. A general-purpose
+        assistant can do it, but it is expensive, it sends your data elsewhere, and it never says &ldquo;I am
+        not sure&rdquo;. This project teaches a <em>small</em> language model to do that one job well, and
+        builds the workshop that makes the next job (another sector, another client) cheap to repeat.
+      </p>
+      <p>
+        <strong>Why a custom model for each organisation:</strong> the model is individually fitted to the
+        organisation's own internal processes, which should give <strong>better results</strong> on the tasks that
+        matter to it than a general-purpose model. It <strong>costs less</strong> per item and runs
+        <strong>faster</strong>, because it is small. Above all it protects <strong>data privacy</strong>: internal
+        data stays inside the organisation and is never sent to a commercial LLM in the cloud. It also reports how
+        sure it is, and abstains when it is not. These are design goals, and the pilots are where they get
+        measured.
+      </p>
+      <p>
+        <strong>How the model is trained:</strong> instead of retraining a whole model, only a thin layer of
+        extra weights (a LoRA adapter) is trained, on top of a base model compressed to 4 bits (QLoRA). That is
+        what makes it possible on a single rented GPU for a few tens of euros. The factory has three layers: a
+        fixed core (base model, training harness and quality gate), a shared adapter per sector, and a small
+        adapter per client. Only the thin layers change from one project to the next.
+      </p>
+      <p>
+        <strong>Pilot 1, food products:</strong> Open Food Facts product labels, in seven languages, mapped onto the
+        official French Agribalyse life-cycle database, which has about 1,700 distinct food entries in a first
+        sample. Every correct or wrong match converts into kilograms of CO2e, so quality is measured in the
+        language of environmental policy and not only in accuracy. The model is trained to pick from a shortlist
+        and to abstain when it is unsure. <strong>Pilot 2 will be in the energy sector</strong>, to show that the
+        same factory transfers to a different domain.
+      </p>
+      <p>
+        <strong>The decisions that matter:</strong> a plain TF-IDF classifier gets the first try, so the LLM has
+        to earn its place; if the simple model is good enough, the project says so. Success thresholds are frozen
+        before the test set is touched, and near-duplicate products are kept in the same split to prevent
+        leakage. Estimates from text alone are described as estimates for triage, never as certified footprints,
+        and where the model disagrees with an existing label it reports a ranked &ldquo;suspect&rdquo;, not a
+        verified error.
+      </p>
+      <p>
+        <strong>The business hypothesis:</strong> the pilots are the proof of concept, not the product. The
+        product would be a custom small model per client, built with the same factory and delivered with a model
+        card and an audit report. Which sectors will pay for it is still to be validated with customer interviews.
+        What the pilots can prove is that the method works end to end, what it costs per 1,000 items, and how many
+        hours and euros each new sector takes. They cannot prove that a client will pay.
+      </p>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The factory in three layers</h2>
+        <p class="chart-desc">Build the expensive part once. Each new sector or client only adds a thin adapter on top.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/factory-layers.svg" alt="Factory in three layers: fixed core, shared sector adapter and client adapter" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>Pilot 1: from label to footprint entry</h2>
+        <p class="chart-desc">The food pilot, step by step. The model can answer, or decline when its confidence is too low.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/data-journey.svg" alt="From ingredient text through cleaning, shortlist, LLM choice and calibration to an answer or an abstention" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The honesty test</h2>
+        <p class="chart-desc">The LLM has to earn its place. A cheap baseline is tried first, and a null result is a valid outcome.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/honesty-test.svg" alt="Honesty test: simple baselines first, then the LLM must beat them by a pre-agreed margin, or the null result is reported" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>The quality gate</h2>
+        <p class="chart-desc">A repeatable check that must accept a good model and reject a bad one, with hard limits on spending.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/quality-gate.svg" alt="Quality gate checks, with a good adapter accepted and a deliberately bad adapter rejected, plus spend rails" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
+        <h2>One pattern, many sectors</h2>
+        <p class="chart-desc">The commercial hypothesis: the same method serves several sectors. To be validated with customers.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="llmfactory/segments.svg" alt="One pattern for retail, industry, IT and sustainability: messy text mapped to a reference list" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <footer class="article-footer">
+      <span>Applied AI - LLM fine-tuning in development</span>
+    </footer>
+  </section>
+</main>
+<script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const mobileOverlay = document.getElementById('mobileOverlay');
+function toggleMobileNav() {
+  mobileNav.classList.toggle('open');
+  mobileOverlay.classList.toggle('visible');
+  document.body.classList.toggle('no-scroll');
+}
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  mobileOverlay.classList.remove('visible');
+  document.body.classList.remove('no-scroll');
+}
+hamburgerBtn.addEventListener('click', toggleMobileNav);
+mobileOverlay.addEventListener('click', closeMobileNav);
+// One URL per project: /<slug>/ (the About page is the root). tools/build_pages.py
+// generates a static copy of this page for each slug so the URLs also work when opened directly.
+var PROJECT_SLUGS = {
+  about: '', funding: 'fundingaicopilot', litreview: 'mltextanalysis', llmfactory: 'customllmfactory',
+  autodispatch: 'aiharness', selfimprove: 'selfimprovementloop', rpi: 'regenerativepotentialindex',
+  miningeurope: 'leadsradar', loop: 'loopeu', porto: 'georeferencedurbanmonitoring',
+  pipeline: 'aiagents247', n8n: 'workflowautomation', gisexplorer: 'interactivegisdashboard'
+};
+function projectFromPath() {
+  var slug = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0];
+  if (slug === 'aboutme') return 'about';
+  for (var id in PROJECT_SLUGS) { if (PROJECT_SLUGS[id] && PROJECT_SLUGS[id] === slug) return id; }
+  return 'about';
+}
+function setProject(id) {
+  document.querySelectorAll('section[id^="project-"]').forEach(function(s) { s.style.display = 'none'; });
+  var target = document.getElementById('project-' + id);
+  if (target) target.style.display = '';
+  document.querySelectorAll('.sidebar-project-link, .mobile-nav-link').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-id') === id);
+  });
+  var link = document.querySelector('.sidebar-project-link[data-id="' + id + '"]');
+  document.title = (id === 'about' || !link) ? 'Sérgio Pedro - Portfolio' : link.firstChild.textContent.trim() + ' - Sérgio Pedro';
+}
+function showProject(id, btn) {
+  setProject(id);
+  var url = '/' + (PROJECT_SLUGS[id] ? PROJECT_SLUGS[id] + '/' : '');
+  try { if (location.pathname !== url) history.pushState({ id: id }, '', url); } catch (e) {}
+  window.scrollTo(0, 0);
+}
+window.addEventListener('popstate', function() { setProject(projectFromPath()); });
+setProject(projectFromPath());
+</script>
+</body>
+</html>

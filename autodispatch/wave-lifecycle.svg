@@ -1,0 +1,98 @@
+<svg viewBox="0 0 1000 776" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f18"/><stop offset="48%" stop-color="#2a2410"/><stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity="0.05"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f0c05e"/></marker>
+  </defs>
+  <rect width="1000" height="776" rx="22" fill="url(#bg)"/><rect width="1000" height="776" rx="22" fill="url(#dots)"/>
+  <text x="500" y="36" text-anchor="middle" font-size="11" letter-spacing="3" font-weight="700" fill="#f0c05e">THE LIFE OF ONE WAVE</text>
+  <text x="500" y="68" text-anchor="middle" font-size="24" font-weight="600" fill="#f3f6fa">From a line in the backlog to a signed-off shift report</text>
+  <text x="500" y="90" text-anchor="middle" font-size="12" fill="#9fb3c8">A wave is one autonomous night shift: it gets a job card, does the work, is inspected and hands in its report</text>
+<text x="30" y="118" font-size="10" letter-spacing="2" font-weight="700" fill="#6fd8c7">BEFORE: THE JOB IS PICKED AND BRIEFED</text>
+<rect x="30" y="125" width="217" height="136" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="44" y="151" font-size="13.5" font-weight="600" fill="#f3f6fa">1  Job on the board</text>
+<text x="44" y="173" font-size="10.5" fill="#9fb3c8">A work item sits in the backlog</text>
+<text x="44" y="188" font-size="10.5" fill="#9fb3c8">(the PRD). Improvements only</text>
+<text x="44" y="203" font-size="10.5" fill="#9fb3c8">get here after the owner</text>
+<text x="44" y="218" font-size="10.5" fill="#9fb3c8">approves them in the Tally</text>
+<text x="44" y="233" font-size="10.5" fill="#9fb3c8">form.</text>
+<rect x="271" y="125" width="217" height="136" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="285" y="151" font-size="13.5" font-weight="600" fill="#f3f6fa">2  Safety gates</text>
+<text x="285" y="173" font-size="10.5" fill="#9fb3c8">Every 5 minutes: is the brake</text>
+<text x="285" y="188" font-size="10.5" fill="#9fb3c8">off, is the last report in, is</text>
+<text x="285" y="203" font-size="10.5" fill="#9fb3c8">the fuse intact, is there work,</text>
+<text x="285" y="218" font-size="10.5" fill="#9fb3c8">is the machine healthy? One</text>
+<text x="285" y="233" font-size="10.5" fill="#9fb3c8">closed gate means no launch.</text>
+<rect x="512" y="125" width="217" height="136" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="526" y="151" font-size="13.5" font-weight="600" fill="#f3f6fa">3  Job card</text>
+<text x="526" y="173" font-size="10.5" fill="#9fb3c8">The generator writes the</text>
+<text x="526" y="188" font-size="10.5" fill="#9fb3c8">instructions for the wave: the</text>
+<text x="526" y="203" font-size="10.5" fill="#9fb3c8">mission, the steps, the rules</text>
+<text x="526" y="218" font-size="10.5" fill="#9fb3c8">and the report it must hand in.</text>
+<rect x="753" y="125" width="217" height="136" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#f0c05e" stroke-opacity="0.55"/>
+<text x="767" y="151" font-size="13.5" font-weight="600" fill="#f3f6fa">4  Shift starts</text>
+<text x="767" y="173" font-size="10.5" fill="#9fb3c8">The launcher opens a fresh AI</text>
+<text x="767" y="188" font-size="10.5" fill="#9fb3c8">session and gives it the job</text>
+<text x="767" y="203" font-size="10.5" fill="#9fb3c8">card. From here the wave works</text>
+<text x="767" y="218" font-size="10.5" fill="#9fb3c8">alone.</text>
+<line x1="247" y1="193" x2="270" y2="193" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="488" y1="193" x2="511" y2="193" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="729" y1="193" x2="752" y2="193" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="30" y="308" font-size="10" letter-spacing="2" font-weight="700" fill="#6fd8c7">DURING: THE WORK AND THE INSPECTION</text>
+<line x1="861" y1="261" x2="861" y2="318" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="680" y="318" width="290" height="122" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="694" y="344" font-size="13.5" font-weight="600" fill="#f3f6fa">5  The work</text>
+<text x="694" y="366" font-size="10.5" fill="#9fb3c8">Read the task, plan the smallest change,</text>
+<text x="694" y="381" font-size="10.5" fill="#9fb3c8">implement it, run the tests and commit. One</text>
+<text x="694" y="396" font-size="10.5" fill="#9fb3c8">candidate per wave, never more.</text>
+<rect x="355" y="318" width="290" height="122" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="369" y="344" font-size="13.5" font-weight="600" fill="#f3f6fa">6  Test gates</text>
+<text x="369" y="366" font-size="10.5" fill="#9fb3c8">The full test-suite gate must be green.</text>
+<text x="369" y="381" font-size="10.5" fill="#9fb3c8">Improvement waves also run a final QA check</text>
+<text x="369" y="396" font-size="10.5" fill="#9fb3c8">that must print QA-FINAL: ok (syntax, hygiene,</text>
+<text x="369" y="411" font-size="10.5" fill="#9fb3c8">related suites, changelog).</text>
+<rect x="30" y="318" width="290" height="122" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#6fd8c7" stroke-opacity="0.55"/>
+<text x="44" y="344" font-size="13.5" font-weight="600" fill="#f3f6fa">7  Mark it done, with proof</text>
+<text x="44" y="366" font-size="10.5" fill="#9fb3c8">Normal wave: the task flips from [ ] to [x] in</text>
+<text x="44" y="381" font-size="10.5" fill="#9fb3c8">the PRD. Improvement wave: the candidate</text>
+<text x="44" y="396" font-size="10.5" fill="#9fb3c8">becomes implemented, with a 40+ character</text>
+<text x="44" y="411" font-size="10.5" fill="#9fb3c8">description and the commit hash.</text>
+<line x1="680" y1="379" x2="647" y2="379" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="355" y1="379" x2="322" y2="379" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="30" y="478" font-size="10" letter-spacing="2" font-weight="700" fill="#6fd8c7">AFTER: THE REPORT, THE OWNER LOOP AND THE ARCHIVE</text>
+<line x1="175" y1="440" x2="175" y2="494" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="30" y="494" width="620" height="164" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#8fd68a" stroke-opacity="0.6"/>
+<text x="44" y="520" font-size="13.5" font-weight="600" fill="#f3f6fa">8  The final report (NIGHT-REPORT)</text>
+<text x="44" y="538" font-size="10.5" fill="#9fb3c8">The shift report is mandatory. Without it the next wave never starts. Its sections:</text>
+<rect x="44" y="552" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="139" y="569" text-anchor="middle" font-size="9.5" fill="#f3f6fa">What failed this session</text>
+<rect x="244" y="552" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="339" y="569" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Infra at close: disk, load, gate</text>
+<rect x="444" y="552" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="539" y="569" text-anchor="middle" font-size="9.5" fill="#f3f6fa">QA final (improvement waves)</text>
+<rect x="44" y="586" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="139" y="603" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Self-evaluation: errors, smells, test gaps</text>
+<rect x="244" y="586" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="339" y="603" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Efficiency checks: time, tokens, retries</text>
+<rect x="444" y="586" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="539" y="603" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Improvement candidates</text>
+<rect x="44" y="620" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="139" y="637" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Do not rediscover: hand-off notes</text>
+<rect x="444" y="620" width="190" height="26" rx="13" fill="#8fd68a" fill-opacity="0.10" stroke="#8fd68a" stroke-opacity="0.45"/>
+<text x="539" y="637" text-anchor="middle" font-size="9.5" fill="#f3f6fa">Questions for the owner</text>
+<line x1="650" y1="576" x2="678" y2="576" stroke="#f0c05e" stroke-opacity="0.85" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="680" y="494" width="290" height="164" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#5ec8e0" stroke-opacity="0.55"/>
+<text x="694" y="520" font-size="13.5" font-weight="600" fill="#f3f6fa">9  Owner loop and board</text>
+<text x="694" y="542" font-size="10.5" fill="#9fb3c8">Open questions go to the Tally form and the</text>
+<text x="694" y="557" font-size="10.5" fill="#9fb3c8">answers are written back into the PRD. The</text>
+<text x="694" y="572" font-size="10.5" fill="#9fb3c8">Notion kanban mirrors the state: In Progress</text>
+<text x="694" y="587" font-size="10.5" fill="#9fb3c8">while a wave runs, Concluded when it is done.</text>
+<text x="694" y="602" font-size="10.5" fill="#9fb3c8">Validated code is published repo-first.</text>
+<rect x="30" y="672" width="940" height="44" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#5ec8e0" stroke-opacity="0.55"/>
+<text x="500" y="691" text-anchor="middle" font-size="11.5" fill="#f3f6fa"><tspan font-weight="600">10  Archive:</tspan> once the report is verified and no wave is running, closed tasks and finished candidates move to archive files,</text>
+<text x="500" y="707" text-anchor="middle" font-size="11.5" fill="#f3f6fa">so the live PRD stays small. An index line keeps duplicate and relapse detection working</text>
+<rect x="30" y="728" width="940" height="34" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#f0c05e" stroke-opacity="0.5"/>
+<text x="500" y="750" text-anchor="middle" font-size="11.5" fill="#f3f6fa">The report is the green light: only when it exists does the observer go back to step 2 and pick the next job</text>
+</svg>

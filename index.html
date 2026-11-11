@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
   <title>Sérgio Pedro - Portfolio</title>
   <meta name="description" content="Portfolio of Sérgio Pedro: INNOVATION MANAGEMENT & ENVIRONMENT | DATA ANALYST AND DEVELOPER | EU CLIMATE PACT AMBASSADOR" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -888,6 +889,14 @@
       </p>
       <hr class="chart-divider" />
       <div class="chart-section">
+        <h2>The life of one wave</h2>
+        <p class="chart-desc">In plain words: a job card is written, a night-shift worker does the job, an inspector checks it, and a shift report is handed in before the next job starts.</p>
+        <div class="svg-frame svg-frame--dark">
+          <img src="autodispatch/wave-lifecycle.svg" alt="Life of one wave: job in the PRD backlog, safety gates, job card, launch, the work, test gates, marked done with proof, final night report with its sections, then the Tally form, Notion kanban and the archive" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+      <hr class="chart-divider" />
+      <div class="chart-section">
         <h2>The dispatch loop</h2>
         <p class="chart-desc">Eight steps from the clock to the report, and back. The report is what unlocks the next wave.</p>
         <div class="svg-frame svg-frame--dark">
@@ -1110,13 +1119,38 @@ function closeMobileNav() {
 }
 hamburgerBtn.addEventListener('click', toggleMobileNav);
 mobileOverlay.addEventListener('click', closeMobileNav);
-function showProject(id, btn) {
+// One URL per project: /<slug>/ (the About page is the root). tools/build_pages.py
+// generates a static copy of this page for each slug so the URLs also work when opened directly.
+var PROJECT_SLUGS = {
+  about: '', funding: 'fundingaicopilot', litreview: 'mltextanalysis', llmfactory: 'customllmfactory',
+  autodispatch: 'aiharness', selfimprove: 'selfimprovementloop', rpi: 'regenerativepotentialindex',
+  miningeurope: 'leadsradar', loop: 'loopeu', porto: 'georeferencedurbanmonitoring',
+  pipeline: 'aiagents247', n8n: 'workflowautomation', gisexplorer: 'interactivegisdashboard'
+};
+function projectFromPath() {
+  var slug = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0];
+  if (slug === 'aboutme') return 'about';
+  for (var id in PROJECT_SLUGS) { if (PROJECT_SLUGS[id] && PROJECT_SLUGS[id] === slug) return id; }
+  return 'about';
+}
+function setProject(id) {
   document.querySelectorAll('section[id^="project-"]').forEach(function(s) { s.style.display = 'none'; });
   var target = document.getElementById('project-' + id);
   if (target) target.style.display = '';
-  document.querySelectorAll('.sidebar-project-link, .mobile-nav-link').forEach(function(b) { b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.sidebar-project-link, .mobile-nav-link').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-id') === id);
+  });
+  var link = document.querySelector('.sidebar-project-link[data-id="' + id + '"]');
+  document.title = (id === 'about' || !link) ? 'Sérgio Pedro - Portfolio' : link.firstChild.textContent.trim() + ' - Sérgio Pedro';
 }
+function showProject(id, btn) {
+  setProject(id);
+  var url = '/' + (PROJECT_SLUGS[id] ? PROJECT_SLUGS[id] + '/' : '');
+  try { if (location.pathname !== url) history.pushState({ id: id }, '', url); } catch (e) {}
+  window.scrollTo(0, 0);
+}
+window.addEventListener('popstate', function() { setProject(projectFromPath()); });
+setProject(projectFromPath());
 </script>
 </body>
 </html>
