@@ -15,8 +15,8 @@
 <text x="560" y="125" text-anchor="middle" font-size="10" letter-spacing="2" font-weight="700" fill="#6fd8c7">SYNTHESISE</text>
 <text x="880" y="125" text-anchor="middle" font-size="10" letter-spacing="2" font-weight="700" fill="#6fd8c7">ACT</text>
 <rect x="30" y="145" width="160" height="62" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#5ec8e0" stroke-opacity="0.45"/>
-<text x="110.0" y="173.0" text-anchor="middle" font-size="12" font-weight="600" fill="#f3f6fa">EU funding portals</text>
-<text x="110.0" y="189.0" text-anchor="middle" font-size="10" fill="#9fb3c8">calls, deadlines, budgets</text>
+<text x="110.0" y="173.0" text-anchor="middle" font-size="12" font-weight="600" fill="#f3f6fa">Funding portals</text>
+<text x="110.0" y="189.0" text-anchor="middle" font-size="10" fill="#9fb3c8">global calls and deadlines</text>
 <line x1="190" y1="176" x2="255" y2="176" stroke="#f0c05e" stroke-opacity="0.7" stroke-width="1.6" marker-end="url(#arr)"/>
 <rect x="30" y="230" width="160" height="62" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#5ec8e0" stroke-opacity="0.45"/>
 <text x="110.0" y="258.0" text-anchor="middle" font-size="12" font-weight="600" fill="#f3f6fa">Regulatory feeds</text>
